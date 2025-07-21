@@ -1,61 +1,74 @@
 ---
-title : "MFA for AWS Accounts"
+title : "Working on the main Functionality of the project using AWS Services"
 date : "2023-12-01T00:00:00Z"
 weight : 2
 chapter : false
 pre : " <b> 2. </b> "
 ---
 
-#### Multi-Factor Authentication (MFA) Setup
-
-During the authentication process, you will need to utilize three different MFA devices to ensure the security of your account.
-
-1. **Virtual MFA Devices (Smartphone Apps)**: Install the following apps on your smartphone and set them up for MFA:
-   - Microsoft Authenticator
-   - Google Authenticator
-   - Okta Verify
-
-2. **Hard U2F Security Key**: Obtain a hard U2F security key to enhance your account's security.
-
-3. **Other Hardware MFA Devices (e.g., Gemalto Security Keys)**: Consider using additional hardware MFA devices for added protection.
-
 ## Content
 
 - [Content](#content)
-- [1. Setup with Virtual MFA Device](#1-setup-with-virtual-mfa-device)
-- [2. Setup with U2F Security Key](#2-setup-with-u2f-security-key)
-- [3. Setup with Other Hardware MFA Device](#3-setup-with-other-hardware-mfa-device)
+- [Setting Up the IAM Identity Center](#setting-up-the-iam-identity-center)
+- [Deploy the Application via AWS Amplify](#deploy-the-application-via-aws-amplify)
+- [Setting up the Frontend, Backend and AWS Sandbox](#setting-up-the-frontend-backend-and-aws-sandbox)
+- [Setting up AWS Bedrock Model (2 Ways)](#setting-up-aws-bedrock-model-2-ways)
+
+## Setting Up the IAM Identity Center
+
+In order to manage multiple accounts with Single-sign on (SSO) session, users, groups, permission sets, and more for your organization, you have to set up the IAM Identity Center.
+
+1. Open AWS Console to access IAM Identity Center and enable the process.
+
+2. Open CloudShell and set up the management for the AWS Services using your root email as the main profile for the project.
+
+3. Configure the account by changing the password and finish setting up the new account and signing in.
+
+## Deploy the Application via AWS Amplify
+
+After initializing Amplify and enabling IAM Identity Center in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.
+
+1. Connect and Deploy AWS Amplify with the Repository from your GitHub.
+
+2. Edit the Build specification in the Amplify file.
+
+3. Save and Redeploy the App.
 
 ---
 
-## 1. Setup with Virtual MFA Device
+## Setting up the Frontend, Backend and AWS Sandbox
 
-To set up your virtual MFA device using apps on your smartphone, follow these steps:
+You will need to set up the frontend, back and the aws sandbox following these steps.
 
-- Step 1: Install the Microsoft Authenticator, Google Authenticator, and Okta Verify apps on your smartphone.
-- Step 2: Open the app and follow the on-screen instructions to add your account.
-- Step 3: Use the app-generated codes during the MFA authentication process.
+   ### Frontend and Backend
 
----
+1. Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:
+   - src/index.css (For Frontend)
+   - src/App.css (For Frontend)
+   - src/main.tsx (For UI)
+   - src/App.tsx (For UI)
 
-## 2. Setup with U2F Security Key
+2. Set up the resources file for Amplify Data by creating the file:
+   - amplify/data/resource.ts
 
-Setting up your U2F security key involves the following steps:
+   ### Amplify Sandbox
 
-- Step 1: Obtain a compatible U2F security key.
-- Step 2: Connect the key to your device's USB port.
-- Step 3: During authentication, insert the key and follow the prompts to complete the process.
+3. Using npm to install Amplify Sandbox.
 
----
+4. After setting up, you will need to configure a profile inside the sandbox. 
 
-## 3. Setup with Other Hardware MFA Device
-
-Consider using hardware MFA devices like Gemalto security keys for an extra layer of security:
-
-- Step 1: Acquire a Gemalto security key or a similar hardware device.
-- Step 2: Connect and set up the device as per the manufacturer's instructions.
-- Step 3: Integrate the device into your MFA authentication workflow.
+5. Configure and make a localhost.
 
 ---
 
-Remember to keep your MFA devices secure and follow best practices to ensure the safety of your account.
+## Setting up AWS Bedrock Model (2 Ways)
+
+1. You will be using Bedrock Model and setting up using Claude Sonnet. 
+
+2. There will be two ways to build the Bedrock Model based on how you intepret. 
+
+- Implementing the servers using manual coding for a fallback server.
+- Using cross-region to make a fallback server. 
+
+
+---
