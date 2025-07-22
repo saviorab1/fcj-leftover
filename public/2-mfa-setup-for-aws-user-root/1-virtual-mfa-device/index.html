@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4181&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.147.9">
@@ -12,21 +12,21 @@
     <title>Setting Up the IAM Identity Center :: </title>
 
     
-    <link href="/css/nucleus.css?1753155756" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753155756" rel="stylesheet">
-    <link href="/css/hybrid.css?1753155756" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753155756" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753155756" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753155756" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753155756" rel="stylesheet">
-    <link href="/css/theme.css?1753155756" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753155756" rel="stylesheet">
+    <link href="/css/nucleus.css?1753158466" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753158466" rel="stylesheet">
+    <link href="/css/hybrid.css?1753158466" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753158466" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753158466" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753158466" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753158466" rel="stylesheet">
+    <link href="/css/theme.css?1753158466" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753158466" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753155756" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753158466" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753155756"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753158466"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753155756"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753155756"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753158466"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753158466"></script>
 <script type="text/javascript">
     
-        var baseurl = "http:\/\/localhost:4181\/";
+        var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753155756"></script>
+<script type="text/javascript" src="/js/search.js?1753158466"></script>
 
     
   </div>
@@ -485,7 +485,7 @@
   <ul>
     <li><a href="#start-up-the-iam-identity-center">Start up the IAM Identity Center</a></li>
     <li><a href="#using-cloudshell-to-set-up-the-management">Using CloudShell to set up the management.</a></li>
-    <li><a href="#finish-the-setup-for">Finish the setup for</a></li>
+    <li><a href="#finish-the-setup-for-iam-identity-center">Finish the setup for IAM Identity Center</a></li>
   </ul>
 </nav>
     </div>
@@ -535,13 +535,32 @@
 </span></span><span style="display:flex;"><span>aws sso-admin attach-managed-policy-to-permission-set --instance-arn $ssoArn --permission-set-arn $permissionSetArn --managed-policy-arn arn:aws:iam::aws:policy/service-role/AmplifyBackendDeployFullAccess
 </span></span><span style="display:flex;"><span>accountId<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sts get-caller-identity | jq <span style="color:#e6db74">&#39;.Account&#39;</span> -r<span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>aws sso-admin create-account-assignment --instance-arn $ssoArn --target-id $accountId --target-type AWS_ACCOUNT --permission-set-arn $permissionSetArn --principal-type USER --principal-id $userId
-</span></span></code></pre></div><p>Hit enter</p>
+</span></span></code></pre></div><p><img src="/images/2/4-5.png?featherlight=false&amp;width=90pc" alt="CloudShell second step"></p>
+<p>Hit enter and just keep on waiting.</p>
+<p><img src="/images/2/4-6.png?featherlight=false&amp;width=90pc" alt="CloudShell second step"></p>
 <p>To validate that this worked, run the following command in the CloudShell:</p>
-<p>You should see something like:
-Start session url: <a href="https://d-XXXXXXXXXX.awsapps.com/start">https://d-XXXXXXXXXX.awsapps.com/start</a>
-Region: <your-account-associated-region>
-Username: amplify-admin</p>
-<h2 id="finish-the-setup-for">Finish the setup for</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>printf <span style="color:#e6db74">&#34;\n\nStart session url: https://</span>$ssoId<span style="color:#e6db74">.awsapps.com/start\nRegion: </span>$AWS_REGION<span style="color:#e6db74">\nUsername: amplify-admin\n\n&#34;</span>
+</span></span></code></pre></div><p><img src="/images/2/4-7.png?featherlight=false&amp;width=90pc" alt="CloudShell third step"></p>
+<p>You should see something like:</p>
+<p>Start session url: <a href="https://d-XXXXXXXXXX.awsapps.com/start">https://d-XXXXXXXXXX.awsapps.com/start</a></p>
+<p>Region: <your-account-associated-region></p>
+<p>Username: amplify-admin</p>
+<h2 id="finish-the-setup-for-iam-identity-center">Finish the setup for IAM Identity Center</h2>
+<p>Now create a password for the user that we need for the next step. In the IAM Identity Center console, navigate to Users→amplify-admin</p>
+<p><img src="/images/2/4-8.png?featherlight=false&amp;width=90pc" alt="IAM Verification first step"></p>
+<p>You will see a notice that will tell you to verify your email address, do click on it and verify.</p>
+<p><img src="/images/2/4-9.png?featherlight=false&amp;width=90pc" alt="IAM Verification second step"></p>
+<p>Once you have clicked on it, a verification email will appear. You will need to follow their instructions throughout.</p>
+<p><img src="/images/2/4-10.png?featherlight=false&amp;width=90pc" alt="IAM Verification third step"></p>
+<p>After verifying the email, you will need to come back to the IAM Dashboard and the setting. Click on the account once again, and click on change password.</p>
+<p><img src="/images/2/4-14.png?featherlight=false&amp;width=90pc" alt="IAM Verification fourth step"></p>
+<p>Then, click on Reset Password.</p>
+<p><img src="/images/2/4-15.png?featherlight=false&amp;width=90pc" alt="IAM Verification fifth step"></p>
+<p>You will need to check your email afterwards, since there will be an email that helps you to change password + setting up the MFA. Follow their instructions.</p>
+<p><img src="/images/2/4-16.png?featherlight=false&amp;width=90pc" alt="IAM Verification fifth step"></p>
+<p>Afterward, get back to the Dashboard, and click on the AWS Access Portal URL, and sign in normally.</p>
+<p><img src="/images/2/4-12.png?featherlight=false&amp;width=90pc" alt="IAM Verification sixth step">
+<img src="/images/2/4-11.png?featherlight=false&amp;width=90pc" alt="IAM Verification sixth-2nd step"></p>
 
 
 
@@ -771,19 +790,19 @@ Username: amplify-admin</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753155756"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753155756"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753155756"></script>
-    <script src="/js/jquery.sticky.js?1753155756"></script>
-    <script src="/js/featherlight.min.js?1753155756"></script>
-    <script src="/js/highlight.pack.js?1753155756"></script>
+    <script src="/js/clipboard.min.js?1753158466"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753158466"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753158466"></script>
+    <script src="/js/jquery.sticky.js?1753158466"></script>
+    <script src="/js/featherlight.min.js?1753158466"></script>
+    <script src="/js/highlight.pack.js?1753158466"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753155756"></script>
-    <script src="/js/learn.js?1753155756"></script>
-    <script src="/js/hugo-learn.js?1753155756"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753158466"></script>
+    <script src="/js/learn.js?1753158466"></script>
+    <script src="/js/hugo-learn.js?1753158466"></script>
 
-    <link href="/mermaid/mermaid.css?1753155756" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753155756"></script>
+    <link href="/mermaid/mermaid.css?1753158466" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753158466"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
