@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:4181/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4181/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -14,6 +17,9 @@
     <loc>http://localhost:4181/1-create-new-aws-account/1.1-find-account-id/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4181/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4181/1-create-new-aws-account/1.2-update-account/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -24,6 +30,9 @@
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4181/3-create-admin-user-and-group/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4181/12-s3-bucket-for-data-storage/12.3-create-the-bucket/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4181/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/</loc>

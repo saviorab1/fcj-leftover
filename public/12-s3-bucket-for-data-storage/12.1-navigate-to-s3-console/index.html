@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Working on the main Functionality of the project using AWS Services :: </title>
+    <title>Navigate to S3 Console :: </title>
 
     
     <link href="/css/nucleus.css?1753163424" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/2-mfa-setup-for-aws-user-root/">
+  <body class="" data-url="/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -206,7 +206,7 @@
     
     <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="Working on the main Functionality of the project using AWS Services" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/2-mfa-setup-for-aws-user-root/">
@@ -379,7 +379,7 @@
   
     
     <li data-nav-id="/12-s3-bucket-for-data-storage/" title="Creating S3 Bucket for Data Storage" class="dd-item 
-        
+        parent
         
         
         ">
@@ -411,7 +411,7 @@
     
     <li data-nav-id="/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/" title="Navigate to S3 Console" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/">
@@ -586,7 +586,13 @@
             
           
           
-            <a href='/'>Setting up an AWS account</a> > Working on the main Functionality of the project using AWS Services
+            
+            
+          
+          
+            <a href='/'>Setting up an AWS account</a> > <a href='/12-s3-bucket-for-data-storage/'>Creating S3 Bucket for Data Storage</a> > Navigate to S3 Console
+          
+        
           
         
           
@@ -599,16 +605,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#content">Content</a></li>
-    <li><a href="#setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</a></li>
-    <li><a href="#deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</a></li>
-    <li><a href="#setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</a>
+    <li>
       <ul>
-        <li><a href="#frontend-and-backend">Frontend and Backend</a></li>
-        <li><a href="#amplify-sandbox">Amplify Sandbox</a></li>
+        <li></li>
       </ul>
     </li>
-    <li><a href="#setting-up-aws-bedrock-model-2-ways">Setting up AWS Bedrock Model (2 Ways)</a></li>
   </ul>
 </nav>
     </div>
@@ -626,7 +627,7 @@
           
             <h1>
               
-              Working on the main Functionality of the project using AWS Services
+              Navigate to S3 Console
             </h1>
           
 
@@ -634,86 +635,23 @@
 
 
 
-	<h2 id="content">Content</h2>
-<ul>
-<li><a href="#content">Content</a></li>
-<li><a href="#setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</a></li>
-<li><a href="#deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</a></li>
-<li><a href="#setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</a></li>
-<li><a href="#setting-up-aws-bedrock-model-2-ways">Setting up AWS Bedrock Model (2 Ways)</a></li>
-</ul>
-<h2 id="setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</h2>
-<p>In order to manage multiple accounts with Single-sign on (SSO) session, users, groups, permission sets, and more for your organization, you have to set up the IAM Identity Center.</p>
+	<h4 id="access-the-s3-service">Access the S3 Service</h4>
+<p>To begin creating your S3 bucket, you need to navigate to the S3 service within the AWS Management Console.</p>
+<h4 id="navigate-to-s3-console">Navigate to S3 Console</h4>
 <ol>
-<li>
-<p>Open AWS Console to access IAM Identity Center and enable the process.</p>
-</li>
-<li>
-<p>Open CloudShell and set up the management for the AWS Services using your root email as the main profile for the project.</p>
-</li>
-<li>
-<p>Configure the account by changing the password and finish setting up the new account and signing in.</p>
-</li>
+<li>Go to the AWS Management Console and search for <strong>S3</strong> in the services search bar.</li>
+<li>Click on <strong>S3</strong> to access the Simple Storage Service console.</li>
 </ol>
-<h2 id="deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</h2>
-<p>After initializing Amplify and enabling IAM Identity Center in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.</p>
+<p><img src="/images/12/0001.png?featherlight=false&amp;width=90pc" alt="S3 Console"></p>
+<h4 id="start-bucket-creation">Start Bucket Creation</h4>
+<p>Once you&rsquo;re in the S3 console:</p>
 <ol>
-<li>
-<p>Connect and Deploy AWS Amplify with the Repository from your GitHub.</p>
-</li>
-<li>
-<p>Edit the Build specification in the Amplify file.</p>
-</li>
-<li>
-<p>Save and Redeploy the App.</p>
-</li>
+<li>Click <strong>Create bucket</strong> to start the bucket creation process.</li>
+<li>This will open the bucket configuration page where you can specify your bucket settings.</li>
 </ol>
-<hr>
-<h2 id="setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</h2>
-<p>You will need to set up the frontend, back and the aws sandbox following these steps.</p>
-<h3 id="frontend-and-backend">Frontend and Backend</h3>
-<ol>
-<li>
-<p>Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:</p>
-<ul>
-<li>src/index.css (For Frontend)</li>
-<li>src/App.css (For Frontend)</li>
-<li>src/main.tsx (For UI)</li>
-<li>src/App.tsx (For UI)</li>
-</ul>
-</li>
-<li>
-<p>Set up the resources file for Amplify Data by creating the file:</p>
-<ul>
-<li>amplify/data/resource.ts</li>
-</ul>
-<h3 id="amplify-sandbox">Amplify Sandbox</h3>
-</li>
-<li>
-<p>Using npm to install Amplify Sandbox.</p>
-</li>
-<li>
-<p>After setting up, you will need to configure a profile inside the sandbox.</p>
-</li>
-<li>
-<p>Configure and make a localhost.</p>
-</li>
-</ol>
-<hr>
-<h2 id="setting-up-aws-bedrock-model-2-ways">Setting up AWS Bedrock Model (2 Ways)</h2>
-<ol>
-<li>
-<p>You will be using Bedrock Model and setting up using Claude Sonnet.</p>
-</li>
-<li>
-<p>There will be two ways to build the Bedrock Model based on how you intepret.</p>
-</li>
-</ol>
-<ul>
-<li>Implementing the servers using manual coding for a fallback server.</li>
-<li>Using cross-region to make a fallback server.</li>
-</ul>
-<hr>
+<p><img src="/images/12/0002.png?featherlight=false&amp;width=90pc" alt="Create Bucket Button"></p>
+<h4 id="result">Result</h4>
+<p>You are now ready to configure your S3 bucket settings in the next step.</p>
 
 
 
@@ -823,7 +761,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -833,60 +770,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
                     
                         
             
@@ -930,10 +813,14 @@
 
                     
                     
-                        
-                    
                     
 
+                    
+            
+        
+                    
+            
+        
                     
                         
             
@@ -955,6 +842,58 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -995,10 +934,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/1-create-new-aws-account/1.3-aws-account-alias/" title="Setting Up Amplify For The Project"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/12-s3-bucket-for-data-storage/" title="Creating S3 Bucket for Data Storage"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Setting Up the IAM Identity Center" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/" title="Configure Bucket Settings" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
