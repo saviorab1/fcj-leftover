@@ -7,7 +7,9 @@ pre : " <b> 2.2 </b> "
 ---
 
 **Content**
-- [Deploy the Application via AWS Amplify](#enable-u2f-security-key-via-console)
+- [Connecting AWS Amplify with GitHub](#connecting-aws-amplify-with-github)
+- [Editing the YML File](#editing-the-yml-file)
+- [Visit the Deployed URL](#visit-the-deployed-url)
 
 #### Connecting AWS Amplify with GitHub
 
@@ -24,6 +26,8 @@ On the “Start building with Amplify” page, choose GitHub as the source provi
 Remember to check the branch/repository of the GitHub repository you used to store the data. 
 
 ![Repository](/images/2/5-3.png?featherlight=false&width=90pc)
+
+#### Editing the YML File
 
 At the app setting part, you will need to edit the YML file. Put all the info just like the screenshot under and click on **Edit YML file**.
 
@@ -81,6 +85,8 @@ In case of the yml file being wrong somewhere, you can come back to the file by 
 {{%/notice%}}
 
 ![Finish Setting up](/images/2/5-8-1.png?featherlight=false&width=90pc)
+
+#### Visit the Deployed URL
 
 Then, you can visit the page by clicking **Visit Deployed URL**.
 

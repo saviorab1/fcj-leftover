@@ -1,5 +1,5 @@
 ---
-title : "Hard MFA Device"
+title : "Setting up the Frontend, Backend and AWS Sandbox"
 date : "2023-12-01T00:00:00Z"
 weight : 3
 chapter : false
