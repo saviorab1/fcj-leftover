@@ -82,61 +82,10 @@ In case of the yml file being wrong somewhere, you can come back to the file by 
 
 ![Finish Setting up](/images/2/5-8-1.png?featherlight=false&width=90pc)
 
-```js
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowManageOwnUserMFA",
-            "Effect": "Allow",
-            "Action": [
-                "iam:DeactivateMFADevice",
-                "iam:EnableMFADevice",
-                "iam:GetUser",
-                "iam:ListMFADevices",
-                "iam:ResyncMFADevice"
-            ],
-            "Resource": "arn:aws:iam::*:user/${aws:username}"
-        },
-        {
-            "Sid": "DenyAllExceptListedIfNoMFA",
-            "Effect": "Deny",
-            "NotAction": [
-                "iam:EnableMFADevice",
-                "iam:GetUser",
-                "iam:ListMFADevices",
-                "iam:ResyncMFADevice"
-            ],
-            "Resource": "arn:aws:iam::*:user/${aws:username}",
-            "Condition": {
-                "BoolIfExists": {
-                    "aws:MultiFactorAuthPresent": "false"
-                }
-            }
-        }
-    ]
-}
-```
+Then, you can visit the page by clicking **Visit Deployed URL**.
 
-![MFA](/images/3/0001.png?featherlight=false&width=90pc)
+![Visit Time](/images/2/5-9.png?featherlight=false&width=90pc)
 
-4. Select **Next: Tags**. This is a screen of **Tags**, a tool used to differentiate AWS resources.
-5. Select **Next: Review**. This is the screen that allows you to review the permission set you are creating.
-6. Enter the permission set name (eg MFAHardDevice) and select **Create policy**.
+You should see the result that looks like this.
 
-![MFA](/images/3/0002.png?featherlight=false&width=90pc)
-
-![MFA](/images/3/0003.png?featherlight=false&width=90pc)
-
-7. In the left sidebar, select **Dashboard** and then select **Enable MFA**.
-
-![MFA](/images/3/0004.png?featherlight=false&width=90pc)
-
-8. Expand Multi-factor authentication (MFA) then select **Active MFA**.
-
-9. In **Manage MFA Device**, select **U2F security key** then press **Continue**.
-10. Plug the U2F security key into the computer's USB port.
-
-![Image](/images/1-account-setup/U2FSK.png?featherlight=false&width=90pc)
-
-11. Click the U2F security key, and then select **Close** when U2F is successfully set up.
+![Visit Time](/images/2/5-10.png?featherlight=false&width=90pc)
