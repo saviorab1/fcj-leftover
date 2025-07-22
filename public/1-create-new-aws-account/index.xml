@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Setting Up the template for the Workshop on Create a new AWS account.</title>
-    <link>http://localhost:1313/1-create-new-aws-account/</link>
-    <description>Recent content in Setting Up the template for the Workshop on Create a new AWS account.</description>
+    <title>Setting Up the template for the Workshop on </title>
+    <link>http://localhost:4181/1-create-new-aws-account/</link>
+    <description>Recent content in Setting Up the template for the Workshop on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/1-create-new-aws-account/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:4181/1-create-new-aws-account/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
