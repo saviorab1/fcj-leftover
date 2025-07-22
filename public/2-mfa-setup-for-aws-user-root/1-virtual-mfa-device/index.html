@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Virtual MFA Device :: Create a new AWS account.</title>
+    <title>Setting Up the IAM Identity Center :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1753150621" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753150621" rel="stylesheet">
-    <link href="/css/hybrid.css?1753150621" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753150621" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753150621" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753150621" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753150621" rel="stylesheet">
-    <link href="/css/theme.css?1753150621" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753150621" rel="stylesheet">
+    <link href="/css/nucleus.css?1753154957" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753154957" rel="stylesheet">
+    <link href="/css/hybrid.css?1753154957" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753154957" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753154957" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753154957" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753154957" rel="stylesheet">
+    <link href="/css/theme.css?1753154957" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753154957" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753150621" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753154957" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753150621"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753154957"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753150621"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753150621"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753154957"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753154957"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753150621"></script>
+<script type="text/javascript" src="/js/search.js?1753154957"></script>
 
     
   </div>
@@ -235,13 +235,13 @@
  
   
     
-    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Virtual MFA Device" class="dd-item 
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Setting Up the IAM Identity Center" class="dd-item 
         
         active
         
         ">
       <a href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/">
-           <b> 2.1 </b> Virtual MFA Device
+           <b> 2.1 </b> Setting Up the IAM Identity Center
           
             <i class="fas fa-check read-icon"></i>
           
@@ -513,7 +513,7 @@
             
           
           
-            <a href='/'>Setting up an AWS account</a> > <a href='/2-mfa-setup-for-aws-user-root/'>Working on the main Functionality of the project using AWS Services</a> > Virtual MFA Device
+            <a href='/'>Setting up an AWS account</a> > <a href='/2-mfa-setup-for-aws-user-root/'>Working on the main Functionality of the project using AWS Services</a> > Setting Up the IAM Identity Center
           
         
           
@@ -528,8 +528,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#enabling-multi-factor-authentication-mfa-on-aws">Enabling Multi-Factor Authentication (MFA) on AWS</a></li>
-    <li><a href="#enable-virtual-mfa-device-through-aws-management-console">Enable Virtual MFA Device through AWS Management Console</a></li>
+    <li><a href="#start-up-the-iam-identity-center">Start up the IAM Identity Center</a></li>
+    <li><a href="#using-cloudshell-to-set-up-the-management">Using CloudShell to set up the management.</a></li>
+    <li><a href="#finish-the-setup-for">Finish the setup for</a></li>
   </ul>
 </nav>
     </div>
@@ -547,7 +548,7 @@
           
             <h1>
               
-              Virtual MFA Device
+              Setting Up the IAM Identity Center
             </h1>
           
 
@@ -555,61 +556,37 @@
 
 
 
-	<h2 id="enabling-multi-factor-authentication-mfa-on-aws">Enabling Multi-Factor Authentication (MFA) on AWS</h2>
-<p><strong>Note:</strong> Before proceeding, ensure you are logged in to AWS using the root user.</p>
-<h2 id="enable-virtual-mfa-device-through-aws-management-console">Enable Virtual MFA Device through AWS Management Console</h2>
-<p>To enhance the security of your AWS account, you can set up Multi-Factor Authentication (MFA). This adds an extra layer of protection by requiring a second form of verification in addition to your password. Follow these steps to set up and activate a virtual MFA device:</p>
-<ol>
-<li>
-<p>Sign in to the AWS Management Console.</p>
-</li>
-<li>
-<p>In the upper right corner of the console, you will see your account name. Click on it and select <strong>My Security Credentials</strong>.</p>
-<p><img src="/images/2/0001.png?featherlight=false&amp;width=90pc" alt="My Security Credentials"></p>
-</li>
-<li>
-<p>Expand the <strong>Multi-factor authentication (MFA)</strong> section and select <strong>Assign MFA</strong>.</p>
-<p><img src="/images/2/0002.png?featherlight=false&amp;width=90pc" alt="Assign MFA"></p>
-</li>
-<li>
-<p>In the <strong>Select MFA Device</strong> interface:</p>
-<ul>
-<li>Enter a <strong>Device Name</strong>.</li>
-<li>Select <strong>MFA Device</strong> as the <strong>Authenticator App</strong>.</li>
-<li>Select <strong>Next</strong>.</li>
-</ul>
-<p><img src="/images/2/0003.png?featherlight=false&amp;width=90pc" alt="Select MFA Device"></p>
-</li>
-<li>
-<p>Install a compatible authenticator app on your smartphone. You can find a list of <a href="https://aws.amazon.com/iam/features/mfa/?audit=2019q1">MFA-compatible apps here</a>.</p>
-<p><img src="/images/2/0004.png?featherlight=false&amp;width=90pc" alt="MFA App List"></p>
-</li>
-<li>
-<p>Install the authenticator extension for Google Chrome. Select <strong>Add to Chrome</strong>.</p>
-<p><img src="/images/2/0005.png?featherlight=false&amp;width=90pc" alt="Authenticator Extension"></p>
-</li>
-<li>
-<p>Use the authenticator app to generate an MFA code and enter it for confirmation.</p>
-<p><img src="/images/2/0006.png?featherlight=false&amp;width=90pc" alt="MFA Code"></p>
-</li>
-<li>
-<p>Perform a QR code scan using the authenticator app.</p>
-<p><img src="/images/2/0007.png?featherlight=false&amp;width=90pc" alt="QR Code Scan"></p>
-</li>
-<li>
-<p>After scanning the QR code, enter the generated MFA codes into the corresponding fields.</p>
-<p><img src="/images/2/0008.png?featherlight=false&amp;width=90pc" alt="Enter MFA Codes"></p>
-</li>
-<li>
-<p>Once the codes are entered, select <strong>Add MFA</strong> to complete the setup.</p>
-</li>
-</ol>
-<p><img src="/images/2/0009.png?featherlight=false&amp;width=90pc" alt="Add MFA"></p>
-<ol start="11">
-<li>Complete the additional MFA setup steps as prompted.</li>
-</ol>
-<p><img src="/images/2/00010.png?featherlight=false&amp;width=90pc" alt="Additional MFA Setup"></p>
-<p>By setting up Multi-Factor Authentication, you add an extra layer of security to your AWS account, helping to protect your valuable resources and data.</p>
+	<h2 id="start-up-the-iam-identity-center">Start up the IAM Identity Center</h2>
+<p>(If you already have a profile, attach the AmplifyBackendDeployFullAccess managed policy to your IAM user)</p>
+<p>Open AWS Console to access IAM Identity Center and choose Enable.</p>
+<p><img src="/images/2/4-1.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>Afterward, a pop up will open, select Enable with AWS Organizations and choose Continue.</p>
+<p><img src="/images/2/4-2.png?featherlight=false&amp;width=90pc" alt="Enabling IAM Identity Center"></p>
+<p>And the basics for IAM Identity Center is ready.</p>
+<h2 id="using-cloudshell-to-set-up-the-management">Using CloudShell to set up the management.</h2>
+<p>We will now using CloudShell to connect our mail account as the main profile for the project.</p>
+<p>Open CloudShell terminal within the website and paste this line of code, then enter your email address after the prompt.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Enter email address: &#34;</span> user_email <span style="color:#75715e"># hit enter</span>
+</span></span></code></pre></div><p><img src="/images/2/4-4.png?featherlight=false&amp;width=90pc" alt="CloudShell first step"></p>
+<p>Afterward, copy and paste the following command, it will show a warning due to the multiline nature, but just keep pasting anyway.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sso-admin list-instances<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>ssoId<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $response | jq <span style="color:#e6db74">&#39;.Instances[0].IdentityStoreId&#39;</span> -r<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>ssoArn<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $response | jq <span style="color:#e6db74">&#39;.Instances[0].InstanceArn&#39;</span> -r<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>email_json<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>jq -n --arg email <span style="color:#e6db74">&#34;</span>$user_email<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#39;{&#34;Type&#34;:&#34;Work&#34;,&#34;Value&#34;:$email}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws identitystore create-user --identity-store-id $ssoId --user-name amplify-admin --display-name <span style="color:#e6db74">&#39;Amplify Admin&#39;</span> --name Formatted<span style="color:#f92672">=</span>string,FamilyName<span style="color:#f92672">=</span>Admin,GivenName<span style="color:#f92672">=</span>Amplify --emails <span style="color:#e6db74">&#34;</span>$email_json<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>userId<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $response | jq <span style="color:#e6db74">&#39;.UserId&#39;</span> -r<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sso-admin create-permission-set --name amplify-policy --instance-arn<span style="color:#f92672">=</span>$ssoArn --session-duration PT12H<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>permissionSetArn<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $response | jq <span style="color:#e6db74">&#39;.PermissionSet.PermissionSetArn&#39;</span> -r<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>aws sso-admin attach-managed-policy-to-permission-set --instance-arn $ssoArn --permission-set-arn $permissionSetArn --managed-policy-arn arn:aws:iam::aws:policy/service-role/AmplifyBackendDeployFullAccess
+</span></span><span style="display:flex;"><span>accountId<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sts get-caller-identity | jq <span style="color:#e6db74">&#39;.Account&#39;</span> -r<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>aws sso-admin create-account-assignment --instance-arn $ssoArn --target-id $accountId --target-type AWS_ACCOUNT --permission-set-arn $permissionSetArn --principal-type USER --principal-id $userId
+</span></span></code></pre></div><p>Hit enter</p>
+<p>To validate that this worked, run the following command in the CloudShell:</p>
+<p>You should see something like:
+Start session url: <a href="https://d-XXXXXXXXXX.awsapps.com/start">https://d-XXXXXXXXXX.awsapps.com/start</a>
+Region: <your-account-associated-region>
+Username: amplify-admin</p>
+<h2 id="finish-the-setup-for">Finish the setup for</h2>
 
 
 
@@ -839,19 +816,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753150621"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753150621"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753150621"></script>
-    <script src="/js/jquery.sticky.js?1753150621"></script>
-    <script src="/js/featherlight.min.js?1753150621"></script>
-    <script src="/js/highlight.pack.js?1753150621"></script>
+    <script src="/js/clipboard.min.js?1753154957"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753154957"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753154957"></script>
+    <script src="/js/jquery.sticky.js?1753154957"></script>
+    <script src="/js/featherlight.min.js?1753154957"></script>
+    <script src="/js/highlight.pack.js?1753154957"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753150621"></script>
-    <script src="/js/learn.js?1753150621"></script>
-    <script src="/js/hugo-learn.js?1753150621"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753154957"></script>
+    <script src="/js/learn.js?1753154957"></script>
+    <script src="/js/hugo-learn.js?1753154957"></script>
 
-    <link href="/mermaid/mermaid.css?1753150621" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753150621"></script>
+    <link href="/mermaid/mermaid.css?1753154957" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753154957"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

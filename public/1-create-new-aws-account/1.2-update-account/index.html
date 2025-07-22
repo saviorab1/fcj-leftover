@@ -12,21 +12,21 @@
     <title>Initialize Git and Push Project to GitHub :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1753150621" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753150621" rel="stylesheet">
-    <link href="/css/hybrid.css?1753150621" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753150621" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753150621" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753150621" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753150621" rel="stylesheet">
-    <link href="/css/theme.css?1753150621" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753150621" rel="stylesheet">
+    <link href="/css/nucleus.css?1753154957" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753154957" rel="stylesheet">
+    <link href="/css/hybrid.css?1753154957" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753154957" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753154957" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753154957" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753154957" rel="stylesheet">
+    <link href="/css/theme.css?1753154957" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753154957" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753150621" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753154957" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753150621"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753154957"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753150621"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753150621"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753154957"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753154957"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753150621"></script>
+<script type="text/javascript" src="/js/search.js?1753154957"></script>
 
     
   </div>
@@ -235,13 +235,13 @@
  
   
     
-    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Virtual MFA Device" class="dd-item 
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Setting Up the IAM Identity Center" class="dd-item 
         
         
         
         ">
       <a href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/">
-           <b> 2.1 </b> Virtual MFA Device
+           <b> 2.1 </b> Setting Up the IAM Identity Center
           
             <i class="fas fa-check read-icon"></i>
           
@@ -561,19 +561,19 @@
 <p><strong>Minimum Permissions:</strong>
 To proceed with the following steps, you will need to follow these steps:</p>
 <p>First, open up a new bash terminal and direct Git towards the project root directory:</p>
-<p><strong>git init</strong></p>
-<p>Then, select all the files that you want to update to your repository. In this case, it will be:</p>
-<p><strong>git add .</strong></p>
-<p>You will need to create an intial commit as well.</p>
-<p><strong>git commit -m &ldquo;first commit&rdquo;</strong></p>
-<p>You will need to link your local repository to Github after that:</p>
-<p><strong>git remote add origin <a href="https://github.com/">https://github.com/</a><em><your-username></em>/leftover.git</strong></p>
-<p>Replace <your-username> with your actual GitHub username.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><p>Then, select all the files that you want to update to your repository. In this case, it will be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span></code></pre></div><p>You will need to create an intial commit as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
+</span></span></code></pre></div><p>You will need to link your local repository to Github after that:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add origin https://github.com/*&lt;your-username&gt;*/leftover.git
+</span></span></code></pre></div><p>Replace <your-username> with your actual GitHub username.</p>
 <p>Then, you will set the branch to main.</p>
-<p><strong>git branch -M main</strong></p>
-<p>Finally, you will need to push the project up to Github.</p>
-<p><strong>git push -u origin main</strong></p>
-<p>Once completed, the project is hosted remotely and can be accessed, shared, or collaborated on via GitHub.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch -M main
+</span></span></code></pre></div><p>Finally, you will need to push the project up to Github.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin main
+</span></span></code></pre></div><p>Once completed, the project is hosted remotely and can be accessed, shared, or collaborated on via GitHub.</p>
 <p><img src="/images/1/2-4.png?featherlight=false&amp;width=90pc" alt="Running The Project"></p>
 <blockquote>
 <p><strong>Note:</strong> &ldquo;git add .&rdquo;, &ldquo;git commit -m&rdquo; and &ldquo;git push&rdquo; will be your way to save and publish your progress onto the repository.</p></blockquote>
@@ -809,19 +809,19 @@ To proceed with the following steps, you will need to follow these steps:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753150621"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753150621"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753150621"></script>
-    <script src="/js/jquery.sticky.js?1753150621"></script>
-    <script src="/js/featherlight.min.js?1753150621"></script>
-    <script src="/js/highlight.pack.js?1753150621"></script>
+    <script src="/js/clipboard.min.js?1753154957"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753154957"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753154957"></script>
+    <script src="/js/jquery.sticky.js?1753154957"></script>
+    <script src="/js/featherlight.min.js?1753154957"></script>
+    <script src="/js/highlight.pack.js?1753154957"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753150621"></script>
-    <script src="/js/learn.js?1753150621"></script>
-    <script src="/js/hugo-learn.js?1753150621"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753154957"></script>
+    <script src="/js/learn.js?1753154957"></script>
+    <script src="/js/hugo-learn.js?1753154957"></script>
 
-    <link href="/mermaid/mermaid.css?1753150621" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753150621"></script>
+    <link href="/mermaid/mermaid.css?1753154957" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753154957"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -33,29 +33,41 @@ To proceed with the following steps, you will need to follow these steps:
 
 First, open up a new bash terminal and direct Git towards the project root directory:
 
-**git init**
+```bash
+git init
+```
 
 Then, select all the files that you want to update to your repository. In this case, it will be:
 
-**git add .**
+```bash
+git add .
+```
 
 You will need to create an intial commit as well. 
 
-**git commit -m "first commit"**
+```bash
+git commit -m "first commit"
+```
 
 You will need to link your local repository to Github after that: 
 
-**git remote add origin https://github.com/*<your-username>*/leftover.git**
+```bash
+git remote add origin https://github.com/*<your-username>*/leftover.git
+```
 
 Replace <your-username> with your actual GitHub username.
 
 Then, you will set the branch to main.
 
-**git branch -M main**
+```bash
+git branch -M main
+```
 
 Finally, you will need to push the project up to Github.
 
-**git push -u origin main**
+```bash
+git push -u origin main
+```
 
 Once completed, the project is hosted remotely and can be accessed, shared, or collaborated on via GitHub.
 

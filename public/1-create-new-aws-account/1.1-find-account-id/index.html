@@ -12,21 +12,21 @@
     <title>Setting Up Vite :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1753150621" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753150621" rel="stylesheet">
-    <link href="/css/hybrid.css?1753150621" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753150621" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753150621" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753150621" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753150621" rel="stylesheet">
-    <link href="/css/theme.css?1753150621" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753150621" rel="stylesheet">
+    <link href="/css/nucleus.css?1753154957" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753154957" rel="stylesheet">
+    <link href="/css/hybrid.css?1753154957" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753154957" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753154957" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753154957" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753154957" rel="stylesheet">
+    <link href="/css/theme.css?1753154957" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753154957" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753150621" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753154957" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753150621"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753154957"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753150621"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753150621"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753154957"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753154957"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753150621"></script>
+<script type="text/javascript" src="/js/search.js?1753154957"></script>
 
     
   </div>
@@ -235,13 +235,13 @@
  
   
     
-    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Virtual MFA Device" class="dd-item 
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Setting Up the IAM Identity Center" class="dd-item 
         
         
         
         ">
       <a href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/">
-           <b> 2.1 </b> Virtual MFA Device
+           <b> 2.1 </b> Setting Up the IAM Identity Center
           
             <i class="fas fa-check read-icon"></i>
           
@@ -550,15 +550,15 @@
 <p>To kick off the development environment, we initialized the project with Vite, a next-generation frontend tooling system that offers fast build times and hot module replacement (HMR). We selected the React + TypeScript template to simplify development with type safety and modern React features.</p>
 <h4 id="create-the-project-using-vite">Create the project using Vite</h4>
 <p>Create a new project by making a new folder and direct to it inside the Visual Studio Code. After the folder is created, use this command:</p>
-<p><strong>npm create vite@latest leftover &ndash; &ndash;template react-ts -y</strong></p>
-<p><img src="/images/1/1-1.png?featherlight=false&amp;width=90pc" alt="Create A Development Site"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm create vite@latest leftover -- --template react-ts -y
+</span></span></code></pre></div><p><img src="/images/1/1-1.png?featherlight=false&amp;width=90pc" alt="Create A Development Site"></p>
 <p>This command scaffolds a new Vite project named leftover with the React + TypeScript template.</p>
 <h4 id="navigate-and-run-the-development-template">Navigate and run the development template</h4>
 <p>Navigate towards the folder that you just created with this command.</p>
-<p><strong>cd leftover</strong></p>
-<p>Then, to run the program after being set up.</p>
-<p><strong>npm run dev</strong></p>
-<p><img src="/images/1/1-2.png?featherlight=false&amp;width=90pc" alt="Running The Project"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd leftover
+</span></span></code></pre></div><p>Then, to run the program after being set up.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm run dev
+</span></span></code></pre></div><p><img src="/images/1/1-2.png?featherlight=false&amp;width=90pc" alt="Running The Project"></p>
 <h4 id="result">Result</h4>
 <p>Once the server is running, the development version of the application becomes accessible at:
 <strong>http://localhost:5173</strong></p>
@@ -790,19 +790,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753150621"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753150621"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753150621"></script>
-    <script src="/js/jquery.sticky.js?1753150621"></script>
-    <script src="/js/featherlight.min.js?1753150621"></script>
-    <script src="/js/highlight.pack.js?1753150621"></script>
+    <script src="/js/clipboard.min.js?1753154957"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753154957"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753154957"></script>
+    <script src="/js/jquery.sticky.js?1753154957"></script>
+    <script src="/js/featherlight.min.js?1753154957"></script>
+    <script src="/js/highlight.pack.js?1753154957"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753150621"></script>
-    <script src="/js/learn.js?1753150621"></script>
-    <script src="/js/hugo-learn.js?1753150621"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753154957"></script>
+    <script src="/js/learn.js?1753154957"></script>
+    <script src="/js/hugo-learn.js?1753154957"></script>
 
-    <link href="/mermaid/mermaid.css?1753150621" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753150621"></script>
+    <link href="/mermaid/mermaid.css?1753154957" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753154957"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

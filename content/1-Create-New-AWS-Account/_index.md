@@ -13,7 +13,7 @@ pre : " <b> 1. </b> "
 
 #### Setting Up Vite
 
-1. If you have installed Node Pacakge Manager, then create the project using Vite.
+1. If you have installed Node Package Manager, then create the project using Vite.
 2. After setting up the **Vite Website**, start the development site.
 3. Test around to see if the website is stable. 
 

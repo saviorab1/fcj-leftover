@@ -1,63 +1,61 @@
 ---
-title : "Virtual MFA Device"
+title : "Setting Up the IAM Identity Center"
 date : "2023-12-01T00:00:00Z"
 weight : 1
 chapter : false
 pre : " <b> 2.1 </b> "
 ---
 
-## Enabling Multi-Factor Authentication (MFA) on AWS
+## Start up the IAM Identity Center
 
-**Note:** Before proceeding, ensure you are logged in to AWS using the root user.
+(If you already have a profile, attach the AmplifyBackendDeployFullAccess managed policy to your IAM user)
 
-## Enable Virtual MFA Device through AWS Management Console
+Open AWS Console to access IAM Identity Center and choose Enable.
 
-To enhance the security of your AWS account, you can set up Multi-Factor Authentication (MFA). This adds an extra layer of protection by requiring a second form of verification in addition to your password. Follow these steps to set up and activate a virtual MFA device:
+ ![IAM Frontpage](/images/2/4-1.png?featherlight=false&width=90pc)
 
-1. Sign in to the AWS Management Console.
+ Afterward, a pop up will open, select Enable with AWS Organizations and choose Continue.
 
-2. In the upper right corner of the console, you will see your account name. Click on it and select **My Security Credentials**.
+ ![Enabling IAM Identity Center](/images/2/4-2.png?featherlight=false&width=90pc)
 
-   ![My Security Credentials](/images/2/0001.png?featherlight=false&width=90pc)
+ And the basics for IAM Identity Center is ready.
 
-3. Expand the **Multi-factor authentication (MFA)** section and select **Assign MFA**.
+## Using CloudShell to set up the management.
 
-   ![Assign MFA](/images/2/0002.png?featherlight=false&width=90pc)
+We will now using CloudShell to connect our mail account as the main profile for the project.
 
-4. In the **Select MFA Device** interface:
+Open CloudShell terminal within the website and paste this line of code, then enter your email address after the prompt.
 
-   - Enter a **Device Name**.
-   - Select **MFA Device** as the **Authenticator App**.
-   - Select **Next**.
+```bash
+read -p "Enter email address: " user_email # hit enter
+```
+ ![CloudShell first step](/images/2/4-4.png?featherlight=false&width=90pc)
 
-   ![Select MFA Device](/images/2/0003.png?featherlight=false&width=90pc)
 
-5. Install a compatible authenticator app on your smartphone. You can find a list of [MFA-compatible apps here](https://aws.amazon.com/iam/features/mfa/?audit=2019q1).
+Afterward, copy and paste the following command, it will show a warning due to the multiline nature, but just keep pasting anyway.
 
-   ![MFA App List](/images/2/0004.png?featherlight=false&width=90pc)
+```bash
+response=$(aws sso-admin list-instances)
+ssoId=$(echo $response | jq '.Instances[0].IdentityStoreId' -r)
+ssoArn=$(echo $response | jq '.Instances[0].InstanceArn' -r)
+email_json=$(jq -n --arg email "$user_email" '{"Type":"Work","Value":$email}')
+response=$(aws identitystore create-user --identity-store-id $ssoId --user-name amplify-admin --display-name 'Amplify Admin' --name Formatted=string,FamilyName=Admin,GivenName=Amplify --emails "$email_json")
+userId=$(echo $response | jq '.UserId' -r)
+response=$(aws sso-admin create-permission-set --name amplify-policy --instance-arn=$ssoArn --session-duration PT12H)
+permissionSetArn=$(echo $response | jq '.PermissionSet.PermissionSetArn' -r)
+aws sso-admin attach-managed-policy-to-permission-set --instance-arn $ssoArn --permission-set-arn $permissionSetArn --managed-policy-arn arn:aws:iam::aws:policy/service-role/AmplifyBackendDeployFullAccess
+accountId=$(aws sts get-caller-identity | jq '.Account' -r)
+aws sso-admin create-account-assignment --instance-arn $ssoArn --target-id $accountId --target-type AWS_ACCOUNT --permission-set-arn $permissionSetArn --principal-type USER --principal-id $userId
+```
 
-6. Install the authenticator extension for Google Chrome. Select **Add to Chrome**.
 
-   ![Authenticator Extension](/images/2/0005.png?featherlight=false&width=90pc)
+Hit enter
 
-7. Use the authenticator app to generate an MFA code and enter it for confirmation.
+To validate that this worked, run the following command in the CloudShell:
 
-   ![MFA Code](/images/2/0006.png?featherlight=false&width=90pc)
+You should see something like:
+Start session url: https://d-XXXXXXXXXX.awsapps.com/start
+Region: <your-account-associated-region>
+Username: amplify-admin
 
-8. Perform a QR code scan using the authenticator app.
-
-   ![QR Code Scan](/images/2/0007.png?featherlight=false&width=90pc)
-
-9. After scanning the QR code, enter the generated MFA codes into the corresponding fields.
-
-   ![Enter MFA Codes](/images/2/0008.png?featherlight=false&width=90pc)
-
-10. Once the codes are entered, select **Add MFA** to complete the setup.
-
-   ![Add MFA](/images/2/0009.png?featherlight=false&width=90pc)
-
-11. Complete the additional MFA setup steps as prompted.
-
-   ![Additional MFA Setup](/images/2/00010.png?featherlight=false&width=90pc)
-
-By setting up Multi-Factor Authentication, you add an extra layer of security to your AWS account, helping to protect your valuable resources and data.
+## Finish the setup for 
