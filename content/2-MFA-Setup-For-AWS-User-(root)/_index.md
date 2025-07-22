@@ -26,7 +26,7 @@ In order to manage multiple accounts with Single-sign on (SSO) session, users, g
 
 ## Deploy the Application via AWS Amplify
 
-After initializing Amplify and enabling IAM Identity Center in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.
+After initializing Amplify and enabling IAM Identity Center in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration.
 
 1. Connect and Deploy AWS Amplify with the Repository from your GitHub.
 

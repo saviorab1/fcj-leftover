@@ -1,5 +1,5 @@
 ---
-title : "U2F Security Key"
+title : "Deploy the Application via AWS Amplify"
 date : "2023-12-01T00:00:00Z"
 weight : 2
 chapter : false
@@ -7,16 +7,16 @@ pre : " <b> 2.2 </b> "
 ---
 
 **Content**
-- [Enable U2F security key via Console](#enable-u2f-security-key-via-console)
+- [Deploy the Application via AWS Amplify](#enable-u2f-security-key-via-console)
 
 
 {{%notice tip%}}
 If you do not have a hardware device, you can skip the steps below.
 {{%/notice%}}
 
-#### Enable U2F security key via Console
+#### COnnecting AWS Amplify with GitHub
 
-U2F Security Key is an open authentication protocol that allows users to access online services with a unique security key without using any software.
+After initializing Amplify in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.
 
 1. Sign in to the AWS Console.
 2. In the upper right corner, you will see your account name, select and select **My Security Credentials** then expand Multi-factor authentication (MFA).
