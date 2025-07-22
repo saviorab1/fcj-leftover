@@ -10,7 +10,9 @@ pre : " <b> 1.3 </b> "
 
 First, you will need to use the npm command: 
 
-**npm create amplify@latest -y**
+```bash
+npm create amplify@latest -y
+```
 
 This command sets up a minimal Amplify project, preparing the application for AWS resource integration.
 
@@ -20,9 +22,11 @@ Upon successful execution, an amplify/ directory is generated in the root folder
 
 After this change, remember to commit and push the updates to the GitHub repository:
 
-**git add .**
-**git commit -m "Add AWS Amplify setup"**
-**git push**
+```bash
+git add .
+git commit -m "Add AWS Amplify setup"
+git push
+```
 
 ![Result](/images/1/3-1.png?featherlight=false&width=90pc)
 

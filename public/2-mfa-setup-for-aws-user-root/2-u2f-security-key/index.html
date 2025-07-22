@@ -12,21 +12,21 @@
     <title>Deploy the Application via AWS Amplify :: </title>
 
     
-    <link href="/css/nucleus.css?1753169551" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753169551" rel="stylesheet">
-    <link href="/css/hybrid.css?1753169551" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753169551" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753169551" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753169551" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753169551" rel="stylesheet">
-    <link href="/css/theme.css?1753169551" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753169551" rel="stylesheet">
+    <link href="/css/nucleus.css?1753174127" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753174127" rel="stylesheet">
+    <link href="/css/hybrid.css?1753174127" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753174127" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753174127" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753174127" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753174127" rel="stylesheet">
+    <link href="/css/theme.css?1753174127" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753174127" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753169551" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753174127" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753169551"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753174127"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753169551"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753169551"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753174127"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753174127"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753169551"></script>
+<script type="text/javascript" src="/js/search.js?1753174127"></script>
 
     
   </div>
@@ -639,23 +639,57 @@
 <ul>
 <li><a href="#enable-u2f-security-key-via-console">Deploy the Application via AWS Amplify</a></li>
 </ul>
-
-<div class="notices tip" ><p>If you do not have a hardware device, you can skip the steps below.</p>
+<h4 id="connecting-aws-amplify-with-github">Connecting AWS Amplify with GitHub</h4>
+<p>After initializing Amplify in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.</p>
+<p>You will open the AWS Console by navigating to the AWS Amplify service, and click on <strong>Deploy an App</strong> or <strong>Create New App</strong>.</p>
+<p><img src="/images/2/5-1.png?featherlight=false&amp;width=90pc" alt="AWS Frontpage"></p>
+<p>On the “Start building with Amplify” page, choose GitHub as the source provider. Log in and authorize GitHub access if prompted.</p>
+<p><img src="/images/2/5-2.png?featherlight=false&amp;width=90pc" alt="AWS GitHub"></p>
+<p>Remember to check the branch/repository of the GitHub repository you used to store the data.</p>
+<p><img src="/images/2/5-3.png?featherlight=false&amp;width=90pc" alt="Repository"></p>
+<p>At the app setting part, you will need to edit the YML file. Put all the info just like the screenshot under and click on <strong>Edit YML file</strong>.</p>
+<p><img src="/images/2/5-4.png?featherlight=false&amp;width=90pc" alt="Repository"></p>
+<p>Inside the YML file, paste the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">Modify the amplify.yml file as follows</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">backend</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">phases</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">preBuild</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm install</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">nvm use 20</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm ci --cache .npm --prefer-offline</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">frontend</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">phases</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm run build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">artifacts</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">baseDirectory</span>: <span style="color:#ae81ff">dist</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">files</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;**/*&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cache</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">node_modules/**/*</span>
+</span></span></code></pre></div>
+<div class="notices warning" ><p>THE COMMAND LINES MUST BE INDENTED CORRECTLY JUST LIKE THE INSTRUCTIONS.</p>
 </div>
 
-<h4 id="connecting-aws-amplify-with-github">COnnecting AWS Amplify with GitHub</h4>
-<p>After initializing Amplify in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.</p>
-<ol>
-<li>
-<p>Sign in to the AWS Console.</p>
-</li>
-<li>
-<p>In the upper right corner, you will see your account name, select and select <strong>My Security Credentials</strong> then expand Multi-factor authentication (MFA).</p>
-</li>
-<li>
-<p>To manage U2F security keys, you must have permissions from the following set of permissions. in the left sidebar, select <strong>Policies</strong> then select <strong>Create policy</strong>, select <strong>JSON</strong> tab and paste the below:</p>
-</li>
-</ol>
+<p><img src="/images/2/5-5.png?featherlight=false&amp;width=90pc" alt="YML File"></p>
+<p>After finished editing the YML file, save and then scroll down to next.</p>
+<p><img src="/images/2/5-6.png?featherlight=false&amp;width=90pc" alt="Finish Step 3"></p>
+<p>Click on Finish and Deploy, this will create an AWS Amplify Console that will match your liking.</p>
+<p><img src="/images/2/5-7.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
+<p>Return to the Overview, click the Production branch, and then select Redeploy this version. Wait for the build process to complete. Once deployed, the app will be accessible at the generated domain link provided in the main branch overview.</p>
+<p><img src="/images/2/5-8.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
+
+<div class="notices tip" ><p>In case of the yml file being wrong somewhere, you can come back to the file by choosing <strong>Hosting</strong> then <strong>Build Settings</strong>.</p>
+</div>
+
+<p><img src="/images/2/5-8-1.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Statement&#34;</span><span style="color:#f92672">:</span> [
@@ -1014,19 +1048,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753169551"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753169551"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753169551"></script>
-    <script src="/js/jquery.sticky.js?1753169551"></script>
-    <script src="/js/featherlight.min.js?1753169551"></script>
-    <script src="/js/highlight.pack.js?1753169551"></script>
+    <script src="/js/clipboard.min.js?1753174127"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753174127"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753174127"></script>
+    <script src="/js/jquery.sticky.js?1753174127"></script>
+    <script src="/js/featherlight.min.js?1753174127"></script>
+    <script src="/js/highlight.pack.js?1753174127"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753169551"></script>
-    <script src="/js/learn.js?1753169551"></script>
-    <script src="/js/hugo-learn.js?1753169551"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753174127"></script>
+    <script src="/js/learn.js?1753174127"></script>
+    <script src="/js/hugo-learn.js?1753174127"></script>
 
-    <link href="/mermaid/mermaid.css?1753169551" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753169551"></script>
+    <link href="/mermaid/mermaid.css?1753174127" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753174127"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
