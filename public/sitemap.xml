@@ -14,13 +14,7 @@
     <loc>http://localhost:4181/1-create-new-aws-account/1.1-find-account-id/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4181/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/_index.vi/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:4181/1-create-new-aws-account/1.2-update-account/</loc>
-    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:4181/2-mfa-setup-for-aws-user-root/2-u2f-security-key/_index.vi/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4181/2-mfa-setup-for-aws-user-root/2-u2f-security-key/</loc>
@@ -38,10 +32,10 @@
     <loc>http://localhost:4181/1-create-new-aws-account/1.3-aws-account-alias/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4181/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/_index.vi/</loc>
+    <loc>http://localhost:4181/4-verify-new-account/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4181/4-verify-new-account/</loc>
+    <loc>http://localhost:4181/12-s3-bucket-for-data-storage/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4181/categories/</loc>
