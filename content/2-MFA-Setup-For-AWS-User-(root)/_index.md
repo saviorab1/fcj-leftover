@@ -42,7 +42,7 @@ You will need to set up the frontend, back and the aws sandbox following these s
 
    ### Frontend and Backend
 
-1. Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:l-2-ways)
+1. Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:l-2-ways
    - src/index.css (For Frontend)
    - src/App.css (For Frontend)
    - src/main.tsx (For UI)

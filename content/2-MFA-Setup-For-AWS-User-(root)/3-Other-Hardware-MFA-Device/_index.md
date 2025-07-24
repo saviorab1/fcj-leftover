@@ -259,5 +259,17 @@ When you’re done with setting up the sandbox environment, run:
 ```bash
 npm run dev
 ```
-
+![SSO](/images/2/7-1.png?featherlight=false&width=90pc)
 to initialize a localhost for your website, you can then get access to the website locally at **locahost:5173**.
+
+Afterwards, sign up and sign in using your account normally. Remember to verify your account as well.
+
+![SSO](/images/2/7-2.png?featherlight=false&width=90pc)
+
+![SSO](/images/2/7-3.png?featherlight=false&width=90pc)
+
+![SSO](/images/2/7-4.png?featherlight=false&width=90pc)
+
+The result should be:
+
+![SSO](/images/2/7-5.png?featherlight=false&width=90pc)

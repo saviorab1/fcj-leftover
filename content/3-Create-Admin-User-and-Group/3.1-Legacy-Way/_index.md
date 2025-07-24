@@ -7,9 +7,6 @@ pre : " <b> 3.1 </b> "
 ---
 
 ## Content
-- [Start up the IAM Identity Center](#start-up-the-iam-identity-center)
-- [Using CloudShell to set up the management](#using-cloudshell-to-set-up-the-management)
-- [Finish the setup for AWS IAM Identity Center](#finish-the-setup-for-aws-iam-identity-center)
 
 ## Start up the IAM Identity Center
 
