@@ -3,7 +3,7 @@ title : "Deploy the Application via AWS Amplify"
 date : "2023-12-01T00:00:00Z"
 weight : 2
 chapter : false
-pre : " <b> 2.2 </b> "
+pre : " <b> 3.2 </b> "
 ---
 
 **Content**
