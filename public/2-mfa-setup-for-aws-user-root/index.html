@@ -12,21 +12,21 @@
     <title>Working on the main Functionality of the project using AWS Services :: </title>
 
     
-    <link href="/css/nucleus.css?1753178352" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753178352" rel="stylesheet">
-    <link href="/css/hybrid.css?1753178352" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753178352" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753178352" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753178352" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753178352" rel="stylesheet">
-    <link href="/css/theme.css?1753178352" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753178352" rel="stylesheet">
+    <link href="/css/nucleus.css?1753342213" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753342213" rel="stylesheet">
+    <link href="/css/hybrid.css?1753342213" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753342213" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753342213" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753342213" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753342213" rel="stylesheet">
+    <link href="/css/theme.css?1753342213" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753342213" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753178352" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753342213" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753178352"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753342213"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753178352"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753178352"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753342213"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753342213"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753178352"></script>
+<script type="text/javascript" src="/js/search.js?1753342213"></script>
 
     
   </div>
@@ -326,18 +326,58 @@
  
   
     
-    <li data-nav-id="/3-create-admin-user-and-group/" title="Create Admin Group and Admin User" class="dd-item 
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock" class="dd-item 
         
         
         
         ">
       <a href="/3-create-admin-user-and-group/">
-           <b> 3. </b> Create Admin Group and Admin User
+           <b> 3. </b> Creating and Developing Amazon Bedrock
           
             <i class="fas fa-check read-icon"></i>
           
       </a>
       
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/3.1-legacy-way/" title="Setting Up the IAM Identity Center" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/3.1-legacy-way/">
+           <b> 2.1 </b> Setting Up the IAM Identity Center
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -608,7 +648,6 @@
         <li><a href="#amplify-sandbox">Amplify Sandbox</a></li>
       </ul>
     </li>
-    <li><a href="#setting-up-aws-bedrock-model-2-ways">Setting up AWS Bedrock Model (2 Ways)</a></li>
   </ul>
 </nav>
     </div>
@@ -640,7 +679,6 @@
 <li><a href="#setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</a></li>
 <li><a href="#deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</a></li>
 <li><a href="#setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</a></li>
-<li><a href="#setting-up-aws-bedrock-model-2-ways">Setting up AWS Bedrock Model (2 Ways)</a></li>
 </ul>
 <h2 id="setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</h2>
 <p>In order to manage multiple accounts with Single-sign on (SSO) session, users, groups, permission sets, and more for your organization, you have to set up the IAM Identity Center.</p>
@@ -674,7 +712,7 @@
 <h3 id="frontend-and-backend">Frontend and Backend</h3>
 <ol>
 <li>
-<p>Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:</p>
+<p>Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:l-2-ways)</p>
 <ul>
 <li>src/index.css (For Frontend)</li>
 <li>src/App.css (For Frontend)</li>
@@ -699,21 +737,6 @@
 <p>Configure and make a localhost.</p>
 </li>
 </ol>
-<hr>
-<h2 id="setting-up-aws-bedrock-model-2-ways">Setting up AWS Bedrock Model (2 Ways)</h2>
-<ol>
-<li>
-<p>You will be using Bedrock Model and setting up using Claude Sonnet.</p>
-</li>
-<li>
-<p>There will be two ways to build the Bedrock Model based on how you intepret.</p>
-</li>
-</ol>
-<ul>
-<li>Implementing the servers using manual coding for a fallback server.</li>
-<li>Using cross-region to make a fallback server.</li>
-</ul>
-<hr>
 
 
 
@@ -898,8 +921,26 @@
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1008,19 +1049,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753178352"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753178352"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753178352"></script>
-    <script src="/js/jquery.sticky.js?1753178352"></script>
-    <script src="/js/featherlight.min.js?1753178352"></script>
-    <script src="/js/highlight.pack.js?1753178352"></script>
+    <script src="/js/clipboard.min.js?1753342213"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753342213"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753342213"></script>
+    <script src="/js/jquery.sticky.js?1753342213"></script>
+    <script src="/js/featherlight.min.js?1753342213"></script>
+    <script src="/js/highlight.pack.js?1753342213"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753178352"></script>
-    <script src="/js/learn.js?1753178352"></script>
-    <script src="/js/hugo-learn.js?1753178352"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753342213"></script>
+    <script src="/js/learn.js?1753342213"></script>
+    <script src="/js/hugo-learn.js?1753342213"></script>
 
-    <link href="/mermaid/mermaid.css?1753178352" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753178352"></script>
+    <link href="/mermaid/mermaid.css?1753342213" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753342213"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

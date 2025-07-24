@@ -12,7 +12,7 @@ pre : " <b> 2. </b> "
 - [Setting Up the IAM Identity Center](#setting-up-the-iam-identity-center)
 - [Deploy the Application via AWS Amplify](#deploy-the-application-via-aws-amplify)
 - [Setting up the Frontend, Backend and AWS Sandbox](#setting-up-the-frontend-backend-and-aws-sandbox)
-- [Setting up AWS Bedrock Model (2 Ways)](#setting-up-aws-bedrock-model-2-ways)
+
 
 ## Setting Up the IAM Identity Center
 
@@ -42,7 +42,7 @@ You will need to set up the frontend, back and the aws sandbox following these s
 
    ### Frontend and Backend
 
-1. Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:
+1. Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:l-2-ways)
    - src/index.css (For Frontend)
    - src/App.css (For Frontend)
    - src/main.tsx (For UI)
@@ -59,16 +59,4 @@ You will need to set up the frontend, back and the aws sandbox following these s
 
 5. Configure and make a localhost.
 
----
 
-## Setting up AWS Bedrock Model (2 Ways)
-
-1. You will be using Bedrock Model and setting up using Claude Sonnet. 
-
-2. There will be two ways to build the Bedrock Model based on how you intepret. 
-
-- Implementing the servers using manual coding for a fallback server.
-- Using cross-region to make a fallback server. 
-
-
----

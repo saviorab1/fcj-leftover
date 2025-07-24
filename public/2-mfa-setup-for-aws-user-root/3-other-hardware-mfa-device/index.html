@@ -12,21 +12,21 @@
     <title>Setting up the Frontend, Backend and AWS Sandbox :: </title>
 
     
-    <link href="/css/nucleus.css?1753178352" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753178352" rel="stylesheet">
-    <link href="/css/hybrid.css?1753178352" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753178352" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753178352" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753178352" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753178352" rel="stylesheet">
-    <link href="/css/theme.css?1753178352" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753178352" rel="stylesheet">
+    <link href="/css/nucleus.css?1753342213" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753342213" rel="stylesheet">
+    <link href="/css/hybrid.css?1753342213" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753342213" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753342213" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753342213" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753342213" rel="stylesheet">
+    <link href="/css/theme.css?1753342213" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753342213" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753178352" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753342213" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753178352"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753342213"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753178352"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753178352"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753342213"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753342213"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753178352"></script>
+<script type="text/javascript" src="/js/search.js?1753342213"></script>
 
     
   </div>
@@ -326,18 +326,58 @@
  
   
     
-    <li data-nav-id="/3-create-admin-user-and-group/" title="Create Admin Group and Admin User" class="dd-item 
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock" class="dd-item 
         
         
         
         ">
       <a href="/3-create-admin-user-and-group/">
-           <b> 3. </b> Create Admin Group and Admin User
+           <b> 3. </b> Creating and Developing Amazon Bedrock
           
             <i class="fas fa-check read-icon"></i>
           
       </a>
       
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/3.1-legacy-way/" title="Setting Up the IAM Identity Center" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/3.1-legacy-way/">
+           <b> 2.1 </b> Setting Up the IAM Identity Center
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -608,6 +648,7 @@
     <li>
       <ul>
         <li></li>
+        <li><a href="#setup-aws-sandbox">Setup AWS Sandbox</a></li>
       </ul>
     </li>
   </ul>
@@ -642,70 +683,176 @@
 <h4 id="coding-the-frontend">Coding the Frontend</h4>
 <p>In the terminal window, navigate to leftover folder and run this command to install the libraries:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install aws-amplify @aws-amplify/ui-react
-</span></span></code></pre></div><ol start="3">
-<li>To manage U2F security keys, you must have permissions from the following set of permissions. in the left sidebar, select <strong>Policies</strong> then select <strong>Create policy</strong>, select <strong>JSON</strong> tab and paste the below:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Statement&#34;</span><span style="color:#f92672">:</span> [
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Sid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;AllowManageOwnUserMFA&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Effect&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Allow&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Action&#34;</span><span style="color:#f92672">:</span> [
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;iam:DeactivateMFADevice&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;iam:EnableMFADevice&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;iam:GetUser&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;iam:ListMFADevices&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;iam:ResyncMFADevice&#34;</span>
-</span></span><span style="display:flex;"><span>            ],
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Resource&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;arn:aws:iam::*:user/${aws:username}&#34;</span>
-</span></span><span style="display:flex;"><span>        },
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Sid&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;DenyAllExceptListedIfNoMFA&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Effect&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Deny&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;NotAction&#34;</span><span style="color:#f92672">:</span> [
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;iam:EnableMFADevice&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;iam:GetUser&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;iam:ListMFADevices&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;iam:ResyncMFADevice&#34;</span>
-</span></span><span style="display:flex;"><span>            ],
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Resource&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;arn:aws:iam::*:user/${aws:username}&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Condition&#34;</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;BoolIfExists&#34;</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;aws:MultiFactorAuthPresent&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;false&#34;</span>
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    ]
+</span></span></code></pre></div><p><img src="/images/2/6-0-1.png?featherlight=false&amp;width=90pc" alt="Install"></p>
+<p>Open index.css file in src folder and update it with the following code to center the App UI:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>:<span style="color:#a6e22e">root</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: Inter, system-ui, Avenir, Helvetica, Arial, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.5</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">400</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.87</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-synthesis</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  text-rendering: <span style="color:#66d9ef">optimizeLegibility</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-webkit-</span>font-smoothing: antialiased;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-moz-</span>osx-font-smoothing: grayscale;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">1280</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img src="/images/3/0001.png?featherlight=false&amp;width=90pc" alt="MFA"></p>
-<ol start="4">
-<li>Select <strong>Next: Tags</strong>. This is a screen of <strong>Tags</strong>, a tool used to differentiate AWS resources.</li>
-<li>Select <strong>Next: Review</strong>. This is the screen that allows you to review the permission set you are creating.</li>
-<li>Enter the permission set name (eg MFAHardDevice) and select <strong>Create policy</strong>.</li>
-</ol>
-<p><img src="/images/3/0002.png?featherlight=false&amp;width=90pc" alt="MFA"></p>
-<p><img src="/images/3/0003.png?featherlight=false&amp;width=90pc" alt="MFA"></p>
-<ol start="7">
-<li>In the left sidebar, select <strong>Dashboard</strong> and then select <strong>Enable MFA</strong>.</li>
-</ol>
-<p><img src="/images/3/0004.png?featherlight=false&amp;width=90pc" alt="MFA"></p>
-<ol start="8">
-<li>
-<p>Expand Multi-factor authentication (MFA) then select <strong>Active MFA</strong>.</p>
-</li>
-<li>
-<p>In <strong>Manage MFA Device</strong>, select <strong>Other Hardware MFA Device</strong> then click <strong>Continue</strong>.</p>
-</li>
-<li>
-<p>Enter <strong>Serial Number</strong> on the back of the device.</p>
-</li>
-</ol>
-<p><img src="/images/1-account-setup/HardwareMFA.png?featherlight=false&amp;width=90pc" alt="Image"></p>
-<ol start="11">
-<li>Enter MFA code 1 then wait 30 seconds and enter MFA code 2.</li>
-<li>Select <strong>Assign MFA</strong>.</li>
-</ol>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">card</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">read-the-docs</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#888</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">3n</span> <span style="color:#f92672">+</span> <span style="color:#f92672">1</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">grid-column</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">3n</span> <span style="color:#f92672">+</span> <span style="color:#f92672">2</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">grid-column</span>: <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">3n</span> <span style="color:#f92672">+</span> <span style="color:#f92672">3</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">grid-column</span>: <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then update the App.css which is also in the same src folder with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">app-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">header-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">2.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">48</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">main-header</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">2.25</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#1a202c</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">main-header</span> .<span style="color:#a6e22e">highlight</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#2563eb</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">640px</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">main-header</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">3.75</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">description</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">500</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.125</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">65</span><span style="color:#66d9ef">ch</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#1a202c</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="coding-the-backend">Coding the Backend</h4>
+<p>Update main.tsx file in src folder with these codes to allow users to sign up, sign in, reset their password, and confirm sign-in for MFA with the Amplify Authenticator component:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react-dom/client&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./App.jsx&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./index.css&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Authenticator</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;root&#34;</span>)<span style="color:#f92672">!</span>).<span style="color:#a6e22e">render</span>(
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">React.StrictMode</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">Authenticator</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">App</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">Authenticator</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">React.StrictMode</span>&gt;
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>In the same src folder, implement a simple UI for the App.tsx:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">FormEvent</span>, <span style="color:#a6e22e">useState</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Loader</span>, <span style="color:#a6e22e">Placeholder</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./App.css&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Amplify</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-amplify&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">outputs</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;../amplify_outputs.json&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react/styles.css&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Amplify</span>.<span style="color:#a6e22e">configure</span>(<span style="color:#a6e22e">outputs</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main-header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">This</span> <span style="color:#a6e22e">here</span> <span style="color:#66d9ef">is</span>
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">br</span> /&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;<span style="color:#a6e22e">just</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">website</span>&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">You</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">develop</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">own</span> <span style="color:#a6e22e">website</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">deploy</span> <span style="color:#a6e22e">it</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">AWS</span> <span style="color:#a6e22e">Amplify</span>.
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">App</span>;
+</span></span></code></pre></div><p>Lastly, setup Amplify Data by create a resource.ts file in amplify/data folder and update it with following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ClientSchema</span>, <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">defineData</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/backend&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">schema</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">schema</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Empty schema but properly formatted
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Schema</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClientSchema</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">schema</span>&gt;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defineData</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">schema</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">authorizationModes</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">defaultAuthorizationMode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;apiKey&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">apiKeyAuthorizationMode</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">expiresInDays</span>: <span style="color:#66d9ef">30</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="setup-aws-sandbox">Setup AWS Sandbox</h3>
+<p>By using Amplify Sandbox, developers can rapidly integrate the website within an isolated development environment, while still able to use AWS services and features. In order to do that, run open a new terminal window, navigate to workshop2 directory and run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx ampx sandbox
+</span></span></code></pre></div><p>Once the cloud sandbox has been fully deployed, your terminal will display a confirmation message and the amplify_outputs.json file will be generated and added to your project.</p>
+<p><img src="/images/2/6-0-2.png?featherlight=false&amp;width=90pc" alt="Invalid"></p>
+<p>→If it says InvalidCredentialError: Failed to load default AWS credentials it means you need to configure your profile, in order to do that, type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure
+</span></span></code></pre></div><p>You can find the necessary information in the logged in session of your amplify-admin account by logging into the AWS Identity Center. Log into the Center and you will be able to find your code here.</p>
+<p><img src="/images/2/6-1.png?featherlight=false&amp;width=90pc" alt="IAM"></p>
+<p>So, once you click into the keys, you will be able to see the 3 options. Based on the operation you are running, choose the suitable one. In my case, it will be Windows.</p>
+<p><img src="/images/2/6-2.png?featherlight=false&amp;width=90pc" alt="IAM"></p>
+<p>You will be seeing the SSO and every info necessary for your SSO registration.</p>
+<p><img src="/images/2/6-3.png?featherlight=false&amp;width=90pc" alt="SSO"></p>
+<p>Redo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure
+</span></span></code></pre></div><p>As for SSO session name and Profile name, please leave it at amplify-default. You can leave the SSO registration scopes and CLI default output format as blank.</p>
+<p><img src="/images/2/6-4.png?featherlight=false&amp;width=90pc" alt="SSO"></p>
+<p>Afterward, type in:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure sso
+</span></span></code></pre></div><p>You should see this in response:</p>
+<p><img src="/images/2/6-5.png?featherlight=false&amp;width=90pc" alt="SSO"></p>
+<p>You shall see the link. Click on it, and click on <strong>Allow Access</strong>.</p>
+<p><img src="/images/2/6-6.png?featherlight=false&amp;width=90pc" alt="SSO"></p>
+<p>You shall be greeted with this message.</p>
+<p><img src="/images/2/6-7.png?featherlight=false&amp;width=90pc" alt="SSO"></p>
+<p>Then, in order to use your newly created profile, type in:
+npx ampx sandbox –profile amplify-default (or whatever your profile name is)
+The terminal will output this line “[Sandbox] Watching for file changes…” when success.</p>
+<p><img src="/images/2/6-8.png?featherlight=false&amp;width=90pc" alt="SSO"></p>
+<p>→If it says SSMCredentialsError: UnrecognizedClientException: The security token included in the request is invalid, it might be due to a conflict amplify accounts, in order to fix this problem, navigate to C:\Users\YourUserName.aws and delete everything in there then start configure your profile as demonstrated above.</p>
+<p><img src="/images/2/6-8-1.png?featherlight=false&amp;width=90pc" alt="SSO"></p>
+<p>Finally, to check the sso, you can use these commands.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws sts get-caller-identity --profile amplify-1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm ampx sandbox --profile amplify-1
+</span></span></code></pre></div><p>When you’re done with setting up the sandbox environment, run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm run dev
+</span></span></code></pre></div><p>to initialize a localhost for your website, you can then get access to the website locally at <strong>locahost:5173</strong>.</p>
 
 
 
@@ -894,8 +1041,26 @@
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -994,7 +1159,7 @@
 			<a class="nav nav-prev" href="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/" title="Deploy the Application via AWS Amplify"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-create-admin-user-and-group/" title="Create Admin Group and Admin User" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1004,19 +1169,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753178352"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753178352"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753178352"></script>
-    <script src="/js/jquery.sticky.js?1753178352"></script>
-    <script src="/js/featherlight.min.js?1753178352"></script>
-    <script src="/js/highlight.pack.js?1753178352"></script>
+    <script src="/js/clipboard.min.js?1753342213"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753342213"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753342213"></script>
+    <script src="/js/jquery.sticky.js?1753342213"></script>
+    <script src="/js/featherlight.min.js?1753342213"></script>
+    <script src="/js/highlight.pack.js?1753342213"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753178352"></script>
-    <script src="/js/learn.js?1753178352"></script>
-    <script src="/js/hugo-learn.js?1753178352"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753342213"></script>
+    <script src="/js/learn.js?1753342213"></script>
+    <script src="/js/hugo-learn.js?1753342213"></script>
 
-    <link href="/mermaid/mermaid.css?1753178352" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753178352"></script>
+    <link href="/mermaid/mermaid.css?1753342213" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753342213"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
