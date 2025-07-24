@@ -1,5 +1,5 @@
 ---
-title : "Setting Up the IAM Identity Center"
+title : "Setting up AWS Bedrock (Legacy)"
 date : "2023-12-01T00:00:00Z"
 weight : 1
 chapter : false

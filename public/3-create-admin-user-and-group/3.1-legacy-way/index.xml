@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Setting Up the IAM Identity Center on </title>
+    <title>Setting up AWS Bedrock (Legacy) on </title>
     <link>http://localhost:1313/3-create-admin-user-and-group/3.1-legacy-way/</link>
-    <description>Recent content in Setting Up the IAM Identity Center on </description>
+    <description>Recent content in Setting up AWS Bedrock (Legacy) on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
