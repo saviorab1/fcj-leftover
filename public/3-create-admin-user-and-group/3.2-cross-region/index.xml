@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Deploy the Application via AWS Amplify on </title>
+    <title>Setting up AWS Bedrock (Cross-Region) on </title>
     <link>http://localhost:1313/3-create-admin-user-and-group/3.2-cross-region/</link>
-    <description>Recent content in Deploy the Application via AWS Amplify on </description>
+    <description>Recent content in Setting up AWS Bedrock (Cross-Region) on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>

@@ -1,5 +1,5 @@
 ---
-title : "Creating and Developing Amazon Bedrock"
+title : "Creating and Developing Amazon Bedrock and CloudWatch"
 date : "2023-12-01T00:00:00Z"
 weight : 3
 chapter : false
@@ -8,6 +8,8 @@ pre : " <b> 3. </b> "
 
 ## Content
 - [Setting up AWS Bedrock Model (2 Ways)](#setting-up-aws-bedrock-mode)
+- [Legacy Way](#legacy-way)
+- [Cross-Region Way](#cross-region-way)
 
 ## Request Amazon Bedrock models
 

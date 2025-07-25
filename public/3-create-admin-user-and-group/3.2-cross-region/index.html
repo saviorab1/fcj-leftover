@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Deploy the Application via AWS Amplify :: </title>
+    <title>Setting up AWS Bedrock (Cross-Region) :: </title>
 
     
-    <link href="/css/nucleus.css?1753354537" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753354537" rel="stylesheet">
-    <link href="/css/hybrid.css?1753354537" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753354537" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753354537" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753354537" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753354537" rel="stylesheet">
-    <link href="/css/theme.css?1753354537" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753354537" rel="stylesheet">
+    <link href="/css/nucleus.css?1753453463" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753453463" rel="stylesheet">
+    <link href="/css/hybrid.css?1753453463" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753453463" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753453463" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753453463" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753453463" rel="stylesheet">
+    <link href="/css/theme.css?1753453463" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753453463" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753354537" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753453463" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753354537"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753453463"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753354537"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753354537"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753453463"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753453463"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753354537"></script>
+<script type="text/javascript" src="/js/search.js?1753453463"></script>
 
     
   </div>
@@ -326,13 +326,13 @@
  
   
     
-    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock" class="dd-item 
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock and CloudWatch" class="dd-item 
         parent
         
         
         ">
       <a href="/3-create-admin-user-and-group/">
-           <b> 3. </b> Creating and Developing Amazon Bedrock
+           <b> 3. </b> Creating and Developing Amazon Bedrock and CloudWatch
           
             <i class="fas fa-check read-icon"></i>
           
@@ -385,13 +385,13 @@
  
   
     
-    <li data-nav-id="/3-create-admin-user-and-group/3.2-cross-region/" title="Deploy the Application via AWS Amplify" class="dd-item 
+    <li data-nav-id="/3-create-admin-user-and-group/3.2-cross-region/" title="Setting up AWS Bedrock (Cross-Region)" class="dd-item 
         
         active
         
         ">
       <a href="/3-create-admin-user-and-group/3.2-cross-region/">
-           <b> 3.2 </b> Deploy the Application via AWS Amplify
+           <b> 3.2 </b> Setting up AWS Bedrock (Cross-Region)
           
             <i class="fas fa-check read-icon"></i>
           
@@ -658,7 +658,7 @@
             
           
           
-            <a href='/'>Setting up an AWS account</a> > <a href='/3-create-admin-user-and-group/'>Creating and Developing Amazon Bedrock</a> > Deploy the Application via AWS Amplify
+            <a href='/'>Setting up an AWS account</a> > <a href='/3-create-admin-user-and-group/'>Creating and Developing Amazon Bedrock and CloudWatch</a> > Setting up AWS Bedrock (Cross-Region)
           
         
           
@@ -673,11 +673,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#content">Content</a></li>
+    <li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
+    <li><a href="#choosing-the-ai-model-inside-bedrock">Choosing the AI Model inside Bedrock</a></li>
   </ul>
 </nav>
     </div>
@@ -695,7 +693,7 @@
           
             <h1>
               
-              Deploy the Application via AWS Amplify
+              Setting up AWS Bedrock (Cross-Region)
             </h1>
           
 
@@ -703,69 +701,31 @@
 
 
 
-	<p><strong>Content</strong></p>
+	<h2 id="content">Content</h2>
 <ul>
-<li><a href="#connecting-aws-amplify-with-github">Connecting AWS Amplify with GitHub</a></li>
-<li><a href="#editing-the-yml-file">Editing the YML File</a></li>
-<li><a href="#visit-the-deployed-url">Visit the Deployed URL</a></li>
+<li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
+<li><a href="#choosing-the-ai-model-inside-bedrock">Choosing the AI Model inside Bedrock</a></li>
+<li><a href="#make-a-fallback-server">Make a fallback server</a></li>
+<li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
 </ul>
-<h4 id="connecting-aws-amplify-with-github">Connecting AWS Amplify with GitHub</h4>
-<p>After initializing Amplify in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.</p>
-<p>You will open the AWS Console by navigating to the AWS Amplify service, and click on <strong>Deploy an App</strong> or <strong>Create New App</strong>.</p>
-<p><img src="/images/2/5-1.png?featherlight=false&amp;width=90pc" alt="AWS Frontpage"></p>
-<p>On the “Start building with Amplify” page, choose GitHub as the source provider. Log in and authorize GitHub access if prompted.</p>
-<p><img src="/images/2/5-2.png?featherlight=false&amp;width=90pc" alt="AWS GitHub"></p>
-<p>Remember to check the branch/repository of the GitHub repository you used to store the data.</p>
-<p><img src="/images/2/5-3.png?featherlight=false&amp;width=90pc" alt="Repository"></p>
-<h4 id="editing-the-yml-file">Editing the YML File</h4>
-<p>At the app setting part, you will need to edit the YML file. Put all the info just like the screenshot under and click on <strong>Edit YML file</strong>.</p>
-<p><img src="/images/2/5-4.png?featherlight=false&amp;width=90pc" alt="Repository"></p>
-<p>Inside the YML file, paste the following code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">Modify the amplify.yml file as follows</span>:
-</span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">backend</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">phases</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">preBuild</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm install</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">nvm use 20</span>
-</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm ci --cache .npm --prefer-offline</span>
-</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">frontend</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">phases</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm run build</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">artifacts</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">baseDirectory</span>: <span style="color:#ae81ff">dist</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">files</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;**/*&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cache</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">paths</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">node_modules/**/*</span>
-</span></span></code></pre></div>
-<div class="notices warning" ><p>THE COMMAND LINES MUST BE INDENTED CORRECTLY JUST LIKE THE INSTRUCTIONS.</p>
-</div>
-
-<p><img src="/images/2/5-5.png?featherlight=false&amp;width=90pc" alt="YML File"></p>
-<p>After finished editing the YML file, save and then scroll down to next.</p>
-<p><img src="/images/2/5-6.png?featherlight=false&amp;width=90pc" alt="Finish Step 3"></p>
-<p>Click on Finish and Deploy, this will create an AWS Amplify Console that will match your liking.</p>
-<p><img src="/images/2/5-7.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
-<p>Return to the Overview, click the Production branch, and then select Redeploy this version. Wait for the build process to complete. Once deployed, the app will be accessible at the generated domain link provided in the main branch overview.</p>
-<p><img src="/images/2/5-8.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
-
-<div class="notices tip" ><p>In case of the yml file being wrong somewhere, you can come back to the file by choosing <strong>Hosting</strong> then <strong>Build Settings</strong>.</p>
-</div>
-
-<p><img src="/images/2/5-8-1.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
-<h4 id="visit-the-deployed-url">Visit the Deployed URL</h4>
-<p>Then, you can visit the page by clicking <strong>Visit Deployed URL</strong>.</p>
-<p><img src="/images/2/5-9.png?featherlight=false&amp;width=90pc" alt="Visit Time"></p>
-<p>You should see the result that looks like this.</p>
-<p><img src="/images/2/5-10.png?featherlight=false&amp;width=90pc" alt="Visit Time"></p>
+<h2 id="request-an-aws-bedrock-model">Request an AWS Bedrock Model</h2>
+<p>Same as the Legacy Way, you will need to get to Amazon Bedrock and click on Model Catalog.</p>
+<p>You will be greeted by one of those two pages. In either way, click on the mark part of the image.</p>
+<p><img src="/images/3/8-0.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p><img src="/images/3/8-0-1.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>Afterward, click on the AI model and click on Modify Access.</p>
+<p><img src="/images/3/8-1.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<h2 id="choosing-the-ai-model-inside-bedrock">Choosing the AI Model inside Bedrock</h2>
+<p>In this case, we will choose Claude 4 Sonnet as it is readily available at ap-southeast-1 region and <strong>it has cross-region</strong>.</p>
+<p>First, you will need to choose to modify the Model Access. There are two scenarios:</p>
+<p>This is the scenario where you have not modfiy any model access into Amazon Bedrock. If you are in this case, choose <strong>Modify model access</strong>.</p>
+<p><img src="/images/3/8-2.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>This is the scenario where you have modfiy any model access into Amazon Bedrock. If you are in this case, choose <strong>Enable Specific Model</strong>.</p>
+<p><img src="/images/3/8-3.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>After that, choose the model that you want, and in this case, it is Claude Sonnet 4.</p>
+<p><img src="/images/3/8-4-Alternate.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>Hit Submit after, nothing much will need to be changed. You will need to wait for a while for the model to finish setting up. You should see this screen.</p>
+<p><img src="/images/3/8-5-Alternate.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
 
 
 
@@ -1098,19 +1058,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753354537"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753354537"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753354537"></script>
-    <script src="/js/jquery.sticky.js?1753354537"></script>
-    <script src="/js/featherlight.min.js?1753354537"></script>
-    <script src="/js/highlight.pack.js?1753354537"></script>
+    <script src="/js/clipboard.min.js?1753453463"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753453463"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753453463"></script>
+    <script src="/js/jquery.sticky.js?1753453463"></script>
+    <script src="/js/featherlight.min.js?1753453463"></script>
+    <script src="/js/highlight.pack.js?1753453463"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753354537"></script>
-    <script src="/js/learn.js?1753354537"></script>
-    <script src="/js/hugo-learn.js?1753354537"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753453463"></script>
+    <script src="/js/learn.js?1753453463"></script>
+    <script src="/js/hugo-learn.js?1753453463"></script>
 
-    <link href="/mermaid/mermaid.css?1753354537" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753354537"></script>
+    <link href="/mermaid/mermaid.css?1753453463" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753453463"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -1,97 +1,49 @@
 ---
-title : "Deploy the Application via AWS Amplify"
+title : "Setting up AWS Bedrock (Cross-Region)"
 date : "2023-12-01T00:00:00Z"
 weight : 2
 chapter : false
 pre : " <b> 3.2 </b> "
 ---
 
-**Content**
-- [Connecting AWS Amplify with GitHub](#connecting-aws-amplify-with-github)
-- [Editing the YML File](#editing-the-yml-file)
-- [Visit the Deployed URL](#visit-the-deployed-url)
+## Content
+- [Request an AWS Bedrock Model](#request-an-aws-bedrock-model)
+- [Choosing the AI Model inside Bedrock](#choosing-the-ai-model-inside-bedrock)
+- [Make a fallback server](#make-a-fallback-server)
+- [Request an AWS Bedrock Model](#request-an-aws-bedrock-model)
 
-#### Connecting AWS Amplify with GitHub
+## Request an AWS Bedrock Model
 
-After initializing Amplify in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.
+Same as the Legacy Way, you will need to get to Amazon Bedrock and click on Model Catalog. 
 
-You will open the AWS Console by navigating to the AWS Amplify service, and click on **Deploy an App** or **Create New App**.
+You will be greeted by one of those two pages. In either way, click on the mark part of the image.
 
-![AWS Frontpage](/images/2/5-1.png?featherlight=false&width=90pc)
+ ![IAM Frontpage](/images/3/8-0.png?featherlight=false&width=90pc)
 
-On the “Start building with Amplify” page, choose GitHub as the source provider. Log in and authorize GitHub access if prompted.
+ ![IAM Frontpage](/images/3/8-0-1.png?featherlight=false&width=90pc)
 
-![AWS GitHub](/images/2/5-2.png?featherlight=false&width=90pc)
+Afterward, click on the AI model and click on Modify Access.
 
-Remember to check the branch/repository of the GitHub repository you used to store the data. 
+ ![IAM Frontpage](/images/3/8-1.png?featherlight=false&width=90pc)
 
-![Repository](/images/2/5-3.png?featherlight=false&width=90pc)
+## Choosing the AI Model inside Bedrock
 
-#### Editing the YML File
+In this case, we will choose Claude 4 Sonnet as it is readily available at ap-southeast-1 region and **it has cross-region**. 
 
-At the app setting part, you will need to edit the YML file. Put all the info just like the screenshot under and click on **Edit YML file**.
+First, you will need to choose to modify the Model Access. There are two scenarios:
 
-![Repository](/images/2/5-4.png?featherlight=false&width=90pc)
+This is the scenario where you have not modfiy any model access into Amazon Bedrock. If you are in this case, choose **Modify model access**.
 
-Inside the YML file, paste the following code:
+ ![IAM Frontpage](/images/3/8-2.png?featherlight=false&width=90pc)
 
-```yml
-Modify the amplify.yml file as follows:
-version: 1
-backend:
-  phases:
-    preBuild:
-      commands:
-        - npm install
-    build:
-      commands:
-        - nvm use 20
-        - npm ci --cache .npm --prefer-offline
-        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
-frontend:
-  phases:
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: dist
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
+This is the scenario where you have modfiy any model access into Amazon Bedrock. If you are in this case, choose **Enable Specific Model**.
 
-```
-{{%notice warning%}}
-THE COMMAND LINES MUST BE INDENTED CORRECTLY JUST LIKE THE INSTRUCTIONS.
-{{%/notice%}}
+ ![IAM Frontpage](/images/3/8-3.png?featherlight=false&width=90pc)
 
-![YML File](/images/2/5-5.png?featherlight=false&width=90pc)
+After that, choose the model that you want, and in this case, it is Claude Sonnet 4.
 
-After finished editing the YML file, save and then scroll down to next.
+ ![IAM Frontpage](/images/3/8-4-Alternate.png?featherlight=false&width=90pc)
 
-![Finish Step 3](/images/2/5-6.png?featherlight=false&width=90pc)
+Hit Submit after, nothing much will need to be changed. You will need to wait for a while for the model to finish setting up. You should see this screen.
 
-Click on Finish and Deploy, this will create an AWS Amplify Console that will match your liking.
-
-![Finish Setting up](/images/2/5-7.png?featherlight=false&width=90pc)
-
-Return to the Overview, click the Production branch, and then select Redeploy this version. Wait for the build process to complete. Once deployed, the app will be accessible at the generated domain link provided in the main branch overview.
-
-![Finish Setting up](/images/2/5-8.png?featherlight=false&width=90pc)
-
-{{%notice tip%}}
-In case of the yml file being wrong somewhere, you can come back to the file by choosing **Hosting** then **Build Settings**.
-{{%/notice%}}
-
-![Finish Setting up](/images/2/5-8-1.png?featherlight=false&width=90pc)
-
-#### Visit the Deployed URL
-
-Then, you can visit the page by clicking **Visit Deployed URL**.
-
-![Visit Time](/images/2/5-9.png?featherlight=false&width=90pc)
-
-You should see the result that looks like this.
-
-![Visit Time](/images/2/5-10.png?featherlight=false&width=90pc)
+ ![IAM Frontpage](/images/3/8-5-Alternate.png?featherlight=false&width=90pc)

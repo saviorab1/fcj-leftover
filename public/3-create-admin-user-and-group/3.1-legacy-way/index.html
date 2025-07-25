@@ -12,21 +12,21 @@
     <title>Setting up AWS Bedrock (Legacy) :: </title>
 
     
-    <link href="/css/nucleus.css?1753354537" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753354537" rel="stylesheet">
-    <link href="/css/hybrid.css?1753354537" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753354537" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753354537" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753354537" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753354537" rel="stylesheet">
-    <link href="/css/theme.css?1753354537" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753354537" rel="stylesheet">
+    <link href="/css/nucleus.css?1753453309" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753453309" rel="stylesheet">
+    <link href="/css/hybrid.css?1753453309" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753453309" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753453309" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753453309" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753453309" rel="stylesheet">
+    <link href="/css/theme.css?1753453309" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753453309" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753354537" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753453309" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753354537"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753453309"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753354537"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753354537"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753453309"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753453309"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753354537"></script>
+<script type="text/javascript" src="/js/search.js?1753453309"></script>
 
     
   </div>
@@ -326,13 +326,13 @@
  
   
     
-    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock" class="dd-item 
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock and CloudWatch" class="dd-item 
         parent
         
         
         ">
       <a href="/3-create-admin-user-and-group/">
-           <b> 3. </b> Creating and Developing Amazon Bedrock
+           <b> 3. </b> Creating and Developing Amazon Bedrock and CloudWatch
           
             <i class="fas fa-check read-icon"></i>
           
@@ -385,13 +385,13 @@
  
   
     
-    <li data-nav-id="/3-create-admin-user-and-group/3.2-cross-region/" title="Deploy the Application via AWS Amplify" class="dd-item 
+    <li data-nav-id="/3-create-admin-user-and-group/3.2-cross-region/" title="Setting up AWS Bedrock (Cross-Region)" class="dd-item 
         
         
         
         ">
       <a href="/3-create-admin-user-and-group/3.2-cross-region/">
-           <b> 3.2 </b> Deploy the Application via AWS Amplify
+           <b> 3.2 </b> Setting up AWS Bedrock (Cross-Region)
           
             <i class="fas fa-check read-icon"></i>
           
@@ -658,7 +658,7 @@
             
           
           
-            <a href='/'>Setting up an AWS account</a> > <a href='/3-create-admin-user-and-group/'>Creating and Developing Amazon Bedrock</a> > Setting up AWS Bedrock (Legacy)
+            <a href='/'>Setting up an AWS account</a> > <a href='/3-create-admin-user-and-group/'>Creating and Developing Amazon Bedrock and CloudWatch</a> > Setting up AWS Bedrock (Legacy)
           
         
           
@@ -674,9 +674,8 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#content">Content</a></li>
-    <li><a href="#start-up-the-iam-identity-center">Start up the IAM Identity Center</a></li>
-    <li><a href="#using-cloudshell-to-set-up-the-management">Using CloudShell to set up the management</a></li>
-    <li><a href="#finish-the-setup-for-aws-iam-identity-center">Finish the setup for AWS IAM Identity Center</a></li>
+    <li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
+    <li><a href="#choosing-the-ai-model-inside-bedrock">Choosing the AI Model inside Bedrock</a></li>
   </ul>
 </nav>
     </div>
@@ -703,58 +702,203 @@
 
 
 	<h2 id="content">Content</h2>
-<h2 id="start-up-the-iam-identity-center">Start up the IAM Identity Center</h2>
-<p>(If you already have a profile, attach the AmplifyBackendDeployFullAccess managed policy to your IAM user)</p>
-<p>Open AWS Console to access IAM Identity Center and choose Enable.</p>
-<p><img src="/images/2/4-1.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
-<p>Afterward, a pop up will open, select Enable with AWS Organizations and choose Continue.</p>
-<p><img src="/images/2/4-2.png?featherlight=false&amp;width=90pc" alt="Enabling IAM Identity Center"></p>
-<p>And the basics for IAM Identity Center is ready.</p>
-<h2 id="using-cloudshell-to-set-up-the-management">Using CloudShell to set up the management</h2>
-<p>We will now using CloudShell to connect our mail account as the main profile for the project.</p>
-<p>Open CloudShell terminal within the website and paste this line of code, then enter your email address after the prompt.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Enter email address: &#34;</span> user_email <span style="color:#75715e"># hit enter</span>
-</span></span></code></pre></div><p><img src="/images/2/4-4.png?featherlight=false&amp;width=90pc" alt="CloudShell first step"></p>
-<p>Afterward, copy and paste the following command, it will show a warning due to the multiline nature, but just keep pasting anyway.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sso-admin list-instances<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>ssoId<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $response | jq <span style="color:#e6db74">&#39;.Instances[0].IdentityStoreId&#39;</span> -r<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>ssoArn<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $response | jq <span style="color:#e6db74">&#39;.Instances[0].InstanceArn&#39;</span> -r<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>email_json<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>jq -n --arg email <span style="color:#e6db74">&#34;</span>$user_email<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#39;{&#34;Type&#34;:&#34;Work&#34;,&#34;Value&#34;:$email}&#39;</span><span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws identitystore create-user --identity-store-id $ssoId --user-name amplify-admin --display-name <span style="color:#e6db74">&#39;Amplify Admin&#39;</span> --name Formatted<span style="color:#f92672">=</span>string,FamilyName<span style="color:#f92672">=</span>Admin,GivenName<span style="color:#f92672">=</span>Amplify --emails <span style="color:#e6db74">&#34;</span>$email_json<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>userId<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $response | jq <span style="color:#e6db74">&#39;.UserId&#39;</span> -r<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sso-admin create-permission-set --name amplify-policy --instance-arn<span style="color:#f92672">=</span>$ssoArn --session-duration PT12H<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>permissionSetArn<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $response | jq <span style="color:#e6db74">&#39;.PermissionSet.PermissionSetArn&#39;</span> -r<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>aws sso-admin attach-managed-policy-to-permission-set --instance-arn $ssoArn --permission-set-arn $permissionSetArn --managed-policy-arn arn:aws:iam::aws:policy/service-role/AmplifyBackendDeployFullAccess
-</span></span><span style="display:flex;"><span>accountId<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sts get-caller-identity | jq <span style="color:#e6db74">&#39;.Account&#39;</span> -r<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>aws sso-admin create-account-assignment --instance-arn $ssoArn --target-id $accountId --target-type AWS_ACCOUNT --permission-set-arn $permissionSetArn --principal-type USER --principal-id $userId
-</span></span></code></pre></div><p><img src="/images/2/4-5.png?featherlight=false&amp;width=90pc" alt="CloudShell second step"></p>
-<p>Hit enter and wait.</p>
-<p><img src="/images/2/4-6.png?featherlight=false&amp;width=90pc" alt="CloudShell second step"></p>
-<p>To validate that this worked, run the following command in the CloudShell:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>printf <span style="color:#e6db74">&#34;\n\nStart session url: https://</span>$ssoId<span style="color:#e6db74">.awsapps.com/start\nRegion: </span>$AWS_REGION<span style="color:#e6db74">\nUsername: amplify-admin\n\n&#34;</span>
-</span></span></code></pre></div><p><img src="/images/2/4-7.png?featherlight=false&amp;width=90pc" alt="CloudShell third step"></p>
-<p>You should see something like:</p>
-<p>Start session url: <a href="https://d-XXXXXXXXXX.awsapps.com/start">https://d-XXXXXXXXXX.awsapps.com/start</a></p>
-<p>Region: <your-account-associated-region></p>
-<p>Username: amplify-admin</p>
-<h2 id="finish-the-setup-for-aws-iam-identity-center">Finish the setup for AWS IAM Identity Center</h2>
-<p>Now create a password for the user that we need for the next step. In the IAM Identity Center console, navigate to Users→amplify-admin.</p>
-<p><img src="/images/2/4-8.png?featherlight=false&amp;width=90pc" alt="IAM verification first step"></p>
-<p>Once you have clicked on the user, you will see a pop-up telling you to verify the email address. You click on that:</p>
-<p><img src="/images/2/4-9.png?featherlight=false&amp;width=90pc" alt="IAM verification second step"></p>
-<p>Check your email, you should get a notification from the AWS to verify your email.</p>
-<p><img src="/images/2/4-10.png?featherlight=false&amp;width=90pc" alt="IAM verification third step"></p>
-<p>Next, you will be changing the password of your account. Once again, navigate to Users→amplify-admin. There, you will see an option to Reset Password, click on it.</p>
-<p><img src="/images/2/4-14.png?featherlight=false&amp;width=90pc" alt="IAM verification fourth step"></p>
-<p>Upon clicking on it, choose Reset Password and wait for a few moments.</p>
-<p><img src="/images/2/4-15.png?featherlight=false&amp;width=90pc" alt="IAM verification fourth step"></p>
-<p>Check your email frequently, you should recieve a mail that look like this:</p>
-<p><img src="/images/2/4-16.png?featherlight=false&amp;width=90pc" alt="IAM verification fourth step"></p>
-<p>Follow the steps that is provided, you will need to create a new password and a MFA. Once you are finished, head back to the IAM Identity Center, you will be given an AWS Access Portal URL.</p>
-<p><img src="/images/2/4-12.png?featherlight=false&amp;width=90pc" alt="IAM verification fourth step"></p>
-<p>You will see a sign-in screen, sign in using the earlier account, password, MFA, and you are good to go.</p>
-<p><img src="/images/2/4-11.png?featherlight=false&amp;width=90pc" alt="IAM verification fourth step"></p>
-
+<ul>
+<li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
+<li><a href="#choosing-the-ai-model-inside-bedrock">Choosing the AI Model inside Bedrock</a></li>
+<li><a href="#make-a-fallback-server">Make a fallback server</a></li>
+<li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
+</ul>
+<h2 id="request-an-aws-bedrock-model">Request an AWS Bedrock Model</h2>
+<p>You will need to get to Amazon Bedrock and click on Model Catalog.</p>
+<p>You will be greeted by one of those two pages. In either way, click on the mark part of the image.</p>
+<p><img src="/images/3/8-0.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p><img src="/images/3/8-0-1.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>Afterward, click on the AI model and click on Modify Access.</p>
+<p><img src="/images/3/8-1.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<h2 id="choosing-the-ai-model-inside-bedrock">Choosing the AI Model inside Bedrock</h2>
+<p>In this case, we will choose Claude 3.5 Sonnet as it is readily available at ap-southeast-1 region. You can check the availability of AI models within each region via this link: <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html">https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html</a></p>
+<p>First, you will need to choose to modify the Model Access. There are two scenarios:</p>
+<p>This is the scenario where you have not modfiy any model access into Amazon Bedrock. If you are in this case, choose <strong>Modify model access</strong>.</p>
+<p><img src="/images/3/8-2.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>This is the scenario where you have modfiy any model access into Amazon Bedrock. If you are in this case, choose <strong>Enable Specific Model</strong>.</p>
+<p><img src="/images/3/8-3.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>After that, choose the model that you want, and in this case, it is Claude Sonnet 3.5.</p>
+<p><img src="/images/3/8-4.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>Hit Submit after, nothing much will need to be changed.</p>
+<p><img src="/images/3/8-5.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>You will need to wait for a while for the model to finish setting up. You should see this screen.</p>
+<p><img src="/images/3/8-6.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<h1 id="make-a-fallback-server">Make a fallback server</h1>
+<p>We will need a fallback server since it acts like a backup server whether our main server shutdown. You will create it using another region and follow the same steps as up there.</p>
+<p><img src="/images/3/9-1.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<h1 id="integrate-and-invoke-bedrock-models-to-be-used-in-our-project">Integrate and invoke Bedrock Models to be used in our project</h1>
+<p>We will need to integrate the models. Remember the two regions that you have used to make the Bedrock Models. Remember to check those.</p>
+<p><img src="/images/3/10-0.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>Afterward, get to amplify folder, look for <strong>backend.ts</strong> and update it with these lines of codes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">defineBackend</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/backend&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">data</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./data/resource&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">PolicyStatement</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-cdk-lib/aws-iam&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">auth</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./auth/resource&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">backend</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defineBackend</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">auth</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Primary region
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bedrockDataSource</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">backend</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">resources</span>.<span style="color:#a6e22e">graphqlApi</span>.<span style="color:#a6e22e">addHttpDataSource</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;bedrockDS&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;https://bedrock-runtime.ap-southeast-1.amazonaws.com&#34;</span>,
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">authorizationConfig</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">signingRegion</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ap-southeast-1&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">signingServiceName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bedrock&#34;</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Fallback region
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bedrockFallbackDataSource</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">backend</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">resources</span>.<span style="color:#a6e22e">graphqlApi</span>.<span style="color:#a6e22e">addHttpDataSource</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;bedrockFallbackDS&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;https://bedrock-runtime.ap-northeast-1.amazonaws.com&#34;</span>,
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">authorizationConfig</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">signingRegion</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ap-northeast-1&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">signingServiceName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bedrock&#34;</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Grant permissions for primary region
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">bedrockDataSource</span>.<span style="color:#a6e22e">grantPrincipal</span>.<span style="color:#a6e22e">addToPrincipalPolicy</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PolicyStatement</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">resources</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;arn:aws:bedrock:ap-southeast-1::foundation-model/anthropic.claude-3-5-sonnet-20240620-v1:0&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;bedrock:InvokeModel&#34;</span>],
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Grant permissions for fallback region
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">bedrockFallbackDataSource</span>.<span style="color:#a6e22e">grantPrincipal</span>.<span style="color:#a6e22e">addToPrincipalPolicy</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PolicyStatement</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">resources</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;arn:aws:bedrock:ap-northeast-1::foundation-model/anthropic.claude-3-5-sonnet-20240620-v1:0&#34;</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;bedrock:InvokeModel&#34;</span>],
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>Now, Update the corresponding region for all requested models.</p>
+<p>You will need to find the model ARN next to put in. To find the link, you will once again click on Model Catalog -&gt; Choose Anthropic on Filter and click on Claude Sonnet 3.5 or the model that you have chosen.</p>
+<p><img src="/images/3/10-1.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>Scroll down or search around. Some models such as Karakuri or Liquid will have their own line of Model ARN and all user has to do is copy that line to resources.</p>
+<p><img src="/images/3/10-2.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>However, since we do not have that luxury with Claude 3.5 Sonnet, we have to be smart about the approach. First off, we have to change to the correct region for the ARN then copy the Model ID to replace the one at the end of that line.</p>
+<p><img src="/images/3/10-3.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>To grant permission for each models, you have to update the corresponding ARN in the PolicyStatement.</p>
+<p><img src="/images/3/10-4.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>Go to amplify/data folder and create a new file called <strong>bedrock.js</strong> and paste in these lines of codes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">request</span>(<span style="color:#a6e22e">ctx</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ingredients</span> <span style="color:#f92672">=</span> [], <span style="color:#a6e22e">useFallback</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">args</span>;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Construct the prompt with the provided ingredients
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">prompt</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`Suggest a recipe idea using these ingredients (Please provide a recipe with the language used in the input ingredients. Provide 2 to 3 different recipes if possible): </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;, &#34;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">.`</span>;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Determine which endpoint to use based on the useFallback parameter
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// If useFallback is undefined or false, use the primary endpoint
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">endpoint</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useFallback</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;bedrockFallbackDS&#34;</span> <span style="color:#75715e">// Use fallback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bedrockDS&#34;</span>;        <span style="color:#75715e">// Use primary
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Return the request configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">resourcePath</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`/model/anthropic.claude-3-5-sonnet-20240620-v1:0/invoke`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">params</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">anthropic_version</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bedrock-2023-05-31&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">max_tokens</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">temperature</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.4</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text&#34;</span>,
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`\n\nHuman: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">prompt</span><span style="color:#e6db74">}</span><span style="color:#e6db74">\n\nAssistant:`</span>,
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>              ],
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>          ],
+</span></span><span style="display:flex;"><span>        }),
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">response</span>(<span style="color:#a6e22e">ctx</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Parse the response body
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">parsedBody</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">body</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Extract the text content from the response
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">parsedBody</span>.<span style="color:#a6e22e">content</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">text</span>,
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Return the response
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>These might be long but there are only a few you have to beware of:
+•	prompt: you can construct a custom prompt prior to the user’s input to keep it consistent with what you want users to experience. (Albeit, you can just skip this all together and type it in text under content).
+•	resourcePath: input the model you want to use, just copy the Model ID and put it between /model/****/invoke
+•	max_tokens: the maximum sequence of characters each user can input.
+•	temperature: dictate the randomness of output response.
+•	type: what type of data you want to send. It can either be text or image.</p>
+<p>In amplify/data folder, update resource.ts with these lines of codes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ClientSchema</span>, <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">defineData</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/backend&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">schema</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">schema</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">BedrockResponse</span>: <span style="color:#66d9ef">a.customType</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">body</span>: <span style="color:#66d9ef">a.string</span>(),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">error</span>: <span style="color:#66d9ef">a.string</span>(),
+</span></span><span style="display:flex;"><span>  }),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">askBedrock</span>: <span style="color:#66d9ef">a</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">query</span>()
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">arguments</span>({ 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ingredients</span>: <span style="color:#66d9ef">a.string</span>().<span style="color:#a6e22e">array</span>(),
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">useFallback</span>: <span style="color:#66d9ef">a.boolean</span>()
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">returns</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">ref</span>(<span style="color:#e6db74">&#34;BedrockResponse&#34;</span>))
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">authorization</span>((<span style="color:#a6e22e">allow</span>) <span style="color:#f92672">=&gt;</span> [<span style="color:#a6e22e">allow</span>.<span style="color:#a6e22e">authenticated</span>()])
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">handler</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">handler</span>.<span style="color:#a6e22e">custom</span>({ <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./bedrock.js&#34;</span>, <span style="color:#a6e22e">dataSource</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bedrockDS&#34;</span> })
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">askBedrockFallback</span>: <span style="color:#66d9ef">a</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">query</span>()
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">arguments</span>({ 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ingredients</span>: <span style="color:#66d9ef">a.string</span>().<span style="color:#a6e22e">array</span>() 
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">returns</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">ref</span>(<span style="color:#e6db74">&#34;BedrockResponse&#34;</span>))
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">authorization</span>((<span style="color:#a6e22e">allow</span>) <span style="color:#f92672">=&gt;</span> [<span style="color:#a6e22e">allow</span>.<span style="color:#a6e22e">authenticated</span>()])
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">handler</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">handler</span>.<span style="color:#a6e22e">custom</span>({ <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./bedrock.js&#34;</span>, <span style="color:#a6e22e">dataSource</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bedrockFallbackDS&#34;</span> })
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Schema</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClientSchema</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">schema</span>&gt;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defineData</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">schema</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">authorizationModes</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">defaultAuthorizationMode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;apiKey&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">apiKeyAuthorizationMode</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">expiresInDays</span>: <span style="color:#66d9ef">30</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div>
 
 
 
@@ -1070,10 +1214,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock and CloudWatch"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-create-admin-user-and-group/3.2-cross-region/" title="Deploy the Application via AWS Amplify" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-create-admin-user-and-group/3.2-cross-region/" title="Setting up AWS Bedrock (Cross-Region)" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1083,19 +1227,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753354537"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753354537"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753354537"></script>
-    <script src="/js/jquery.sticky.js?1753354537"></script>
-    <script src="/js/featherlight.min.js?1753354537"></script>
-    <script src="/js/highlight.pack.js?1753354537"></script>
+    <script src="/js/clipboard.min.js?1753453310"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753453310"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753453310"></script>
+    <script src="/js/jquery.sticky.js?1753453310"></script>
+    <script src="/js/featherlight.min.js?1753453310"></script>
+    <script src="/js/highlight.pack.js?1753453310"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753354537"></script>
-    <script src="/js/learn.js?1753354537"></script>
-    <script src="/js/hugo-learn.js?1753354537"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753453310"></script>
+    <script src="/js/learn.js?1753453310"></script>
+    <script src="/js/hugo-learn.js?1753453310"></script>
 
-    <link href="/mermaid/mermaid.css?1753354537" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753354537"></script>
+    <link href="/mermaid/mermaid.css?1753453310" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753453310"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
