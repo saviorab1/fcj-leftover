@@ -12,21 +12,21 @@
     <title>Setting up AWS Bedrock (Cross-Region) :: </title>
 
     
-    <link href="/css/nucleus.css?1753453463" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753453463" rel="stylesheet">
-    <link href="/css/hybrid.css?1753453463" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753453463" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753453463" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753453463" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753453463" rel="stylesheet">
-    <link href="/css/theme.css?1753453463" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753453463" rel="stylesheet">
+    <link href="/css/nucleus.css?1753457236" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753457236" rel="stylesheet">
+    <link href="/css/hybrid.css?1753457236" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753457236" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753457236" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753457236" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753457236" rel="stylesheet">
+    <link href="/css/theme.css?1753457236" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753457236" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753453463" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753457236" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753453463"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753457236"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753453463"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753453463"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753457236"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753457236"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753453463"></script>
+<script type="text/javascript" src="/js/search.js?1753457236"></script>
 
     
   </div>
@@ -676,6 +676,8 @@
     <li><a href="#content">Content</a></li>
     <li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
     <li><a href="#choosing-the-ai-model-inside-bedrock">Choosing the AI Model inside Bedrock</a></li>
+    <li><a href="#checking-and-implementing-cross-region-model">Checking and implementing cross-region Model</a></li>
+    <li><a href="#integrate-and-invoke-bedrock-models-to-be-used-in-our-project">Integrate and invoke Bedrock Models to be used in our project</a></li>
   </ul>
 </nav>
     </div>
@@ -726,6 +728,355 @@
 <p><img src="/images/3/8-4-Alternate.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
 <p>Hit Submit after, nothing much will need to be changed. You will need to wait for a while for the model to finish setting up. You should see this screen.</p>
 <p><img src="/images/3/8-5-Alternate.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<h2 id="checking-and-implementing-cross-region-model">Checking and implementing cross-region Model</h2>
+<p>You will be able to find the ARN Model as well as the available regions for the models by clicking on the Cross-Region Interface and scrolled down to the model you want. (In our case, Claude Sonnet 4.)</p>
+<p><img src="/images/3/8-6-Alternate.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>You can request the Claude Sonnet 4 to as many local zones as you want in the same Region.</p>
+<h2 id="integrate-and-invoke-bedrock-models-to-be-used-in-our-project">Integrate and invoke Bedrock Models to be used in our project</h2>
+<p>Then, go to your bedrock.js:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">request</span>(<span style="color:#a6e22e">ctx</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ingredients</span> <span style="color:#f92672">=</span> [] } <span style="color:#f92672">=</span> <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">args</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Construct the prompt with the provided ingredients
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">prompt</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`Suggest a recipe idea using these ingredients (Please provide a recipe with the language used in the input ingredients. Provide 2 to 3 different recipes if possible): </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;, &#34;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">.`</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Use cross-region inference profile for automatic region routing
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">modelId</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;apac.anthropic.claude-sonnet-4-20250514-v1:0&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Return the request configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">resourcePath</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`/model/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">modelId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/invoke`</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">params</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">anthropic_version</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bedrock-2023-05-31&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">max_tokens</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">temperature</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.4</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">messages</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">prompt</span>,  
+</span></span><span style="display:flex;"><span>              },
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>          },
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>      }),
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">response</span>(<span style="color:#a6e22e">ctx</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Parse the response body
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">parsedBody</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">body</span>);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Handle potential errors
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">parsedBody</span>.<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">parsedBody</span>.<span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;Model invocation failed&#34;</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Extract the text content from the response
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">parsedBody</span>.<span style="color:#a6e22e">content</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">parsedBody</span>.<span style="color:#a6e22e">content</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">text</span>, 
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Return the response
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>App.tsx:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#66d9ef">type</span> { <span style="color:#a6e22e">FormEvent</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useState</span>, <span style="color:#a6e22e">useEffect</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Loader</span>, <span style="color:#a6e22e">Placeholder</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./App.css&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Amplify</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-amplify&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#66d9ef">type</span> { <span style="color:#a6e22e">Schema</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;../amplify/data/resource&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">generateClient</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-amplify/data&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">outputs</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;../amplify_outputs.json&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">logoImage</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./assets/pics/logo.png&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">signOut</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-amplify/auth&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react/styles.css&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Amplify</span>.<span style="color:#a6e22e">configure</span>(<span style="color:#a6e22e">outputs</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">amplifyClient</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">generateClient</span>&lt;<span style="color:#f92672">Schema</span>&gt;({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">authMode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;userPool&#34;</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">setResult</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>&lt;<span style="color:#f92672">string</span>&gt;(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">loading</span>, <span style="color:#a6e22e">setLoading</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">inputValue</span>, <span style="color:#a6e22e">setInputValue</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">animateIntro</span>, <span style="color:#a6e22e">setAnimateIntro</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">setError</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>&lt;<span style="color:#f92672">string</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">null</span>&gt;(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Trigger animation after component mounts
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">setAnimateIntro</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">callBedrockAPI</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">ingredients</span>: <span style="color:#66d9ef">string</span>[]) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Create a promise that will reject after 30 seconds
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timeout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">never</span>&gt;((<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">reject</span>) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setTimeout</span>(() <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;Request timed out&#39;</span>)), <span style="color:#ae81ff">30000</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Calling Bedrock API with cross-region inference, ingredients:&#39;</span>, <span style="color:#a6e22e">ingredients</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">Promise</span>.<span style="color:#a6e22e">race</span>([
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">amplifyClient</span>.<span style="color:#a6e22e">queries</span>.<span style="color:#a6e22e">askBedrock</span>({ <span style="color:#a6e22e">ingredients</span> }),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">timeout</span>
+</span></span><span style="display:flex;"><span>      ]);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Received response:&#39;</span>, <span style="color:#a6e22e">response</span>);
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// If we get here, API request completed before timeout
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;No data returned from the API&#34;</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Check if there&#39;s an error in the response
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Bedrock API returned error:&#39;</span>, <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Full response:&#39;</span>, <span style="color:#a6e22e">response</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Check if body is empty or null
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">body</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;Empty response body from the API&#34;</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">body</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Re-throw the error to handle it in the calling function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">error</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">onSubmit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>: <span style="color:#66d9ef">FormEvent</span>&lt;<span style="color:#f92672">HTMLFormElement</span>&gt;) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">inputValue</span>.<span style="color:#a6e22e">trim</span>()) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setLoading</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setResult</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setError</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ingredientsInput</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">inputValue</span>.<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ingredientsArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ingredientsInput</span>
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">ingredient</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">ingredient</span>.<span style="color:#a6e22e">trim</span>())
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">ingredient</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">ingredient</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Use cross-region inference - AWS Bedrock will handle routing automatically
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resultText</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">callBedrockAPI</span>(<span style="color:#a6e22e">ingredientsArray</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setResult</span>(<span style="color:#a6e22e">resultText</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;No recipe content returned&#34;</span>);
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Cross-region inference failed:&#34;</span>, <span style="color:#a6e22e">e</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span> <span style="color:#66d9ef">instanceof</span> Error) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">`Service error: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">&#34;Service is currently unavailable. Please try again later.&#34;</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">finally</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setLoading</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleInputChange</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">e</span>: <span style="color:#66d9ef">React.ChangeEvent</span>&lt;<span style="color:#f92672">HTMLInputElement</span>&gt;) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setInputValue</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>);
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleLogout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">signOut</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// The Authenticator will handle the UI change automatically
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error signing out: &#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logout-button&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleLogout</span>}&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">Log</span> <span style="color:#a6e22e">Out</span>
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">`header-container </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">animateIntro</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;fade-in&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>}&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">logoImage</span>} <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Recipe AI Logo&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main-header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">Do</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">some</span>
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">br</span> /&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;<span style="color:#a6e22e">Leftover</span><span style="color:#f92672">?</span>&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">Just</span> <span style="color:#66d9ef">type</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">any</span> <span style="color:#a6e22e">ingredients</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">fridge</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">pantry</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">separated</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">commas</span>. <span style="color:#a6e22e">We</span><span style="color:#e6db74">&#39;ll help you create a delicious recipe with what you already have!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;br /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;span className=&#34;multilingual-note&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            (Our website supports all languages, please input the ingredients in your language)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;form onSubmit={onSubmit} className={`form-container ${animateIntro ? &#39;</span><span style="color:#a6e22e">slide</span><span style="color:#f92672">-</span><span style="color:#a6e22e">up</span><span style="color:#e6db74">&#39; : &#39;&#39;}`}&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;div className=&#34;search-container&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;input
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            type=&#34;text&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            className=&#34;wide-input&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            id=&#34;ingredients&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            name=&#34;ingredients&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            placeholder=&#34;Chicken, rice, carrots, onion...&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            value={inputValue}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            onChange={handleInputChange}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;button 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            type=&#34;submit&#34; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            className=&#34;search-button&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            disabled={loading || !inputValue.trim()}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            {loading ? &#39;</span><span style="color:#a6e22e">Processing</span>...<span style="color:#e6db74">&#39; : &#39;</span><span style="color:#a6e22e">Generate</span><span style="color:#e6db74">&#39;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/form&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      {(loading || result || error) &amp;&amp; (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;div className={`result-container ${result || loading || error ? &#39;</span><span style="color:#a6e22e">appear</span><span style="color:#e6db74">&#39; : &#39;</span><span style="color:#960050;background-color:#1e0010">&#39;</span>}<span style="color:#e6db74">`}&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          {loading ? (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;div className=&#34;loader-container&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;p&gt;Creating your personalized recipe...&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;Loader size=&#34;large&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;Placeholder size=&#34;large&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;Placeholder size=&#34;large&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;Placeholder size=&#34;large&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          ) : error ? (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;p className=&#34;result error-message&#34;&gt;{error}&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          ) : (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;p className=&#34;result&#34;&gt;{result}&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          )}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      )}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  );
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export default App;
+</span></span></span></code></pre></div><p>resource.ts:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ClientSchema</span>, <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">defineData</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/backend&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">schema</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">schema</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">BedrockResponse</span>: <span style="color:#66d9ef">a.customType</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">body</span>: <span style="color:#66d9ef">a.string</span>(),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">error</span>: <span style="color:#66d9ef">a.string</span>(),
+</span></span><span style="display:flex;"><span>  }),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">askBedrock</span>: <span style="color:#66d9ef">a</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">query</span>()
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">arguments</span>({ 
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ingredients</span>: <span style="color:#66d9ef">a.string</span>().<span style="color:#a6e22e">array</span>()
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">returns</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">ref</span>(<span style="color:#e6db74">&#34;BedrockResponse&#34;</span>))
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">authorization</span>((<span style="color:#a6e22e">allow</span>) <span style="color:#f92672">=&gt;</span> [<span style="color:#a6e22e">allow</span>.<span style="color:#a6e22e">authenticated</span>()])
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">handler</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">handler</span>.<span style="color:#a6e22e">custom</span>({ <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./bedrock.js&#34;</span>, <span style="color:#a6e22e">dataSource</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bedrockDS&#34;</span> })
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Schema</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClientSchema</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">schema</span>&gt;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defineData</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">schema</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">authorizationModes</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">defaultAuthorizationMode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;apiKey&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">apiKeyAuthorizationMode</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">expiresInDays</span>: <span style="color:#66d9ef">30</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Bedrock.ts:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">defineBackend</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/backend&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">data</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./data/resource&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">PolicyStatement</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-cdk-lib/aws-iam&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">auth</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./auth/resource&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">backend</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defineBackend</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">auth</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Use the latest Claude 4.0 model with cross-region inference
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">crossRegionModelId</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;apac.anthropic.claude-sonnet-4-20250514-v1:0&#34;</span>; <span style="color:#75715e">//Declare the inference profile ID here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">regionalModelId</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;anthropic.claude-sonnet-4-20250514-v1:0&#34;</span>; <span style="color:#75715e">//Declare the Bedrock modelID here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Primary region  - Cross-region inference will handle routing automatically
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bedrockDataSource</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">backend</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">resources</span>.<span style="color:#a6e22e">graphqlApi</span>.<span style="color:#a6e22e">addHttpDataSource</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;bedrockDS&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;https://bedrock-runtime.ap-southeast-1.amazonaws.com&#34;</span>,
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">authorizationConfig</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">signingRegion</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ap-southeast-1&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">signingServiceName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bedrock&#34;</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Grant permissions for cross-region inference profile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">bedrockDataSource</span>.<span style="color:#a6e22e">grantPrincipal</span>.<span style="color:#a6e22e">addToPrincipalPolicy</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PolicyStatement</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">resources</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Cross-region inference profile
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#e6db74">`arn:aws:bedrock:ap-southeast-1:&lt;UserID&gt;:inference-profile/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">crossRegionModelId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Regional model as fallback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#e6db74">`arn:aws:bedrock:ap-southeast-1::foundation-model/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">regionalModelId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Additional regions that might be used by cross-region inference
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#e6db74">`arn:aws:bedrock:ap-northeast-1::foundation-model/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">regionalModelId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">`arn:aws:bedrock:ap-southeast-2::foundation-model/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">regionalModelId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">`arn:aws:bedrock:ap-northeast-2::foundation-model/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">regionalModelId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">`arn:aws:bedrock:ap-northeast-3::foundation-model/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">regionalModelId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Add wildcard for cross-region inference to handle all regions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#e6db74">`arn:aws:bedrock:*::foundation-model/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">regionalModelId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;bedrock:InvokeModel&#34;</span>, <span style="color:#e6db74">&#34;bedrock:InvokeModelWithResponseStream&#34;</span>],
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>You will be able to find the Cross-Region interface profile ID here:</p>
+<p><img src="/images/3/8-7-Alternate.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>Going back to the code:</p>
+<p><img src="/images/3/8-7-1-Alternate.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>In the image above, you will need to specify the Cross Region Inference Profile first before the Region Model ID. You can add as many Regional Models as you want. Therefore, if you want to specify the order of region models that will be used for the project, you can write like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  // Regional model as fallback
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">`</span>arn:aws:bedrock:&lt;The primary local zone&gt;::foundation-model/<span style="color:#e6db74">${</span>regionalModelId<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>  // Additional regions that might be used by cross-region inference
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">`</span>arn:aws:bedrock:&lt;The following local zone&gt;::foundation-model/<span style="color:#e6db74">${</span>regionalModelId<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">`</span>arn:aws:bedrock:&lt;The following local zone&gt;::foundation-model/<span style="color:#e6db74">${</span>regionalModelId<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">`</span>arn:aws:bedrock:&lt;The following local zone&gt;::foundation-model/<span style="color:#e6db74">${</span>regionalModelId<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">`</span>arn:aws:bedrock:&lt;The following local zone&gt;::foundation-model/<span style="color:#e6db74">${</span>regionalModelId<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>…
+</span></span></code></pre></div><p>Or if you want to use all of the subscribed Regional Models, then you can write like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#e6db74">`</span>arn:aws:bedrock:*::foundation-model/<span style="color:#e6db74">${</span>regionalModelId<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span></code></pre></div><p>In the bedrock.js file, you will see these lines:</p>
+<p><img src="/images/3/8-8-Alternate.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>For the ModelID: Since we are using cross-region which is different from the legacy, we will need to define the inference region profile before the agent model. Then it can automatically route between different local zone within the region we defined in the backend.ts file.</p>
+<p>For the max_tokens: The maximum string output can a response generate. This will help us manage the estimation cost.</p>
+<p>For the temperature: This is to dictate the randomness of a response.</p>
+<p>For the type: This is to define the type of content it will deliver.</p>
+<p>For the text: This is to generate a prompt to the agent model.</p>
+<p>Furthermore, to calculate the estimation cost of the service, we will need to access to the AWS Price Estimation website <strong>(<a href="https://aws.amazon.com/vi/bedrock/pricing/">https://aws.amazon.com/vi/bedrock/pricing/</a>)</strong> and check on the company, the area and the model that you are using for the project.</p>
+<p>Example: Our project, which is located in the Asia Pacific region, developed by Anthropic and the model is Claude Sonnet 4, then you can calculate the price under this formula:</p>
+<p><em><strong>(0.003 x (The number of input tokens) / 1000) + (0.015 x (The number of output tokens) / 1000)</strong></em></p>
+<p><img src="/images/3/8-9-Alternate.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
 
 
 
@@ -1058,19 +1409,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753453463"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753453463"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753453463"></script>
-    <script src="/js/jquery.sticky.js?1753453463"></script>
-    <script src="/js/featherlight.min.js?1753453463"></script>
-    <script src="/js/highlight.pack.js?1753453463"></script>
+    <script src="/js/clipboard.min.js?1753457236"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753457236"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753457236"></script>
+    <script src="/js/jquery.sticky.js?1753457236"></script>
+    <script src="/js/featherlight.min.js?1753457236"></script>
+    <script src="/js/highlight.pack.js?1753457236"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753453463"></script>
-    <script src="/js/learn.js?1753453463"></script>
-    <script src="/js/hugo-learn.js?1753453463"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753457236"></script>
+    <script src="/js/learn.js?1753457236"></script>
+    <script src="/js/hugo-learn.js?1753457236"></script>
 
-    <link href="/mermaid/mermaid.css?1753453463" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753453463"></script>
+    <link href="/mermaid/mermaid.css?1753457236" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753457236"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

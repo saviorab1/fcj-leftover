@@ -53,13 +53,13 @@ You will need to wait for a while for the model to finish setting up. You should
 
  ![IAM Frontpage](/images/3/8-6.png?featherlight=false&width=90pc)
 
-# Make a fallback server
+## Make a fallback server
 
 We will need a fallback server since it acts like a backup server whether our main server shutdown. You will create it using another region and follow the same steps as up there.
 
  ![IAM Frontpage](/images/3/9-1.png?featherlight=false&width=90pc)
 
-# Integrate and invoke Bedrock Models to be used in our project
+## Integrate and invoke Bedrock Models to be used in our project
 
 We will need to integrate the models. Remember the two regions that you have used to make the Bedrock Models. Remember to check those. 
 

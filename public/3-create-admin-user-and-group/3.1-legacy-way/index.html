@@ -12,21 +12,21 @@
     <title>Setting up AWS Bedrock (Legacy) :: </title>
 
     
-    <link href="/css/nucleus.css?1753453309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753453309" rel="stylesheet">
-    <link href="/css/hybrid.css?1753453309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753453309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753453309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753453309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753453309" rel="stylesheet">
-    <link href="/css/theme.css?1753453309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753453309" rel="stylesheet">
+    <link href="/css/nucleus.css?1753457236" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753457236" rel="stylesheet">
+    <link href="/css/hybrid.css?1753457236" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753457236" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753457236" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753457236" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753457236" rel="stylesheet">
+    <link href="/css/theme.css?1753457236" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753457236" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753453309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753457236" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753453309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753457236"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753453309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753453309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753457236"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753457236"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753453309"></script>
+<script type="text/javascript" src="/js/search.js?1753457236"></script>
 
     
   </div>
@@ -676,6 +676,8 @@
     <li><a href="#content">Content</a></li>
     <li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
     <li><a href="#choosing-the-ai-model-inside-bedrock">Choosing the AI Model inside Bedrock</a></li>
+    <li><a href="#make-a-fallback-server">Make a fallback server</a></li>
+    <li><a href="#integrate-and-invoke-bedrock-models-to-be-used-in-our-project">Integrate and invoke Bedrock Models to be used in our project</a></li>
   </ul>
 </nav>
     </div>
@@ -728,10 +730,10 @@
 <p><img src="/images/3/8-5.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
 <p>You will need to wait for a while for the model to finish setting up. You should see this screen.</p>
 <p><img src="/images/3/8-6.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
-<h1 id="make-a-fallback-server">Make a fallback server</h1>
+<h2 id="make-a-fallback-server">Make a fallback server</h2>
 <p>We will need a fallback server since it acts like a backup server whether our main server shutdown. You will create it using another region and follow the same steps as up there.</p>
 <p><img src="/images/3/9-1.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
-<h1 id="integrate-and-invoke-bedrock-models-to-be-used-in-our-project">Integrate and invoke Bedrock Models to be used in our project</h1>
+<h2 id="integrate-and-invoke-bedrock-models-to-be-used-in-our-project">Integrate and invoke Bedrock Models to be used in our project</h2>
 <p>We will need to integrate the models. Remember the two regions that you have used to make the Bedrock Models. Remember to check those.</p>
 <p><img src="/images/3/10-0.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
 <p>Afterward, get to amplify folder, look for <strong>backend.ts</strong> and update it with these lines of codes:</p>
@@ -1227,19 +1229,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753453310"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753453310"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753453310"></script>
-    <script src="/js/jquery.sticky.js?1753453310"></script>
-    <script src="/js/featherlight.min.js?1753453310"></script>
-    <script src="/js/highlight.pack.js?1753453310"></script>
+    <script src="/js/clipboard.min.js?1753457236"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753457236"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753457236"></script>
+    <script src="/js/jquery.sticky.js?1753457236"></script>
+    <script src="/js/featherlight.min.js?1753457236"></script>
+    <script src="/js/highlight.pack.js?1753457236"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753453310"></script>
-    <script src="/js/learn.js?1753453310"></script>
-    <script src="/js/hugo-learn.js?1753453310"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753457236"></script>
+    <script src="/js/learn.js?1753457236"></script>
+    <script src="/js/hugo-learn.js?1753457236"></script>
 
-    <link href="/mermaid/mermaid.css?1753453310" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753453310"></script>
+    <link href="/mermaid/mermaid.css?1753457236" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753457236"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
