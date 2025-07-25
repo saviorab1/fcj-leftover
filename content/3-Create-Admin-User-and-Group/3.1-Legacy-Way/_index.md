@@ -8,19 +8,25 @@ pre : " <b> 3.1 </b> "
 
 ## Content
 
-## Start up the IAM Identity Center
 
-(If you already have a profile, attach the AmplifyBackendDeployFullAccess managed policy to your IAM user)
 
-Open AWS Console to access IAM Identity Center and choose Enable.
+## Request an AWS Bedrock Model
 
- ![IAM Frontpage](/images/2/4-1.png?featherlight=false&width=90pc)
+You will need to get to Amazon Bedrock and click on Model Catalog. 
 
- Afterward, a pop up will open, select Enable with AWS Organizations and choose Continue.
+You will be greeted by one of those two pages. In either way, click on the mark part of the image.
 
- ![Enabling IAM Identity Center](/images/2/4-2.png?featherlight=false&width=90pc)
+ ![IAM Frontpage](/images/3/8-0.png?featherlight=false&width=90pc)
 
- And the basics for IAM Identity Center is ready.
+ ![IAM Frontpage](/images/3/8-0-1.png?featherlight=false&width=90pc)
+
+Afterward, click on the AI model and click on Modify Access.
+
+ ![IAM Frontpage](/images/3/8-1.png?featherlight=false&width=90pc)
+
+Once you have accessed, click on Modify Model Access. 
+
+ ![IAM Frontpage](/images/3/8-2.png?featherlight=false&width=90pc)
 
 ## Using CloudShell to set up the management
 
