@@ -9,7 +9,7 @@ pre : " <b> 3.2 </b> "
 ## Content
 - [Request an AWS Bedrock Model](#request-an-aws-bedrock-model)
 - [Choosing the AI Model inside Bedrock](#choosing-the-ai-model-inside-bedrock)
-- [Make a fallback server](#make-a-fallback-server)
+- [Checking and implementing cross-region Model](#checking-and-implementing-cross-region-model)
 - [Request an AWS Bedrock Model](#request-an-aws-bedrock-model)
 
 ## Request an AWS Bedrock Model
