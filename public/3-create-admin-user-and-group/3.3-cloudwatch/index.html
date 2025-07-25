@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Creating and Developing Amazon Bedrock and CloudWatch :: </title>
+    <title>Apply CloudWatch to monitor average response time :: </title>
 
     
     <link href="/css/nucleus.css?1753461745" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/3-create-admin-user-and-group/">
+  <body class="" data-url="/3-create-admin-user-and-group/3.3-cloudwatch/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -327,8 +327,8 @@
   
     
     <li data-nav-id="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock and CloudWatch" class="dd-item 
+        parent
         
-        active
         
         ">
       <a href="/3-create-admin-user-and-group/">
@@ -415,7 +415,7 @@
     
     <li data-nav-id="/3-create-admin-user-and-group/3.3-cloudwatch/" title="Apply CloudWatch to monitor average response time" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/3-create-admin-user-and-group/3.3-cloudwatch/">
@@ -682,7 +682,13 @@
             
           
           
-            <a href='/'>Setting up an AWS account</a> > Creating and Developing Amazon Bedrock and CloudWatch
+            
+            
+          
+          
+            <a href='/'>Setting up an AWS account</a> > <a href='/3-create-admin-user-and-group/'>Creating and Developing Amazon Bedrock and CloudWatch</a> > Apply CloudWatch to monitor average response time
+          
+        
           
         
           
@@ -696,10 +702,7 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#content">Content</a></li>
-    <li><a href="#request-amazon-bedrock-models">Request Amazon Bedrock models</a></li>
-    <li><a href="#legacy-way">Legacy Way</a></li>
-    <li><a href="#cross-region-way">Cross-Region Way</a></li>
-    <li><a href="#deploy-cloudwatch">Deploy Cloudwatch</a></li>
+    <li></li>
   </ul>
 </nav>
     </div>
@@ -717,7 +720,7 @@
           
             <h1>
               
-              Creating and Developing Amazon Bedrock and CloudWatch
+              Apply CloudWatch to monitor average response time
             </h1>
           
 
@@ -727,78 +730,15 @@
 
 	<h2 id="content">Content</h2>
 <ul>
-<li><a href="#setting-up-aws-bedrock-mode">Setting up AWS Bedrock Model (2 Ways)</a></li>
-<li><a href="#legacy-way">Legacy Way</a></li>
-<li><a href="#cross-region-way">Cross-Region Way</a></li>
-<li><a href="#deploy-cloudwatch">Deploy Cloudwatch</a></li>
+<li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
+<li><a href="#choosing-the-ai-model-inside-bedrock">Choosing the AI Model inside Bedrock</a></li>
+<li><a href="#checking-and-implementing-cross-region-model">Checking and implementing cross-region Model</a></li>
+<li><a href="#request-an-aws-bedrock-model">Request an AWS Bedrock Model</a></li>
 </ul>
-<h2 id="request-amazon-bedrock-models">Request Amazon Bedrock models</h2>
-<ol>
-<li>
-<p>You will be using Bedrock Model and setting up using Claude Sonnet.</p>
-</li>
-<li>
-<p>There will be two ways to build the Bedrock Model based on how you intepret.</p>
-</li>
-</ol>
-<ul>
-<li>Implementing the servers using manual coding for a fallback server.</li>
-<li>Using cross-region to make a fallback server.</li>
-</ul>
-<hr>
-<h2 id="legacy-way">Legacy Way</h2>
-<ol>
-<li>
-<p>Go to Amazon Bedrock and get for yourself the AI Model. In this case, it should be Claude Sonnet 2.5</p>
-</li>
-<li>
-<p>Change AWS region to another region that is suitable → repeat Step 1 to enable Claude 3.5 Sonnet in that region. This provides a backup model in case of failure or latency.</p>
-</li>
-<li>
-<p>In Amplify backend:</p>
-</li>
-</ol>
-<p>Modify backend.ts to add two data sources: one for primary and one for fallback with correct PolicyStatement.</p>
-<p>Create bedrock.js under amplify/data → handle request/response logic for model invocation with fallback logic.</p>
-<p>Update resource.ts to define askBedrock and askBedrockFallback GraphQL queries, attach to the right data source, and configure authentication.</p>
-<hr>
-<h2 id="cross-region-way">Cross-Region Way</h2>
-<p>To ensure high availability and performance, you can configure Claude models to work across AWS regions using cross-region inference profiles.</p>
-<ol>
-<li>
-<p>Go to Amazon Bedrock and select a Claude Sonnet 4 → click Next and confirm access.</p>
-</li>
-<li>
-<p>Click Cross-region inference beside the model → copy the Inference profile ID and Model ID for each region you want to support.</p>
-</li>
-<li>
-<p>In backend.ts, configure both Cross-Region and Fallback endpoints using addHttpDataSource() and grant model access with the correct ARN.</p>
-</li>
-<li>
-<p>In bedrock.js, use the modelId dynamically in resourcePath, and define max_tokens, temperature, and other parameters as needed.</p>
-</li>
-</ol>
-<hr>
-<h2 id="deploy-cloudwatch">Deploy Cloudwatch</h2>
-<p>To track model invocation and latency, set up a simple dashboard in AWS CloudWatch.</p>
-<ol>
-<li>
-<p>Go to CloudWatch → Metrics → All metrics, search for AWS Bedrock, then select Bedrock &gt; By ModelID.</p>
-</li>
-<li>
-<p>Choose metrics such as:</p>
-</li>
-</ol>
-<p>Invocations (number of invoke calls)</p>
-<p>InvocationLatency (response time)</p>
-<ol start="3">
-<li>
-<p>Go to CloudWatch again to create dashboard.</p>
-</li>
-<li>
-<p>Add a widget and equip the metrics.</p>
-</li>
-</ol>
+<h2></h2>
+<p>On AWS Management Console, go to CloudWatch → Metrics → All metrics</p>
+<p><img src="/images/3/10-0.png?featherlight=false&amp;width=90pc" alt="IAM Frontpage"></p>
+<p>In the search box on the right, find “AWS Bedrock” and choose Bedrock &gt; By ModelID</p>
 
 
 
@@ -1025,6 +965,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1043,6 +984,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1130,10 +1074,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Setting up the Frontend, Backend and AWS Sandbox"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-create-admin-user-and-group/3.2-cross-region/" title="Setting up AWS Bedrock (Cross-Region)"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-create-admin-user-and-group/3.1-legacy-way/" title="Setting up AWS Bedrock (Legacy)" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/4-verify-new-account/" title="Account Authentication Support" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
