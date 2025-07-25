@@ -24,15 +24,16 @@ Afterward, click on the AI model and click on Modify Access.
 
  ![IAM Frontpage](/images/3/8-1.png?featherlight=false&width=90pc)
 
-Once you have accessed, click on Modify Model Access. 
-
- ![IAM Frontpage](/images/3/8-2.png?featherlight=false&width=90pc)
 
 ## Using CloudShell to set up the management
 
-We will now using CloudShell to connect our mail account as the main profile for the project.
+In this case, we will choose Claude 3.5 Sonnet as it is readily available at ap-southeast-1 region. You can check the availability of AI models within each region via this link: https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html
 
-Open CloudShell terminal within the website and paste this line of code, then enter your email address after the prompt.
+First, you will need to choose to modify the Model Access. There are two scenarios:
+
+
+
+ ![IAM Frontpage](/images/3/8-2.png?featherlight=false&width=90pc)
 
 ```bash
 read -p "Enter email address: " user_email # hit enter
