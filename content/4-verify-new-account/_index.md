@@ -1,5 +1,5 @@
 ---
-title : "Account Authentication Support"
+title : "Build the website frontend, S3 and Lambda"
 date : "2023-12-01T00:00:00Z"
 weight : 4
 chapter : false
@@ -7,52 +7,27 @@ pre : " <b> 4. </b> "
 ---
 
 **Content:**
-- [Check the information](#check-the-information)
-- [Create a support case with AWS Support](#create-a-support-case-with-aws-support)
+- [Build The Website Frontend](#build-the-website-frontend)
+- [Build the S3](#build-the-s3)
+- [Build the Lambda Function](#build-the-lambda-function)
 
-During the AWS account creation process, at the contact phone number verification step, sometimes there will be a situation where no SMS or calls from AWS will be received. In that case, follow these steps to complete the account information verification:
+## Build The Website Frontend
 
-#### Check the information
+For this project, we have created our own custom logo simply just for aesthetic reason, you can drop in your own logo or remove it entirely.
 
-First, double-check your account information and make sure it's entered correctly:
-- You have entered the phone number information and selected the correct international area code to receive the call.
-- If you use a mobile phone, check your phone to make sure you are still within range to receive calls.
-- Payment method information has been entered correctly.
-{{% notice info %}}
-Make sure that the phone number you provide in your AWS account is reachable.
-{{% /notice %}}
+1. Create another folder inside **src** folder, create a folder to store the pictures inside the newlymade folder, and put the images inside. 
 
-#### Create a support case with AWS Support
+2. Adjust the app.tsx file to match the design you desire.
 
-After checking that the information is correct but still has not received the verification call, AWS Support will assist you to activate your account manually.
+## Build the S3
 
-1. Go to the [AWS Support console](https://aws.amazon.com/support/), select **Create case**.
+You will also need to create a bucket for storage. The steps are basics.
 
-![AWS Support](/images/4/0001.png?featherlight=false&width=90pc)
+## Build the Lambda Function
 
-2. Select **Account and billing support** and enter the support information:
-   - Type: select **Account**.
-   - Category: select **Activation**.
-   - Subject: briefly write down your situation (eg **Did not receive an SMS message or call for verification**)
-   - Description: Provide details of the situation encountered and information about the time you need support to activate the account.
-   - Attachments: Attach an image describing the authentication step you are facing.
+To create Lambda, you will need to:
 
-![AWS Support](/images/4/0002.png?featherlight=false&width=90pc)
+1. Set up IAM role for Lambda
 
-![AWS Support](/images/4/0003.png?featherlight=false&width=90pc)
+2. Create Lambda function for data collection
 
-![AWS Support](/images/4/0004.png?featherlight=false&width=90pc)
-
-3. Under **Contact options**, select **Chat** under **Contact methods**.
-
-![AWS Support](/images/4/0005.png?featherlight=false&width=90pc)
-
-4. Select **Submit**.
-
-![AWS Support](/images/4/0006.png?featherlight=false&width=90pc)
-5. The AWS Support team will contact and assist in activating your account.
-
-![AWS Support](/images/4/0007.png?featherlight=false&width=90pc)
-{{% notice note %}}
-You can create a support request with AWS Support even if your account is not activated.
-{{% /notice %}}

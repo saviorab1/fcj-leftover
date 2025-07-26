@@ -61,9 +61,10 @@ To track model invocation and latency, set up a simple dashboard in AWS CloudWat
 
 2. Choose metrics such as:
 
-Invocations (number of invoke calls)
-
-InvocationLatency (response time)
+{{% notice note %}}
+**Invocations (number of invoke calls)** and
+**InvocationLatency (response time)**
+{{% /notice %}}
 
 3. Go to CloudWatch again to create dashboard.
 

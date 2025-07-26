@@ -35,6 +35,9 @@
     <loc>http://localhost:1313/2-mfa-setup-for-aws-user-root/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/3-create-admin-user-and-group/3.3-cloudwatch/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/12-s3-bucket-for-data-storage/12.3-create-the-bucket/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>

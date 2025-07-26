@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 1. </b> "
 ---
 
-**Content:**
+## Content:
 - [Setting up Vite](#setting-up-vite)
 - [Setting up Git and push to Github](#setting-up-git-and-push-to-github)
 - [Setting Up Amplify into the project](#setting-up-amplify-into-the-project)

@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Account Authentication Support :: </title>
+    <title>Build the website frontend, S3 and Lambda :: </title>
 
     
-    <link href="/css/nucleus.css?1753453309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753453309" rel="stylesheet">
-    <link href="/css/hybrid.css?1753453309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753453309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753453309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753453309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753453309" rel="stylesheet">
-    <link href="/css/theme.css?1753453309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753453309" rel="stylesheet">
+    <link href="/css/nucleus.css?1753523231" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753523231" rel="stylesheet">
+    <link href="/css/hybrid.css?1753523231" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753523231" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753523231" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753523231" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753523231" rel="stylesheet">
+    <link href="/css/theme.css?1753523231" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753523231" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753453309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753523231" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753453309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753523231"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753453309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753453309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753523231"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753523231"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753453309"></script>
+<script type="text/javascript" src="/js/search.js?1753523231"></script>
 
     
   </div>
@@ -404,6 +404,34 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/3.3-cloudwatch/" title="Apply CloudWatch to monitor average response time" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/3.3-cloudwatch/">
+           <b> 3.3 </b> Apply CloudWatch to monitor average response time
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -420,13 +448,13 @@
  
   
     
-    <li data-nav-id="/4-verify-new-account/" title="Account Authentication Support" class="dd-item 
+    <li data-nav-id="/4-verify-new-account/" title="Build the website frontend, S3 and Lambda" class="dd-item 
         
         active
         
         ">
       <a href="/4-verify-new-account/">
-           <b> 4. </b> Account Authentication Support
+           <b> 4. </b> Build the website frontend, S3 and Lambda
           
             <i class="fas fa-check read-icon"></i>
           
@@ -654,7 +682,7 @@
             
           
           
-            <a href='/'>Setting up an AWS account</a> > Account Authentication Support
+            <a href='/'>Setting up an AWS account</a> > Build the website frontend, S3 and Lambda
           
         
           
@@ -667,11 +695,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#build-the-website-frontend">Build The Website Frontend</a></li>
+    <li><a href="#build-the-s3">Build the S3</a></li>
+    <li><a href="#build-the-lambda-function">Build the Lambda Function</a></li>
   </ul>
 </nav>
     </div>
@@ -689,7 +715,7 @@
           
             <h1>
               
-              Account Authentication Support
+              Build the website frontend, S3 and Lambda
             </h1>
           
 
@@ -699,55 +725,32 @@
 
 	<p><strong>Content:</strong></p>
 <ul>
-<li><a href="#check-the-information">Check the information</a></li>
-<li><a href="#create-a-support-case-with-aws-support">Create a support case with AWS Support</a></li>
+<li><a href="#build-the-website-frontend">Build The Website Frontend</a></li>
+<li><a href="#build-the-s3">Build the S3</a></li>
+<li><a href="#build-the-lambda-function">Build the Lambda Function</a></li>
 </ul>
-<p>During the AWS account creation process, at the contact phone number verification step, sometimes there will be a situation where no SMS or calls from AWS will be received. In that case, follow these steps to complete the account information verification:</p>
-<h4 id="check-the-information">Check the information</h4>
-<p>First, double-check your account information and make sure it&rsquo;s entered correctly:</p>
-<ul>
-<li>You have entered the phone number information and selected the correct international area code to receive the call.</li>
-<li>If you use a mobile phone, check your phone to make sure you are still within range to receive calls.</li>
-<li>Payment method information has been entered correctly.
-
-<div class="notices info" ><p>Make sure that the phone number you provide in your AWS account is reachable.</p>
-</div>
-</li>
-</ul>
-<h4 id="create-a-support-case-with-aws-support">Create a support case with AWS Support</h4>
-<p>After checking that the information is correct but still has not received the verification call, AWS Support will assist you to activate your account manually.</p>
+<h2 id="build-the-website-frontend">Build The Website Frontend</h2>
+<p>For this project, we have created our own custom logo simply just for aesthetic reason, you can drop in your own logo or remove it entirely.</p>
 <ol>
-<li>Go to the <a href="https://aws.amazon.com/support/">AWS Support console</a>, select <strong>Create case</strong>.</li>
-</ol>
-<p><img src="/images/4/0001.png?featherlight=false&amp;width=90pc" alt="AWS Support"></p>
-<ol start="2">
-<li>Select <strong>Account and billing support</strong> and enter the support information:
-<ul>
-<li>Type: select <strong>Account</strong>.</li>
-<li>Category: select <strong>Activation</strong>.</li>
-<li>Subject: briefly write down your situation (eg <strong>Did not receive an SMS message or call for verification</strong>)</li>
-<li>Description: Provide details of the situation encountered and information about the time you need support to activate the account.</li>
-<li>Attachments: Attach an image describing the authentication step you are facing.</li>
-</ul>
+<li>
+<p>Create another folder inside <strong>src</strong> folder, create a folder to store the pictures inside the newlymade folder, and put the images inside.</p>
+</li>
+<li>
+<p>Adjust the app.tsx file to match the design you desire.</p>
 </li>
 </ol>
-<p><img src="/images/4/0002.png?featherlight=false&amp;width=90pc" alt="AWS Support"></p>
-<p><img src="/images/4/0003.png?featherlight=false&amp;width=90pc" alt="AWS Support"></p>
-<p><img src="/images/4/0004.png?featherlight=false&amp;width=90pc" alt="AWS Support"></p>
-<ol start="3">
-<li>Under <strong>Contact options</strong>, select <strong>Chat</strong> under <strong>Contact methods</strong>.</li>
+<h2 id="build-the-s3">Build the S3</h2>
+<p>You will also need to create a bucket for storage. The steps are basics.</p>
+<h2 id="build-the-lambda-function">Build the Lambda Function</h2>
+<p>To create Lambda, you will need to:</p>
+<ol>
+<li>
+<p>Set up IAM role for Lambda</p>
+</li>
+<li>
+<p>Create Lambda function for data collection</p>
+</li>
 </ol>
-<p><img src="/images/4/0005.png?featherlight=false&amp;width=90pc" alt="AWS Support"></p>
-<ol start="4">
-<li>Select <strong>Submit</strong>.</li>
-</ol>
-<p><img src="/images/4/0006.png?featherlight=false&amp;width=90pc" alt="AWS Support">
-5. The AWS Support team will contact and assist in activating your account.</p>
-<p><img src="/images/4/0007.png?featherlight=false&amp;width=90pc" alt="AWS Support">
-
-<div class="notices note" ><p>You can create a support request with AWS Support even if your account is not activated.</p>
-</div>
-</p>
 
 
 
@@ -965,6 +968,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1063,7 +1082,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-create-admin-user-and-group/3.2-cross-region/" title="Setting up AWS Bedrock (Cross-Region)"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-create-admin-user-and-group/3.3-cloudwatch/" title="Apply CloudWatch to monitor average response time"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/12-s3-bucket-for-data-storage/" title="Creating S3 Bucket for Data Storage" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1076,19 +1095,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753453309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753453309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753453309"></script>
-    <script src="/js/jquery.sticky.js?1753453309"></script>
-    <script src="/js/featherlight.min.js?1753453309"></script>
-    <script src="/js/highlight.pack.js?1753453309"></script>
+    <script src="/js/clipboard.min.js?1753523231"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753523231"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753523231"></script>
+    <script src="/js/jquery.sticky.js?1753523231"></script>
+    <script src="/js/featherlight.min.js?1753523231"></script>
+    <script src="/js/highlight.pack.js?1753523231"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753453309"></script>
-    <script src="/js/learn.js?1753453309"></script>
-    <script src="/js/hugo-learn.js?1753453309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753523231"></script>
+    <script src="/js/learn.js?1753523231"></script>
+    <script src="/js/hugo-learn.js?1753523231"></script>
 
-    <link href="/mermaid/mermaid.css?1753453309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753453309"></script>
+    <link href="/mermaid/mermaid.css?1753523231" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753523231"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
