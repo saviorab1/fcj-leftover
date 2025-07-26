@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Build The Website Frontend :: </title>
+
+    
+    <link href="/css/nucleus.css?1753524632" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753524632" rel="stylesheet">
+    <link href="/css/hybrid.css?1753524632" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753524632" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753524632" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753524632" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753524632" rel="stylesheet">
+    <link href="/css/theme.css?1753524632" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753524632" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1753524632" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1753524632"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/4-verify-new-account/4.1-frontend/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1753524632"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753524632"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1753524632"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/" title="Setting Up the template for the Workshop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/">
+           <b> 1. </b> Setting Up the template for the Workshop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="Setting Up Vite" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.1-find-account-id/">
+           <b> 1.1 </b> Setting Up Vite
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Initialize Git and Push Project to GitHub" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.2-update-account/">
+           <b> 1.2 </b> Initialize Git and Push Project to GitHub
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="Setting Up Amplify For The Project" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.3-aws-account-alias/">
+           <b> 1.3 </b> Setting Up Amplify For The Project
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="Working on the main Functionality of the project using AWS Services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/">
+           <b> 2. </b> Working on the main Functionality of the project using AWS Services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Setting Up the IAM Identity Center" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/">
+           <b> 2.1 </b> Setting Up the IAM Identity Center
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/" title="Deploy the Application via AWS Amplify" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/">
+           <b> 2.2 </b> Deploy the Application via AWS Amplify
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Setting up the Frontend, Backend and AWS Sandbox" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/">
+           <b> 2.3 </b> Setting up the Frontend, Backend and AWS Sandbox
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock and CloudWatch" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/">
+           <b> 3. </b> Creating and Developing Amazon Bedrock and CloudWatch
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/3.1-legacy-way/" title="Setting up AWS Bedrock (Legacy)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/3.1-legacy-way/">
+           <b> 3.1 </b> Setting up AWS Bedrock (Legacy)
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/3.2-cross-region/" title="Setting up AWS Bedrock (Cross-Region)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/3.2-cross-region/">
+           <b> 3.2 </b> Setting up AWS Bedrock (Cross-Region)
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/3.3-cloudwatch/" title="Apply CloudWatch to monitor average response time" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/3.3-cloudwatch/">
+           <b> 3.3 </b> Apply CloudWatch to monitor average response time
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-verify-new-account/" title="Build the website frontend, S3 and Lambda" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/4-verify-new-account/">
+           <b> 4. </b> Build the website frontend, S3 and Lambda
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-verify-new-account/4.1-frontend/" title="Build The Website Frontend" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/4-verify-new-account/4.1-frontend/">
+           <b> 4.1 </b> Build The Website Frontend
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/12-s3-bucket-for-data-storage/" title="Creating S3 Bucket for Data Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/12-s3-bucket-for-data-storage/">
+           <b> 12. </b> Creating S3 Bucket for Data Storage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/" title="Navigate to S3 Console" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/">
+           <b> 12.1 </b> Navigate to S3 Console
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/" title="Configure Bucket Settings" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/">
+           <b> 12.2 </b> Configure Bucket Settings
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/12-s3-bucket-for-data-storage/12.3-create-the-bucket/" title="Create the Bucket" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/12-s3-bucket-for-data-storage/12.3-create-the-bucket/">
+           <b> 12.3 </b> Create the Bucket
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Setting up an AWS account</a> > <a href='/4-verify-new-account/'>Build the website frontend, S3 and Lambda</a> > Build The Website Frontend
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#content">Content</a></li>
+    <li><a href="#commit-new-files-and-folders-as-images">Commit new files and folders as images</a></li>
+    <li><a href="#commit-new-changes-for-apptsx-for-the-frontend">Commit new changes for App.tsx for the frontend</a></li>
+    <li><a href="#update-the-appcss-file">Update the App.css file</a></li>
+    <li><a href="#update-the-indexcss-file">Update the index.css file</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Build The Website Frontend
+            </h1>
+          
+
+        
+
+
+
+	<h2 id="content">Content</h2>
+<ul>
+<li><a href="#commit-new-files-and-folders-as-images">Commit new files and folders as images</a></li>
+<li><a href="#commit-new-changes-for-apptsx-for-the-frontend">Commit new changes for App.tsx for the frontend</a></li>
+<li><a href="#update-the-appcss-file">Update the App.css file</a></li>
+<li><a href="#update-the-indexcss-file">Update the index.css file</a></li>
+</ul>
+<h2 id="commit-new-files-and-folders-as-images">Commit new files and folders as images</h2>
+<p>For this project, we have created our own custom logo simply just for aesthetic reason, you can drop in your own logo or remove it entirely.</p>
+<p><img src="/images/4/12-1.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
+<p>In <strong>src</strong> folder, create another folder named <strong>assets</strong> and within it create another pics folder then drop the provided <strong>logo.png</strong> inside.</p>
+<h2 id="commit-new-changes-for-apptsx-for-the-frontend">Commit new changes for App.tsx for the frontend</h2>
+<p>Update App.tsx file in src folder with these lines of codes. Knowing that we added a footer for copyright reason but feel free to delete it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#66d9ef">type</span> { <span style="color:#a6e22e">FormEvent</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useState</span>, <span style="color:#a6e22e">useEffect</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Loader</span>, <span style="color:#a6e22e">Placeholder</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./App.css&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Amplify</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-amplify&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#66d9ef">type</span> { <span style="color:#a6e22e">Schema</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;../amplify/data/resource&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">generateClient</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-amplify/data&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">outputs</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;../amplify_outputs.json&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">logoImage</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./assets/pics/logo.png&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">signOut</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-amplify/auth&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react/styles.css&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Amplify</span>.<span style="color:#a6e22e">configure</span>(<span style="color:#a6e22e">outputs</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">amplifyClient</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">generateClient</span>&lt;<span style="color:#f92672">Schema</span>&gt;({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">authMode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;userPool&#34;</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">setResult</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>&lt;<span style="color:#f92672">string</span>&gt;(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">loading</span>, <span style="color:#a6e22e">setLoading</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">inputValue</span>, <span style="color:#a6e22e">setInputValue</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">animateIntro</span>, <span style="color:#a6e22e">setAnimateIntro</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">error</span>, <span style="color:#a6e22e">setError</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>&lt;<span style="color:#f92672">string</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">null</span>&gt;(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">usingFallback</span>, <span style="color:#a6e22e">setUsingFallback</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Trigger animation after component mounts
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">setAnimateIntro</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">callBedrockAPI</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">ingredients</span>: <span style="color:#66d9ef">string</span>[], <span style="color:#a6e22e">useFallback</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Create a promise that will reject after 30 seconds
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timeout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">never</span>&gt;((<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">reject</span>) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setTimeout</span>(() <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;Request timed out&#39;</span>)), <span style="color:#ae81ff">30000</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">Promise</span>.<span style="color:#a6e22e">race</span>([
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">useFallback</span> 
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">?</span> <span style="color:#a6e22e">amplifyClient</span>.<span style="color:#a6e22e">queries</span>.<span style="color:#a6e22e">askBedrockFallback</span>({ <span style="color:#a6e22e">ingredients</span> })
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">:</span> <span style="color:#a6e22e">amplifyClient</span>.<span style="color:#a6e22e">queries</span>.<span style="color:#a6e22e">askBedrock</span>({ <span style="color:#a6e22e">ingredients</span> }),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">timeout</span>
+</span></span><span style="display:flex;"><span>      ]);
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// If we get here, API request completed before timeout
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;No data returned from the API&#34;</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">body</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Re-throw the error to handle it in the calling function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">error</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">onSubmit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>: <span style="color:#66d9ef">FormEvent</span>&lt;<span style="color:#f92672">HTMLFormElement</span>&gt;) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">inputValue</span>.<span style="color:#a6e22e">trim</span>()) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setLoading</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setResult</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setError</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setUsingFallback</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ingredientsInput</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">inputValue</span>.<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ingredientsArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ingredientsInput</span>
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">ingredient</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">ingredient</span>.<span style="color:#a6e22e">trim</span>())
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">ingredient</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">ingredient</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// First try the primary region (ap-southeast-1)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resultText</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">callBedrockAPI</span>(<span style="color:#a6e22e">ingredientsArray</span>, <span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setResult</span>(<span style="color:#a6e22e">resultText</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;No recipe content returned&#34;</span>);
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">primaryError</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#e6db74">&#34;Primary region failed, trying fallback:&#34;</span>, <span style="color:#a6e22e">primaryError</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setUsingFallback</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// If primary region fails, try the fallback region (ap-northeast-1)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fallbackResult</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">callBedrockAPI</span>(<span style="color:#a6e22e">ingredientsArray</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">setResult</span>(<span style="color:#a6e22e">fallbackResult</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;No recipe content returned&#34;</span>);
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">fallbackError</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Both regions failed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Both regions failed:&#34;</span>, <span style="color:#a6e22e">fallbackError</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">fallbackError</span> <span style="color:#66d9ef">instanceof</span> Error) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">`Service unavailable: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fallbackError</span>.<span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">&#34;Service is unavailable in all regions. Please try again later.&#34;</span>);
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Exception:&#34;</span>, <span style="color:#a6e22e">e</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span> <span style="color:#66d9ef">instanceof</span> Error) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">`An error occurred: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">setError</span>(<span style="color:#e6db74">&#34;An unknown error occurred. Please try again.&#34;</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">finally</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setLoading</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleInputChange</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">e</span>: <span style="color:#66d9ef">React.ChangeEvent</span>&lt;<span style="color:#f92672">HTMLInputElement</span>&gt;) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setInputValue</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>);
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleLogout</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> () <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">signOut</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// The Authenticator will handle the UI change automatically
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error signing out: &#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logout-button&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleLogout</span>}&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">Log</span> <span style="color:#a6e22e">Out</span>
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">`header-container </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">animateIntro</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;fade-in&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>}&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">logoImage</span>} <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Recipe AI Logo&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main-header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">Do</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">some</span>
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">br</span> /&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;<span style="color:#a6e22e">Leftover</span><span style="color:#f92672">?</span>&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">Just</span> <span style="color:#66d9ef">type</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">any</span> <span style="color:#a6e22e">ingredients</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">left</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">fridge</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">pantry</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">separated</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">commas</span>. <span style="color:#a6e22e">We</span><span style="color:#e6db74">&#39;ll help you create a delicious recipe with what you already have!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;br /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;span className=&#34;multilingual-note&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            (Our website supports all languages, please input the ingredients in your language)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;form onSubmit={onSubmit} className={`form-container ${animateIntro ? &#39;</span><span style="color:#a6e22e">slide</span><span style="color:#f92672">-</span><span style="color:#a6e22e">up</span><span style="color:#e6db74">&#39; : &#39;&#39;}`}&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;div className=&#34;search-container&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;input
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            type=&#34;text&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            className=&#34;wide-input&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            id=&#34;ingredients&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            name=&#34;ingredients&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            placeholder=&#34;Chicken, rice, carrots, onion...&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            value={inputValue}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            onChange={handleInputChange}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;button 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            type=&#34;submit&#34; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            className=&#34;search-button&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            disabled={loading || !inputValue.trim()}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            {loading ? &#39;</span><span style="color:#a6e22e">Processing</span>...<span style="color:#e6db74">&#39; : &#39;</span><span style="color:#a6e22e">Generate</span><span style="color:#e6db74">&#39;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/form&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      {(loading || result || error) &amp;&amp; (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;div className={`result-container ${result || loading || error ? &#39;</span><span style="color:#a6e22e">appear</span><span style="color:#e6db74">&#39; : &#39;</span><span style="color:#960050;background-color:#1e0010">&#39;</span>}<span style="color:#e6db74">`}&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          {loading ? (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;div className=&#34;loader-container&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;p&gt;Creating your personalized recipe...&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;Loader size=&#34;large&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;Placeholder size=&#34;large&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;Placeholder size=&#34;large&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;Placeholder size=&#34;large&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          ) : error ? (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;p className=&#34;result error-message&#34;&gt;{error}&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          ) : (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              {usingFallback &amp;&amp; (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;p className=&#34;fallback-notice&#34;&gt;Using fallback region (ap-northeast-1)&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              )}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;p className=&#34;result&#34;&gt;{result}&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          )}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      )}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;footer className=&#34;footer&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        © {new Date().getFullYear()} Aiden Dinh &amp; Arthur Nguyen
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/footer&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  );
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export default App;
+</span></span></span></code></pre></div><h2 id="update-the-appcss-file">Update the App.css file</h2>
+<p>Afterwards, update the App.css file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/* Modern UI Variables */</span>
+</span></span><span style="display:flex;"><span>:<span style="color:#a6e22e">root</span> {
+</span></span><span style="display:flex;"><span>  --dark-yellow: <span style="color:#ae81ff">#E6C700</span>;
+</span></span><span style="display:flex;"><span>  --hue-green: <span style="color:#ae81ff">#8DCB85</span>;
+</span></span><span style="display:flex;"><span>  --dark-green: <span style="color:#ae81ff">#116530</span>;
+</span></span><span style="display:flex;"><span>  --darker-green: <span style="color:#ae81ff">#0A4D25</span>;
+</span></span><span style="display:flex;"><span>  --white: <span style="color:#ae81ff">#FFFFFF</span>;
+</span></span><span style="display:flex;"><span>  --light-background: <span style="color:#ae81ff">#fcffe3</span>;
+</span></span><span style="display:flex;"><span>  --accent-color: <span style="color:#ae81ff">#FFD700</span>;
+</span></span><span style="display:flex;"><span>  --border-radius-sm: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  --border-radius-md: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  --border-radius-lg: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  --box-shadow-sm: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">6</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.1</span>);
+</span></span><span style="display:flex;"><span>  --box-shadow-md: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">6</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.15</span>);
+</span></span><span style="display:flex;"><span>  --box-shadow-lg: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.2</span>);
+</span></span><span style="display:flex;"><span>  --transition-fast: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">0.2</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">ease</span>;
+</span></span><span style="display:flex;"><span>  --transition-normal: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">ease</span>;
+</span></span><span style="display:flex;"><span>  --animation-duration: <span style="color:#ae81ff">0.8</span><span style="color:#66d9ef">s</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Global Styles */</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-sizing</span>: <span style="color:#66d9ef">border-box</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Animations */</span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">fadeIn</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">from</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-20</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">to</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">slideUp</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">from</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">to</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">appear</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">from</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transform</span>: scale(<span style="color:#ae81ff">0.95</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">to</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transform</span>: scale(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">fade-in</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">animation</span>: fadeIn <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>animation<span style="color:#f92672">-</span>duration) <span style="color:#66d9ef">ease</span> <span style="color:#66d9ef">forwards</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">slide-up</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">animation</span>: slideUp <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>animation<span style="color:#f92672">-</span>duration) <span style="color:#66d9ef">ease</span> <span style="color:#66d9ef">forwards</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">animation-delay</span>: <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">s</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">animation-fill-mode</span>: <span style="color:#66d9ef">forwards</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">appear</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">animation</span>: appear <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>animation<span style="color:#f92672">-</span>duration) <span style="color:#66d9ef">ease</span> <span style="color:#66d9ef">forwards</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">app-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">60</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>light<span style="color:#f92672">-</span>background);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">min-height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">vh</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>dark<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Inter&#39;</span>, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">flex-direction</span>: <span style="color:#66d9ef">column</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">flex-start</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Logo Styling */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">logo</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">150</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span><span style="color:#66d9ef">white</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transition</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>transition<span style="color:#f92672">-</span><span style="color:#66d9ef">normal</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">logo</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-5</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>box<span style="color:#f92672">-</span>shadow<span style="color:#f92672">-</span>lg);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Header Styling */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">header-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">2.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">48</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#ae81ff">135</span><span style="color:#66d9ef">deg</span>, <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>dark<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>darker<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>) <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span>radius<span style="color:#f92672">-</span>lg);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>box<span style="color:#f92672">-</span>shadow<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>  backdrop-filter: blur(<span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.1</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Typography */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">main-header</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">2.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">800</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span><span style="color:#66d9ef">white</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">letter-spacing</span>: <span style="color:#ae81ff">-0.5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">main-header</span> .<span style="color:#a6e22e">highlight</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>accent<span style="color:#f92672">-</span><span style="color:#66d9ef">color</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">main-header</span> .<span style="color:#a6e22e">highlight</span>::<span style="color:#a6e22e">after</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">-3.5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">90</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>accent<span style="color:#f92672">-</span><span style="color:#66d9ef">color</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0.6</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">description</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">400</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.125</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">65</span><span style="color:#66d9ef">ch</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span><span style="color:#66d9ef">white</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">rem</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.6</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0.9</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">multilingual-note</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">0.85</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0.8</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">italic</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Form Styling */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">form-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#ae81ff">145</span><span style="color:#66d9ef">deg</span>, <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>dark<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>darker<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>) <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span>radius<span style="color:#f92672">-</span>lg);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">800</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>box<span style="color:#f92672">-</span>shadow<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.1</span>);
+</span></span><span style="display:flex;"><span>  backdrop-filter: blur(<span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">search-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">flex-direction</span>: <span style="color:#66d9ef">column</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">gap</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">wide-input</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span> <span style="color:#ae81ff">1.25</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> rgba(<span style="color:#ae81ff">141</span>, <span style="color:#ae81ff">203</span>, <span style="color:#ae81ff">133</span>, <span style="color:#ae81ff">0.5</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span>radius<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.9</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>dark<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transition</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>transition<span style="color:#f92672">-</span><span style="color:#66d9ef">fast</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#66d9ef">inset</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.05</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">wide-input</span>:<span style="color:#a6e22e">focus</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">outline</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>accent<span style="color:#f92672">-</span><span style="color:#66d9ef">color</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">230</span>, <span style="color:#ae81ff">199</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.3</span>), <span style="color:#66d9ef">inset</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.05</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">wide-input</span>::<span style="color:#a6e22e">placeholder</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">101</span>, <span style="color:#ae81ff">48</span>, <span style="color:#ae81ff">0.5</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">search-button</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.9</span><span style="color:#66d9ef">rem</span> <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#66d9ef">to</span> <span style="color:#66d9ef">right</span>, <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>dark<span style="color:#f92672">-</span><span style="color:#66d9ef">yellow</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">#ffdc60</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span><span style="color:#66d9ef">white</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span>radius<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">600</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transition</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>transition<span style="color:#f92672">-</span><span style="color:#66d9ef">normal</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">letter-spacing</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-transform</span>: <span style="color:#66d9ef">uppercase</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>box<span style="color:#f92672">-</span>shadow<span style="color:#f92672">-</span>sm);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">search-button</span>:<span style="color:#a6e22e">hover</span>:<span style="color:#a6e22e">not</span><span style="color:#f92672">(</span>:<span style="color:#a6e22e">disabled</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#66d9ef">to</span> <span style="color:#66d9ef">right</span>, <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span><span style="color:#66d9ef">hue</span><span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">#A0E897</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-3</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>box<span style="color:#f92672">-</span>shadow<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">search-button</span>:<span style="color:#a6e22e">active</span>:<span style="color:#a6e22e">not</span><span style="color:#f92672">(</span>:<span style="color:#a6e22e">disabled</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-1</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">search-button</span>:<span style="color:#a6e22e">disabled</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0.6</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">not-allowed</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#cccccc</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#666666</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Results Area */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">result-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transition</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>transition<span style="color:#f92672">-</span><span style="color:#66d9ef">normal</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">800</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#ae81ff">145</span><span style="color:#66d9ef">deg</span>, <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>dark<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>) <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>darker<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>) <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span>radius<span style="color:#f92672">-</span>lg);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>box<span style="color:#f92672">-</span>shadow<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.1</span>);
+</span></span><span style="display:flex;"><span>  backdrop-filter: blur(<span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">loader-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">flex-direction</span>: <span style="color:#66d9ef">column</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">gap</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span>radius<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">loader-container</span> <span style="color:#f92672">p</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span><span style="color:#66d9ef">white</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">result</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#66d9ef">to</span> <span style="color:#66d9ef">bottom</span>, <span style="color:#ae81ff">#f4f7d9</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">#f5fcbf</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span>radius<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">pre-wrap</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">word-wrap</span>: <span style="color:#66d9ef">break-word</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>dark<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">400</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">left</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>box<span style="color:#f92672">-</span>shadow<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: calc(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.6</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">error-message</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#66d9ef">to</span> <span style="color:#66d9ef">bottom</span>, <span style="color:#ae81ff">#fff0f0</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">#ffe0e0</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#d32f2f</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-left</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#d32f2f</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Responsive Adjustments */</span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">768px</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">main-header</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">3.75</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">search-container</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">flex-direction</span>: <span style="color:#66d9ef">row</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">search-button</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">min-width</span>: <span style="color:#ae81ff">150</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">wide-input</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">flex</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">480px</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">header-container</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">form-container</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">result-container</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">main-header</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">logo</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Logout Button */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">nav-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">logout-button</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>dark<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span><span style="color:#66d9ef">white</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span>radius<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">0.9</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">600</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transition</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>transition<span style="color:#f92672">-</span><span style="color:#66d9ef">fast</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>box<span style="color:#f92672">-</span>shadow<span style="color:#f92672">-</span>sm);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">logout-button</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>darker<span style="color:#f92672">-</span><span style="color:#66d9ef">green</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-2</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">box-shadow</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>box<span style="color:#f92672">-</span>shadow<span style="color:#f92672">-</span>md);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Footer Styling */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">footer</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#000</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span><span style="color:#66d9ef">white</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">0.85</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="update-the-indexcss-file">Update the index.css file</h2>
+<p>Last but not least, also update the index.css file with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>  <span style="color:#f92672">font-family</span><span style="color:#f92672">:</span> <span style="color:#f92672">Inter</span><span style="color:#f92672">,</span> <span style="color:#f92672">system-ui</span><span style="color:#f92672">,</span> <span style="color:#f92672">Avenir</span><span style="color:#f92672">,</span> <span style="color:#f92672">Helvetica</span><span style="color:#f92672">,</span> <span style="color:#f92672">Arial</span><span style="color:#f92672">,</span> <span style="color:#f92672">sans-serif</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">line-height</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-weight</span><span style="color:#f92672">:</span> <span style="color:#f92672">400</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">color</span><span style="color:#f92672">:</span> <span style="color:#f92672">rgba</span><span style="color:#f92672">(</span><span style="color:#f92672">255</span><span style="color:#f92672">,</span> <span style="color:#f92672">255</span><span style="color:#f92672">,</span> <span style="color:#f92672">255</span><span style="color:#f92672">,</span> <span style="color:#f92672">0</span>.<span style="color:#a6e22e">87</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">background-color</span><span style="color:#f92672">:</span> #fcffe3<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">font-synthesis</span><span style="color:#f92672">:</span> <span style="color:#f92672">none</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">text-rendering</span><span style="color:#f92672">:</span> <span style="color:#f92672">optimizeLegibility</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-webkit-font-smoothing</span><span style="color:#f92672">:</span> <span style="color:#f92672">antialiased</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-moz-osx-font-smoothing</span><span style="color:#f92672">:</span> <span style="color:#f92672">grayscale</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">1280px</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">margin</span><span style="color:#f92672">:</span> <span style="color:#f92672">0</span> <span style="color:#f92672">auto</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">padding</span><span style="color:#f92672">:</span> <span style="color:#f92672">2rem</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">min-width</span>: <span style="color:#ae81ff">320</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">min-height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">vh</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#fcffe3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">card</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">read-the-docs</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#8DCB85</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">3n</span> <span style="color:#f92672">+</span> <span style="color:#f92672">1</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">grid-column</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">3n</span> <span style="color:#f92672">+</span> <span style="color:#f92672">2</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">grid-column</span>: <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">3n</span> <span style="color:#f92672">+</span> <span style="color:#f92672">3</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">grid-column</span>: <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The end result should look like this:</p>
+<p><img src="/images/4/12-2.png?featherlight=false&amp;width=90pc" alt="Result"></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/4-verify-new-account/" title="Build the website frontend, S3 and Lambda"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/12-s3-bucket-for-data-storage/" title="Creating S3 Bucket for Data Storage" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1753524632"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753524632"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753524632"></script>
+    <script src="/js/jquery.sticky.js?1753524632"></script>
+    <script src="/js/featherlight.min.js?1753524632"></script>
+    <script src="/js/highlight.pack.js?1753524632"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753524632"></script>
+    <script src="/js/learn.js?1753524632"></script>
+    <script src="/js/hugo-learn.js?1753524632"></script>
+
+    <link href="/mermaid/mermaid.css?1753524632" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753524632"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
