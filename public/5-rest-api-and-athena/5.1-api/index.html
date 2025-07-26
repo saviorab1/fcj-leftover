@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Setting up an AWS account :: </title>
+    <title>Create and Implement API :: </title>
 
     
-    <link href="/css/nucleus.css?1753550491" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753550491" rel="stylesheet">
-    <link href="/css/hybrid.css?1753550491" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753550491" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753550491" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753550491" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753550491" rel="stylesheet">
-    <link href="/css/theme.css?1753550491" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753550491" rel="stylesheet">
+    <link href="/css/nucleus.css?1753551701" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753551701" rel="stylesheet">
+    <link href="/css/hybrid.css?1753551701" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753551701" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753551701" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753551701" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753551701" rel="stylesheet">
+    <link href="/css/theme.css?1753551701" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753551701" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753550491" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753551701" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753550491"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753551701"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/5-rest-api-and-athena/5.1-api/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753550491"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753550491"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753551701"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753551701"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753550491"></script>
+<script type="text/javascript" src="/js/search.js?1753551701"></script>
 
     
   </div>
@@ -571,7 +571,7 @@
   
     
     <li data-nav-id="/5-rest-api-and-athena/" title="Update API and Athena" class="dd-item 
-        
+        parent
         
         
         ">
@@ -601,13 +601,41 @@
  
   
     
-    <li data-nav-id="/5-rest-api-and-athena/5.1-api/" title="Build the S3 Bucket for data storage" class="dd-item 
+    <li data-nav-id="/5-rest-api-and-athena/5.1-api/" title="Create and Implement API" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/5-rest-api-and-athena/5.1-api/">
+           <b> 5.1 </b> Create and Implement API
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-rest-api-and-athena/5.2-athena/" title="Set up Athena for analysis" class="dd-item 
         
         
         
         ">
-      <a href="/5-rest-api-and-athena/5.1-api/">
-           <b> 4.2 </b> Build the S3 Bucket for data storage
+      <a href="/5-rest-api-and-athena/5.2-athena/">
+           <b> 5.2 </b> Set up Athena for analysis
           
             <i class="fas fa-check read-icon"></i>
           
@@ -821,51 +849,174 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Setting up an AWS account</a> > <a href='/5-rest-api-and-athena/'>Update API and Athena</a> > Create and Implement API
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#content">Content</a></li>
+    <li><a href="#create-a-rest-api-with-api-gateway">Create a REST API with API Gateway</a></li>
+    <li><a href="#update-projects-codebase-to-work-with-new-changes">Update project’s codebase to work with new changes</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Create and Implement API
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h1 id="creating-your-first-aws-account">Creating your first AWS account</h1>
-<h4 id="overview">Overview</h4>
-<p>In this first lab, you will be creating your new <strong>AWS</strong> account and use Multi-factor Authentication (<strong>MFA</strong>) to improve your account security. Next, you will create an <strong>Administrator Group</strong> and <strong>Admin User</strong> to manage access to resources in your account instead of using the root user. <br>
-Finally, we will step through account authentication with <strong>AWS Support</strong> in the event you experience authentication problems.</p>
-<h4 id="aws-account">AWS Account</h4>
-<p><strong>An AWS account</strong> is the basic container for all the AWS resources you can create as an AWS customer. By default, each AWS account will have a <em>root user</em>. The <em>root user</em> has full access within your AWS account, and root user permissions cannot be limited. When you first create your AWS account, you will be assessing it as the <em>root user</em>.</p>
-<p><img src="/images/1/0001.png?featherlight=false&amp;width=90pc" alt="Create Account"></p>
 
-<div class="notices note" ><p>As a best practice, do not use the AWS account <em>root user</em> for any task where it&rsquo;s not required. Instead, create a new IAM user for each person that requires administrator access. Thereafter, the users in the administrators user group should set up the user groups, users, and so on, for the AWS account. All future interaction should be through the AWS account&rsquo;s users and their own keys instead of the root user. However, to perform some account and service management tasks, you must log in using the root user credentials.</p>
-</div>
+	<h2 id="content">Content</h2>
+<ul>
+<li><a href="#create-a-rest-api-with-api-gateway">Create a REST API with API Gateway</a></li>
+<li><a href="#update-projects-codebase-to-work-with-new-changes">Update project’s codebase to work with new changes</a></li>
+</ul>
+<h2 id="create-a-rest-api-with-api-gateway">Create a REST API with API Gateway</h2>
+<p>Go to API Gateway console → Create API → REST API → Build</p>
+<p><img src="/images/5/16-1.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
+<p>•	API name: leftover-data-collection-api
+•	Endpoint type: Regional</p>
+<p><img src="/images/5/16-2.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
+<p>On the left handside, click Create resource and fill in these info:
+•	Create resource: /collect-data
+•	CORS: Enable</p>
+<p><img src="/images/5/16-3.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
+<p>Then on the right handside, click Create method with these settings:
+•	Create method: POST
+•	Integration type: Lambda Function
+•	Lambda function: leftover-data-collector
+•	Use Lambda Proxy integration: Yes</p>
+<p><img src="/images/5/16-4.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
+<p>Click on the resource directory we just made to enable CORS by following these steps:
+•	Select the POST method
+•	Actions → Enable CORS
+•	Access-Control-Allow-Origin: *
+•	Access-Control-Allow-Headers: Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token</p>
+<p><img src="/images/5/16-5.png?featherlight=false&amp;width=90pc" alt="Logo">
+<img src="/images/5/16-6.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
+<p>Then click Deploy API with stage name of your choice:</p>
+<h2 id="update-projects-codebase-to-work-with-new-changes">Update project’s codebase to work with new changes</h2>
+<p>In App.tsx, incorporate these new lines of code to the existing one:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#75715e">// ... existing imports ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">getCurrentUser</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;aws-amplify/auth&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ... existing code ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ... existing state variables ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Add this new function for data collection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">collectUserData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">ingredients</span>: <span style="color:#66d9ef">string</span>) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">getCurrentUser</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sessionId</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`session_</span><span style="color:#e6db74">${</span>Date.<span style="color:#a6e22e">now</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">_</span><span style="color:#e6db74">${</span>Math.<span style="color:#a6e22e">random</span>().<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">36</span>).<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">9</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dataPayload</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ingredients</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">timestamp</span>: <span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toISOString</span>(),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">userId</span>: <span style="color:#66d9ef">user.userId</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;anonymous&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">sessionId</span>
+</span></span><span style="display:flex;"><span>      };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Replace YOUR_API_GATEWAY_URL with the actual URL from step 15
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;YOUR_API_GATEWAY_URL/collect-data&#39;</span>, {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">body</span>: <span style="color:#66d9ef">JSON.stringify</span>(<span style="color:#a6e22e">dataPayload</span>)
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Silently fail - don&#39;t disrupt user experience
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Data collection failed:&#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">onSubmit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>: <span style="color:#66d9ef">FormEvent</span>&lt;<span style="color:#f92672">HTMLFormElement</span>&gt;) <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">inputValue</span>.<span style="color:#a6e22e">trim</span>()) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setLoading</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setResult</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setError</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setUsingFallback</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ingredientsInput</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">inputValue</span>.<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Collect user data (fire and forget)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">collectUserData</span>(<span style="color:#a6e22e">ingredientsInput</span>);
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ingredientsArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ingredientsInput</span>
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;,&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">ingredient</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">ingredient</span>.<span style="color:#a6e22e">trim</span>())
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">ingredient</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">ingredient</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// ... rest of existing onSubmit logic remains the same ...
+</span></span></span></code></pre></div><p>I have commented all necessary information on what each part of the code should do. However, it will now run out of the box, you should replace the API Gateway URL yourself. You can expect to find it in the ARN box in POST method.</p>
+<p><img src="/images/5/17-1.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
 
-<h4 id="multi-factor-authentication-mfa">Multi-Factor Authentication (MFA)</h4>
-<p><strong>MFA</strong> adds extra security because it requires users to provide unique authentication from an AWS supported MFA mechanism in addition to their regular sign-in credentials when they access AWS websites or services.</p>
-<h4 id="iam-user-group">IAM User Group</h4>
-<p>An <strong>IAM user group</strong> is a collection of IAM users. User groups let you specify permissions for multiple users, which can make it easier to manage the permissions for those users. Any user in that user group automatically has the permissions that are assigned to the user group.</p>
-<h4 id="iam-user">IAM User</h4>
-<p>An <strong>IAM user</strong> is an entity that you create in AWS to represent the person or application that uses it to interact with AWS. A user in AWS consists of a name and credentials. <br>
-Please note that an IAM user with administrator permissions is not the same thing as the AWS account root user.</p>
-<h4 id="aws-support">AWS Support</h4>
-<p>AWS Basic Support offers all AWS customers access to our Resource Center, Service Health Dashboard, Product FAQs, Discussion Forums, and Support for Health Checks – at no additional charge. Customers who desire a deeper level of support can subscribe to AWS Support at the Developer, Business, or Enterprise level.</p>
-<p>Customers who choose AWS Support gain one-on-one, fast-response support from AWS engineers. The service helps customers use AWS&rsquo;s products and features. With pay-by-the-month pricing and unlimited support cases, customers are freed from long-term commitments. Customers with operational issues or technical questions can contact a team of support engineers and receive predictable response times and personalized support.</p>
-<h4 id="main-content">Main Content</h4>
-<ol>
-<li><a href="1-create-new-aws-account/">Creating a new AWS Account</a></li>
-<li><a href="2-MFA-Setup-For-AWS-User-(root)">Setting up MFA for the AWS Account root user</a></li>
-<li><a href="3-create-admin-user-and-group/">Creating an Administrator Accounts and Groups</a></li>
-<li><a href="4-verify-new-account/">Getting support for Account Authentication</a></li>
-</ol>
-<!-- need to remove parenthesis for path in Hugo 0.88.1 for Windows-->
+
+
+
+
+<footer class=" footline" >
 	
-  
+</footer>
+
         
         </div> 
         
@@ -1164,6 +1315,7 @@ Please note that an IAM user with administrator permissions is not the same thin
             
                 
                     
+                    
                 
                 
 
@@ -1178,6 +1330,26 @@ Please note that an IAM user with administrator permissions is not the same thin
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1268,10 +1440,10 @@ Please note that an IAM user with administrator permissions is not the same thin
 	 
 	 
 		
-			<a class="nav nav-prev" href="/12-s3-bucket-for-data-storage/12.3-create-the-bucket/" title="Create the Bucket"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/5-rest-api-and-athena/" title="Update API and Athena"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/1-create-new-aws-account/" title="Setting Up the template for the Workshop" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/5-rest-api-and-athena/5.2-athena/" title="Set up Athena for analysis" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1281,19 +1453,19 @@ Please note that an IAM user with administrator permissions is not the same thin
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753550491"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753550491"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753550491"></script>
-    <script src="/js/jquery.sticky.js?1753550491"></script>
-    <script src="/js/featherlight.min.js?1753550491"></script>
-    <script src="/js/highlight.pack.js?1753550491"></script>
+    <script src="/js/clipboard.min.js?1753551701"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753551701"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753551701"></script>
+    <script src="/js/jquery.sticky.js?1753551701"></script>
+    <script src="/js/featherlight.min.js?1753551701"></script>
+    <script src="/js/highlight.pack.js?1753551701"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753550491"></script>
-    <script src="/js/learn.js?1753550491"></script>
-    <script src="/js/hugo-learn.js?1753550491"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753551701"></script>
+    <script src="/js/learn.js?1753551701"></script>
+    <script src="/js/hugo-learn.js?1753551701"></script>
 
-    <link href="/mermaid/mermaid.css?1753550491" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753550491"></script>
+    <link href="/mermaid/mermaid.css?1753551701" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753551701"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -1309,4 +1481,3 @@ Please note that an IAM user with administrator permissions is not the same thin
 </script>
   </body>
 </html>
-
