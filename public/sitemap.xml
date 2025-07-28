@@ -5,6 +5,9 @@
     <loc>http://localhost:12594/4-verify-new-account/4.1-frontend/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:12594/5-rest-api-and-athena/5.1-api/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:12594/13-setup-iam-role-for-lambda/13.1-create-iam-role/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -23,7 +26,7 @@
     <loc>http://localhost:12594/1-create-new-aws-account/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/1-create-new-aws-account/1.1-find-account-id/</loc>
+    <loc>http://localhost:12594/1-setting-up-vite/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:12594/4-verify-new-account/4.2-s3/</loc>
@@ -39,6 +42,9 @@
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:12594/1-create-new-aws-account/1.2-update-account/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:12594/5-rest-api-and-athena/5.2-athena/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:12594/3-create-admin-user-and-group/3.2-cross-region/</loc>
@@ -69,6 +75,9 @@
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:12594/4-verify-new-account/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:12594/5-rest-api-and-athena/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:12594/12-s3-bucket-for-data-storage/</loc>

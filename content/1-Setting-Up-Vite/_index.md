@@ -3,7 +3,7 @@ title : "Setting Up Vite"
 date : "2023-12-01T00:00:00Z"
 weight : 1
 chapter : false
-pre : " <b> 1.1 </b> "
+pre : " <b> 1. </b> "
 ---
 
 

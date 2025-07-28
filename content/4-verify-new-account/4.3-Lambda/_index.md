@@ -7,6 +7,8 @@ pre : " <b> 4.3 </b> "
 ---
 
 ## Content
+- [Set up IAM role for Lambda](#set-up-iam-role-for-lambda)
+- [Create Lambda function for data collection](#create-lambda-function-for-data-collection)
 
 ## Set up IAM role for Lambda
 
