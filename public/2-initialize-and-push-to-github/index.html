@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Working on the main Functionality of the project using AWS Services :: </title>
+    <title>Initialize Git and Push Project to GitHub :: </title>
 
     
     <link href="/css/nucleus.css?1753694974" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/2-mfa-setup-for-aws-user-root/">
+  <body class="" data-url="/2-initialize-and-push-to-github/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -136,7 +136,7 @@
     
     <li data-nav-id="/2-initialize-and-push-to-github/" title="Initialize Git and Push Project to GitHub" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/2-initialize-and-push-to-github/">
@@ -162,7 +162,7 @@
     
     <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="Working on the main Functionality of the project using AWS Services" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/2-mfa-setup-for-aws-user-root/">
@@ -984,7 +984,7 @@
             
           
           
-            <a href='/'>Setting up an AWS account</a> > Working on the main Functionality of the project using AWS Services
+            <a href='/'>Setting up an AWS account</a> > Initialize Git and Push Project to GitHub
           
         
           
@@ -997,13 +997,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#content">Content</a></li>
-    <li><a href="#setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</a></li>
-    <li><a href="#deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</a></li>
-    <li><a href="#setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</a>
+    <li>
       <ul>
-        <li><a href="#frontend-and-backend">Frontend and Backend</a></li>
-        <li><a href="#amplify-sandbox">Amplify Sandbox</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -1023,7 +1019,7 @@
           
             <h1>
               
-              Working on the main Functionality of the project using AWS Services
+              Initialize Git and Push Project to GitHub
             </h1>
           
 
@@ -1031,70 +1027,40 @@
 
 
 
-	<h2 id="content">Content</h2>
-<ul>
-<li><a href="#content">Content</a></li>
-<li><a href="#setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</a></li>
-<li><a href="#deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</a></li>
-<li><a href="#setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</a></li>
-</ul>
-<h2 id="setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</h2>
-<p>In order to manage multiple accounts with Single-sign on (SSO) session, users, groups, permission sets, and more for your organization, you have to set up the IAM Identity Center.</p>
-<ol>
-<li>
-<p>Open AWS Console to access IAM Identity Center and enable the process.</p>
-</li>
-<li>
-<p>Open CloudShell and set up the management for the AWS Services using your root email as the main profile for the project.</p>
-</li>
-<li>
-<p>Configure the account by changing the password and finish setting up the new account and signing in.</p>
-</li>
-</ol>
-<h2 id="deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</h2>
-<p>After initializing Amplify and enabling IAM Identity Center in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration.</p>
-<ol>
-<li>
-<p>Connect and Deploy AWS Amplify with the Repository from your GitHub.</p>
-</li>
-<li>
-<p>Edit the Build specification in the Amplify file.</p>
-</li>
-<li>
-<p>Save and Redeploy the App.</p>
-</li>
-</ol>
-<hr>
-<h2 id="setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</h2>
-<p>You will need to set up the frontend, back and the aws sandbox following these steps.</p>
-<h3 id="frontend-and-backend">Frontend and Backend</h3>
-<ol>
-<li>
-<p>Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:l-2-ways</p>
-<ul>
-<li>src/index.css (For Frontend)</li>
-<li>src/App.css (For Frontend)</li>
-<li>src/main.tsx (For UI)</li>
-<li>src/App.tsx (For UI)</li>
-</ul>
-</li>
-<li>
-<p>Set up the resources file for Amplify Data by creating the file:</p>
-<ul>
-<li>amplify/data/resource.ts</li>
-</ul>
-<h3 id="amplify-sandbox">Amplify Sandbox</h3>
-</li>
-<li>
-<p>Using npm to install Amplify Sandbox.</p>
-</li>
-<li>
-<p>After setting up, you will need to configure a profile inside the sandbox.</p>
-</li>
-<li>
-<p>Configure and make a localhost.</p>
-</li>
-</ol>
+	<h4 id="setting-up-git-and-push">Setting up Git and Push</h4>
+<p>After setting up the local Vite + React + TypeScript project, the next step was to version control the project and push it to a remote GitHub repository named AWS-leftover.</p>
+<h4 id="create-a-github-respository-for-the-workshop">Create a GitHub respository for the workshop</h4>
+<p>We will need to publish our Workshop so that the services on AWS such as Amplify can access, henceforth, a GitHub account is necessary. Prepare yourself a GitHub account. Once you are ready, in your profile, click on New.</p>
+<p><img src="/images/1/2-1.png?featherlight=false&amp;width=90pc" alt="GitHub profile"></p>
+<p>Name the respository as leftover.</p>
+<p><img src="/images/1/2-2.png?featherlight=false&amp;width=90pc" alt="GitHub repository"></p>
+<p>Once you are finished with the creation, you should see the link that will connect you to your project.</p>
+<p><img src="/images/1/2-3.png?featherlight=false&amp;width=90pc" alt="GitHub link"></p>
+<blockquote>
+<p><strong>Note:</strong> Do remember that your GitHub link is private and it should only come from your GitHub profile, so we have to censor it for security and privacy reasons.</p></blockquote>
+<h4 id="intialize-git-into-the-project">Intialize Git into the project.</h4>
+<p><strong>Minimum Permissions:</strong>
+To proceed with the following steps, you will need to follow these steps:</p>
+<p>First, open up a new bash terminal and direct Git towards the project root directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><p>Then, select all the files that you want to update to your repository. In this case, it will be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span></code></pre></div><p>You will need to create an intial commit as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
+</span></span></code></pre></div><p>You will need to link your local repository to Github after that:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add origin https://github.com/*&lt;your-username&gt;*/leftover.git
+</span></span></code></pre></div><p>Replace <your-username> with your actual GitHub username.</p>
+<p>Then, you will set the branch to main.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch -M main
+</span></span></code></pre></div><p>Finally, you will need to push the project up to Github.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin main
+</span></span></code></pre></div><p>Once completed, the project is hosted remotely and can be accessed, shared, or collaborated on via GitHub.</p>
+<p><img src="/images/1/2-4.png?featherlight=false&amp;width=90pc" alt="Running The Project"></p>
+<blockquote>
+<p><strong>Note:</strong> &ldquo;git add .&rdquo;, &ldquo;git commit -m&rdquo; and &ldquo;git push&rdquo; will be your way to save and publish your progress onto the repository.</p></blockquote>
+<h1 id="result">Result</h1>
+<p>The screenshot below shows the successfully initialized GitHub repository with the project directory and supporting files committed.</p>
+<p><img src="/images/1/2-5.png?featherlight=false&amp;width=90pc" alt="Result"></p>
 
 
 
@@ -1170,22 +1136,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1205,6 +1155,22 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1604,10 +1570,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-initialize-and-push-to-github/" title="Initialize Git and Push Project to GitHub"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/1-setting-up-vite/" title="Setting Up Vite"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock and CloudWatch" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/2-mfa-setup-for-aws-user-root/" title="Working on the main Functionality of the project using AWS Services" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

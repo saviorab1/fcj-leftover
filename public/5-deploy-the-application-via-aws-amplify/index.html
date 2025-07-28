@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Working on the main Functionality of the project using AWS Services :: </title>
+    <title>Deploy the Application via AWS Amplify :: </title>
 
     
     <link href="/css/nucleus.css?1753694974" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/2-mfa-setup-for-aws-user-root/">
+  <body class="" data-url="/5-deploy-the-application-via-aws-amplify/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -162,7 +162,7 @@
     
     <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="Working on the main Functionality of the project using AWS Services" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/2-mfa-setup-for-aws-user-root/">
@@ -484,7 +484,7 @@
     
     <li data-nav-id="/5-deploy-the-application-via-aws-amplify/" title="Deploy the Application via AWS Amplify" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/5-deploy-the-application-via-aws-amplify/">
@@ -984,7 +984,7 @@
             
           
           
-            <a href='/'>Setting up an AWS account</a> > Working on the main Functionality of the project using AWS Services
+            <a href='/'>Setting up an AWS account</a> > Deploy the Application via AWS Amplify
           
         
           
@@ -997,13 +997,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#content">Content</a></li>
-    <li><a href="#setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</a></li>
-    <li><a href="#deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</a></li>
-    <li><a href="#setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</a>
+    <li>
       <ul>
-        <li><a href="#frontend-and-backend">Frontend and Backend</a></li>
-        <li><a href="#amplify-sandbox">Amplify Sandbox</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -1023,7 +1019,7 @@
           
             <h1>
               
-              Working on the main Functionality of the project using AWS Services
+              Deploy the Application via AWS Amplify
             </h1>
           
 
@@ -1031,70 +1027,69 @@
 
 
 
-	<h2 id="content">Content</h2>
+	<p><strong>Content</strong></p>
 <ul>
-<li><a href="#content">Content</a></li>
-<li><a href="#setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</a></li>
-<li><a href="#deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</a></li>
-<li><a href="#setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</a></li>
+<li><a href="#connecting-aws-amplify-with-github">Connecting AWS Amplify with GitHub</a></li>
+<li><a href="#editing-the-yml-file">Editing the YML File</a></li>
+<li><a href="#visit-the-deployed-url">Visit the Deployed URL</a></li>
 </ul>
-<h2 id="setting-up-the-iam-identity-center">Setting Up the IAM Identity Center</h2>
-<p>In order to manage multiple accounts with Single-sign on (SSO) session, users, groups, permission sets, and more for your organization, you have to set up the IAM Identity Center.</p>
-<ol>
-<li>
-<p>Open AWS Console to access IAM Identity Center and enable the process.</p>
-</li>
-<li>
-<p>Open CloudShell and set up the management for the AWS Services using your root email as the main profile for the project.</p>
-</li>
-<li>
-<p>Configure the account by changing the password and finish setting up the new account and signing in.</p>
-</li>
-</ol>
-<h2 id="deploy-the-application-via-aws-amplify">Deploy the Application via AWS Amplify</h2>
-<p>After initializing Amplify and enabling IAM Identity Center in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration.</p>
-<ol>
-<li>
-<p>Connect and Deploy AWS Amplify with the Repository from your GitHub.</p>
-</li>
-<li>
-<p>Edit the Build specification in the Amplify file.</p>
-</li>
-<li>
-<p>Save and Redeploy the App.</p>
-</li>
-</ol>
-<hr>
-<h2 id="setting-up-the-frontend-backend-and-aws-sandbox">Setting up the Frontend, Backend and AWS Sandbox</h2>
-<p>You will need to set up the frontend, back and the aws sandbox following these steps.</p>
-<h3 id="frontend-and-backend">Frontend and Backend</h3>
-<ol>
-<li>
-<p>Install the libraries necessary using npm inside the local repository for AWS Amplify and update the following files:l-2-ways</p>
-<ul>
-<li>src/index.css (For Frontend)</li>
-<li>src/App.css (For Frontend)</li>
-<li>src/main.tsx (For UI)</li>
-<li>src/App.tsx (For UI)</li>
-</ul>
-</li>
-<li>
-<p>Set up the resources file for Amplify Data by creating the file:</p>
-<ul>
-<li>amplify/data/resource.ts</li>
-</ul>
-<h3 id="amplify-sandbox">Amplify Sandbox</h3>
-</li>
-<li>
-<p>Using npm to install Amplify Sandbox.</p>
-</li>
-<li>
-<p>After setting up, you will need to configure a profile inside the sandbox.</p>
-</li>
-<li>
-<p>Configure and make a localhost.</p>
-</li>
-</ol>
+<h4 id="connecting-aws-amplify-with-github">Connecting AWS Amplify with GitHub</h4>
+<p>After initializing Amplify in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.</p>
+<p>You will open the AWS Console by navigating to the AWS Amplify service, and click on <strong>Deploy an App</strong> or <strong>Create New App</strong>.</p>
+<p><img src="/images/2/5-1.png?featherlight=false&amp;width=90pc" alt="AWS Frontpage"></p>
+<p>On the “Start building with Amplify” page, choose GitHub as the source provider. Log in and authorize GitHub access if prompted.</p>
+<p><img src="/images/2/5-2.png?featherlight=false&amp;width=90pc" alt="AWS GitHub"></p>
+<p>Remember to check the branch/repository of the GitHub repository you used to store the data.</p>
+<p><img src="/images/2/5-3.png?featherlight=false&amp;width=90pc" alt="Repository"></p>
+<h4 id="editing-the-yml-file">Editing the YML File</h4>
+<p>At the app setting part, you will need to edit the YML file. Put all the info just like the screenshot under and click on <strong>Edit YML file</strong>.</p>
+<p><img src="/images/2/5-4.png?featherlight=false&amp;width=90pc" alt="Repository"></p>
+<p>Inside the YML file, paste the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">Modify the amplify.yml file as follows</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">backend</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">phases</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">preBuild</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm install</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">nvm use 20</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm ci --cache .npm --prefer-offline</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">frontend</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">phases</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm run build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">artifacts</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">baseDirectory</span>: <span style="color:#ae81ff">dist</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">files</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;**/*&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cache</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">node_modules/**/*</span>
+</span></span></code></pre></div>
+<div class="notices warning" ><p>THE COMMAND LINES MUST BE INDENTED CORRECTLY JUST LIKE THE INSTRUCTIONS.</p>
+</div>
+
+<p><img src="/images/2/5-5.png?featherlight=false&amp;width=90pc" alt="YML File"></p>
+<p>After finished editing the YML file, save and then scroll down to next.</p>
+<p><img src="/images/2/5-6.png?featherlight=false&amp;width=90pc" alt="Finish Step 3"></p>
+<p>Click on Finish and Deploy, this will create an AWS Amplify Console that will match your liking.</p>
+<p><img src="/images/2/5-7.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
+<p>Return to the Overview, click the Production branch, and then select Redeploy this version. Wait for the build process to complete. Once deployed, the app will be accessible at the generated domain link provided in the main branch overview.</p>
+<p><img src="/images/2/5-8.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
+
+<div class="notices tip" ><p>In case of the yml file being wrong somewhere, you can come back to the file by choosing <strong>Hosting</strong> then <strong>Build Settings</strong>.</p>
+</div>
+
+<p><img src="/images/2/5-8-1.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
+<h4 id="visit-the-deployed-url">Visit the Deployed URL</h4>
+<p>Then, you can visit the page by clicking <strong>Visit Deployed URL</strong>.</p>
+<p><img src="/images/2/5-9.png?featherlight=false&amp;width=90pc" alt="Visit Time"></p>
+<p>You should see the result that looks like this.</p>
+<p><img src="/images/2/5-10.png?featherlight=false&amp;width=90pc" alt="Visit Time"></p>
 
 
 
@@ -1186,92 +1181,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1375,6 +1284,21 @@
 
                     
                     
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                     
 
                     
@@ -1385,6 +1309,77 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1604,10 +1599,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-initialize-and-push-to-github/" title="Initialize Git and Push Project to GitHub"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/4-setup-iam-identity-center/" title="Setting Up the IAM Identity Center"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-create-admin-user-and-group/" title="Creating and Developing Amazon Bedrock and CloudWatch" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/5-rest-api-and-athena/" title="Update API and Athena" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
