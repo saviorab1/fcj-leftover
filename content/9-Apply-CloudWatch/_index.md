@@ -1,7 +1,7 @@
 ---
 title : "Apply CloudWatch to monitor average response time"
 date : "2023-12-01T00:00:00Z"
-weight : 3
+weight : 9
 chapter : false
 pre : " <b> 3.3 </b> "
 ---

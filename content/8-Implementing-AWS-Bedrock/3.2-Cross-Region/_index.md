@@ -3,7 +3,7 @@ title : "Setting up AWS Bedrock (Cross-Region)"
 date : "2023-12-01T00:00:00Z"
 weight : 2
 chapter : false
-pre : " <b> 3.2 </b> "
+pre : " <b> 8.2 </b> "
 ---
 
 ## Content
