@@ -15,7 +15,7 @@ To begin creating your S3 bucket, you need to navigate to the S3 service within 
 1. Go to the AWS Management Console and search for **S3** in the services search bar.
 2. Click on **S3** to access the Simple Storage Service console.
 
-![S3 Console](/images/12/0001.png?featherlight=false&width=90pc)
+![S3 Console](/images/12/12-1.png?featherlight=false&width=90pc)
 
 #### Start Bucket Creation
 
@@ -24,7 +24,7 @@ Once you're in the S3 console:
 1. Click **Create bucket** to start the bucket creation process.
 2. This will open the bucket configuration page where you can specify your bucket settings.
 
-![Create Bucket Button](/images/12/0002.png?featherlight=false&width=90pc)
+![Create Bucket Button](/images/12/12-2.PNG?featherlight=false&width=90pc)
 
 #### Result
 

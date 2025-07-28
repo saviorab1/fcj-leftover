@@ -21,7 +21,7 @@ Configure the following basic settings:
 **Region**: `ap-southeast-1` (Singapore)
 - Choose the same region as your Amplify app for optimal performance
 
-![Basic Configuration](/images/12/0003.png?featherlight=false&width=90pc)
+![Basic Configuration](/images/12/12-3.png?featherlight=false&width=90pc)
 
 {{% notice info %}}
 If "leftover-storage" is already taken, append a unique identifier like your initials or numbers (e.g., "leftover-storage-abc123").
@@ -33,7 +33,7 @@ If "leftover-storage" is already taken, append a unique identifier like your ini
 - Keep all four settings checked to ensure your data remains private
 - This prevents accidental public exposure of your bucket contents
 
-![Security Settings](/images/12/0004.png?featherlight=false&width=90pc)
+![Security Settings](/images/12/12-4.png?featherlight=false&width=90pc)
 
 #### Advanced Features
 
@@ -44,7 +44,7 @@ If "leftover-storage" is already taken, append a unique identifier like your ini
 - Enable with **SSE-S3** (Server-Side Encryption with Amazon S3-Managed Keys)
 - This ensures all objects stored in the bucket are automatically encrypted
 
-![Advanced Settings](/images/12/0005.png?featherlight=false&width=90pc)
+![Advanced Settings](/images/12/12-5.png?featherlight=false&width=90pc)
 
 #### Result
 

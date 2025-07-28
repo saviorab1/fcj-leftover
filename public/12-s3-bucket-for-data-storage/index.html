@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=3205&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.147.9">
@@ -12,21 +12,21 @@
     <title>Creating S3 Bucket for Data Storage :: </title>
 
     
-    <link href="/css/nucleus.css?1753551701" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1753551701" rel="stylesheet">
-    <link href="/css/hybrid.css?1753551701" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1753551701" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1753551701" rel="stylesheet">
-    <link href="/css/auto-complete.css?1753551701" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1753551701" rel="stylesheet">
-    <link href="/css/theme.css?1753551701" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1753551701" rel="stylesheet">
+    <link href="/css/nucleus.css?1753689421" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1753689421" rel="stylesheet">
+    <link href="/css/hybrid.css?1753689421" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1753689421" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1753689421" rel="stylesheet">
+    <link href="/css/auto-complete.css?1753689421" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1753689421" rel="stylesheet">
+    <link href="/css/theme.css?1753689421" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1753689421" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1753551701" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1753689421" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1753551701"></script>
+    <script src="/js/jquery-3.3.1.min.js?1753689421"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1753551701"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1753551701"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1753689421"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1753689421"></script>
 <script type="text/javascript">
     
-        var baseurl = "http:\/\/localhost:1313\/";
+        var baseurl = "http:\/\/localhost:3205\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1753551701"></script>
+<script type="text/javascript" src="/js/search.js?1753689421"></script>
 
     
   </div>
@@ -570,100 +570,6 @@
  
   
     
-    <li data-nav-id="/5-rest-api-and-athena/" title="Update API and Athena" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-rest-api-and-athena/">
-           <b> 5. </b> Update API and Athena
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-rest-api-and-athena/5.1-api/" title="Create and Implement API" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-rest-api-and-athena/5.1-api/">
-           <b> 5.1 </b> Create and Implement API
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-rest-api-and-athena/5.2-athena/" title="Set up Athena for analysis" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-rest-api-and-athena/5.2-athena/">
-           <b> 5.2 </b> Set up Athena for analysis
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
     <li data-nav-id="/12-s3-bucket-for-data-storage/" title="Creating S3 Bucket for Data Storage" class="dd-item 
         
         active
@@ -883,7 +789,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -914,6 +828,26 @@
 <li><a href="12.3-create-the-bucket/">Create the Bucket</a></li>
 </ul>
 <p>Amazon S3 (Simple Storage Service) provides secure, durable, and scalable object storage. In this section, we&rsquo;ll create an S3 bucket to store application data with proper security and versioning configurations.</p>
+<h4 id="navigate-to-s3-console">Navigate to S3 Console</h4>
+<ol>
+<li>Access the AWS Management Console and search for the S3 service.</li>
+<li>Click <strong>Create bucket</strong> to begin the bucket creation process.</li>
+<li>This opens the configuration page where you&rsquo;ll specify all bucket settings.</li>
+</ol>
+<h4 id="configure-bucket-settings">Configure Bucket Settings</h4>
+<ol>
+<li>Set the bucket name to <code>leftover-storage</code> (must be globally unique).</li>
+<li>Select region <code>ap-southeast-1</code> to match your Amplify app location.</li>
+<li>Keep all <strong>Block Public Access</strong> settings checked for security.</li>
+<li>Enable <strong>Bucket Versioning</strong> for data integrity and recovery.</li>
+<li>Enable <strong>Default Encryption</strong> with SSE-S3 for automatic data protection.</li>
+</ol>
+<h4 id="create-the-bucket">Create the Bucket</h4>
+<ol>
+<li>Review all configuration settings to ensure they match requirements.</li>
+<li>Click <strong>Create bucket</strong> to finalize the creation process.</li>
+<li>Verify the bucket appears successfully in your S3 console.</li>
+</ol>
 
 
 
@@ -1221,56 +1155,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1345,7 +1229,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/5-rest-api-and-athena/5.2-athena/" title="Set up Athena for analysis"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/4-verify-new-account/4.3-lambda/" title="Build the Lambda"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/" title="Navigate to S3 Console" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1358,19 +1242,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1753551701"></script>
-    <script src="/js/perfect-scrollbar.min.js?1753551701"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1753551701"></script>
-    <script src="/js/jquery.sticky.js?1753551701"></script>
-    <script src="/js/featherlight.min.js?1753551701"></script>
-    <script src="/js/highlight.pack.js?1753551701"></script>
+    <script src="/js/clipboard.min.js?1753689421"></script>
+    <script src="/js/perfect-scrollbar.min.js?1753689421"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1753689421"></script>
+    <script src="/js/jquery.sticky.js?1753689421"></script>
+    <script src="/js/featherlight.min.js?1753689421"></script>
+    <script src="/js/highlight.pack.js?1753689421"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1753551701"></script>
-    <script src="/js/learn.js?1753551701"></script>
-    <script src="/js/hugo-learn.js?1753551701"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1753689421"></script>
+    <script src="/js/learn.js?1753689421"></script>
+    <script src="/js/hugo-learn.js?1753689421"></script>
 
-    <link href="/mermaid/mermaid.css?1753551701" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1753551701"></script>
+    <link href="/mermaid/mermaid.css?1753689421" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1753689421"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

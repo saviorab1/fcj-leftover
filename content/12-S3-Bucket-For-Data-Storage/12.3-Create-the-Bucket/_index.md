@@ -21,14 +21,14 @@ Before creating the bucket:
    - Versioning: Enabled
    - Encryption: SSE-S3 enabled
 
-![Review Settings](/images/12/0006.png?featherlight=false&width=90pc)
+![Review Settings](/images/12/12-6.PNG?featherlight=false&width=90pc)
 
 #### Create the Bucket
 
 1. Scroll down to the bottom of the configuration page.
 2. Click **Create bucket** to finalize the creation process.
 
-![Create Bucket](/images/12/0007.png?featherlight=false&width=90pc)
+![Create Bucket](/images/12/12-7.png?featherlight=false&width=90pc)
 
 #### Successful Creation
 
@@ -37,7 +37,7 @@ Once the bucket is created successfully:
 1. You will see a confirmation message indicating the bucket was created.
 2. Your new S3 bucket will appear in the S3 console bucket list.
 
-![Bucket Created](/images/12/0008.png?featherlight=false&width=90pc)
+![Bucket Created](/images/12/12-7.png?featherlight=false&width=90pc)
 
 #### Result
 
