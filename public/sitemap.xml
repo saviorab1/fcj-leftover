@@ -2,92 +2,104 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:12594/4-verify-new-account/4.1-frontend/</loc>
+    <loc>http://localhost:3352/4-verify-new-account/4.1-frontend/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/5-rest-api-and-athena/5.1-api/</loc>
+    <loc>http://localhost:3352/5-rest-api-and-athena/5.1-api/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/13-setup-iam-role-for-lambda/13.1-create-iam-role/</loc>
+    <loc>http://localhost:3352/13-setup-iam-role-for-lambda/13.1-create-iam-role/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/</loc>
+    <loc>http://localhost:3352/14-create-lambda-function-for-data-collection/14.1-create-lambda-function/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/</loc>
+    <loc>http://localhost:3352/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/3-create-admin-user-and-group/3.1-legacy-way/</loc>
+    <loc>http://localhost:3352/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/</loc>
+    <loc>http://localhost:3352/3-create-admin-user-and-group/3.1-legacy-way/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/1-create-new-aws-account/</loc>
+    <loc>http://localhost:3352/1-create-new-aws-account/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/1-setting-up-vite/</loc>
+    <loc>http://localhost:3352/1-setting-up-vite/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/4-verify-new-account/4.2-s3/</loc>
+    <loc>http://localhost:3352/4-verify-new-account/4.2-s3/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/</loc>
+    <loc>http://localhost:3352/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/13-setup-iam-role-for-lambda/13.2-configure-role-permissions/</loc>
+    <loc>http://localhost:3352/13-setup-iam-role-for-lambda/13.2-configure-role-permissions/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/2-mfa-setup-for-aws-user-root/2-u2f-security-key/</loc>
+    <loc>http://localhost:3352/14-create-lambda-function-for-data-collection/14.2-implement-data-collection-code/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/1-create-new-aws-account/1.2-update-account/</loc>
+    <loc>http://localhost:3352/2-initialize-and-push-to-github/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/5-rest-api-and-athena/5.2-athena/</loc>
+    <loc>http://localhost:3352/5-rest-api-and-athena/5.2-athena/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/3-create-admin-user-and-group/3.2-cross-region/</loc>
+    <loc>http://localhost:3352/3-create-admin-user-and-group/3.2-cross-region/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/2-mfa-setup-for-aws-user-root/</loc>
+    <loc>http://localhost:3352/2-mfa-setup-for-aws-user-root/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/13-setup-iam-role-for-lambda/13.3-add-s3-access-policy/</loc>
+    <loc>http://localhost:3352/13-setup-iam-role-for-lambda/13.3-add-s3-access-policy/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/3-create-admin-user-and-group/3.3-cloudwatch/</loc>
+    <loc>http://localhost:3352/3-create-admin-user-and-group/3.3-cloudwatch/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/4-verify-new-account/4.3-lambda/</loc>
+    <loc>http://localhost:3352/4-verify-new-account/4.3-lambda/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/12-s3-bucket-for-data-storage/12.3-create-the-bucket/</loc>
+    <loc>http://localhost:3352/12-s3-bucket-for-data-storage/12.3-create-the-bucket/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/3-create-admin-user-and-group/</loc>
+    <loc>http://localhost:3352/3-create-admin-user-and-group/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/1-create-new-aws-account/1.3-aws-account-alias/</loc>
+    <loc>http://localhost:3352/3-setting-up-amplify/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/</loc>
+    <loc>http://localhost:3352/4-verify-new-account/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/4-verify-new-account/</loc>
+    <loc>http://localhost:3352/4-setup-iam-identity-center/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/5-rest-api-and-athena/</loc>
+    <loc>http://localhost:3352/5-deploy-the-application-via-aws-amplify/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/12-s3-bucket-for-data-storage/</loc>
+    <loc>http://localhost:3352/5-rest-api-and-athena/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/13-setup-iam-role-for-lambda/</loc>
+    <loc>http://localhost:3352/6-setting-up-frontend-and-backend/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/categories/</loc>
+    <loc>http://localhost:3352/7-setting-up-sandbox/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:12594/tags/</loc>
+    <loc>http://localhost:3352/12-s3-bucket-for-data-storage/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:3352/13-setup-iam-role-for-lambda/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:3352/14-create-lambda-function-for-data-collection/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:3352/categories/</loc>
+  </url><url>
+    <loc>http://localhost:3352/tags/</loc>
   </url>
 </urlset>
