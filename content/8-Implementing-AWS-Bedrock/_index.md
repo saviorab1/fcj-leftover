@@ -1,16 +1,15 @@
 ---
 title : "Creating and Developing Amazon Bedrock and CloudWatch"
 date : "2023-12-01T00:00:00Z"
-weight : 3
+weight : 8
 chapter : false
-pre : " <b> 3. </b> "
+pre : " <b> 8. </b> "
 ---
 
 ## Content
 - [Setting up AWS Bedrock Model (2 Ways)](#setting-up-aws-bedrock-mode)
 - [Legacy Way](#legacy-way)
 - [Cross-Region Way](#cross-region-way)
-- [Deploy Cloudwatch](#deploy-cloudwatch)
 
 ## Request Amazon Bedrock models
 
@@ -52,20 +51,3 @@ To ensure high availability and performance, you can configure Claude models to 
 4. In bedrock.js, use the modelId dynamically in resourcePath, and define max_tokens, temperature, and other parameters as needed.
 
 ---
-
-## Deploy Cloudwatch
-
-To track model invocation and latency, set up a simple dashboard in AWS CloudWatch.
-
-1. Go to CloudWatch → Metrics → All metrics, search for AWS Bedrock, then select Bedrock > By ModelID.
-
-2. Choose metrics such as:
-
-{{% notice note %}}
-**Invocations (number of invoke calls)** and
-**InvocationLatency (response time)**
-{{% /notice %}}
-
-3. Go to CloudWatch again to create dashboard.
-
-4. Add a widget and equip the metrics.

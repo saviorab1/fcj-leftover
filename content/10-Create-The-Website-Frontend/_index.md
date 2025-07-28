@@ -1,7 +1,7 @@
 ---
 title : "Build The Website Frontend"
 date : "2023-12-01T00:00:00Z"
-weight : 1
+weight : 10
 chapter : false
 pre : " <b> 4.1 </b> "
 ---
