@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Build the Lambda :: </title>
+    <title>Setting up the Frontend and Backend :: </title>
 
     
     <link href="/css/nucleus.css?1753693611" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/4-verify-new-account/4.3-lambda/">
+  <body class="" data-url="/6-setting-up-frontend-and-backend/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -335,7 +335,7 @@
   
     
     <li data-nav-id="/4-verify-new-account/" title="Build the website frontend, S3 and Lambda" class="dd-item 
-        parent
+        
         
         
         ">
@@ -423,7 +423,7 @@
     
     <li data-nav-id="/4-verify-new-account/4.3-lambda/" title="Build the Lambda" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/4-verify-new-account/4.3-lambda/">
@@ -604,7 +604,7 @@
     
     <li data-nav-id="/6-setting-up-frontend-and-backend/" title="Setting up the Frontend and Backend" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/6-setting-up-frontend-and-backend/">
@@ -862,13 +862,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>Setting up an AWS account</a> > <a href='/4-verify-new-account/'>Build the website frontend, S3 and Lambda</a> > Build the Lambda
-          
-        
+            <a href='/'>Setting up an AWS account</a> > Setting up the Frontend and Backend
           
         
           
@@ -881,9 +875,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#content">Content</a></li>
-    <li><a href="#set-up-iam-role-for-lambda">Set up IAM role for Lambda</a></li>
-    <li><a href="#create-lambda-function-for-data-collection">Create Lambda function for data collection</a></li>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -901,7 +897,7 @@
           
             <h1>
               
-              Build the Lambda
+              Setting up the Frontend and Backend
             </h1>
           
 
@@ -909,117 +905,143 @@
 
 
 
-	<h2 id="content">Content</h2>
-<ul>
-<li><a href="#set-up-iam-role-for-lambda">Set up IAM role for Lambda</a></li>
-<li><a href="#create-lambda-function-for-data-collection">Create Lambda function for data collection</a></li>
-</ul>
-<h2 id="set-up-iam-role-for-lambda">Set up IAM role for Lambda</h2>
-<p>Go to IAM console → Roles → Create Role</p>
-<p><img src="/images/4/14-1.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>Choose AWS Service for Trusted entity and Lambda for Use case in the first step</p>
-<p><img src="/images/4/14-2.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>For Permissions Policies, choose AWSLambdaBasicExecutionRole.</p>
-<p><img src="/images/4/14-3.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>For Role name, we named it LeftoverDataCollectionRole, but you can pick your own poison to be fair. Afterward, go back to the Roles tab and click on the role we just created. Click on Add permissions → Create inline policy.</p>
-<p><img src="/images/4/14-4.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>In the Policy Editor, switch to JSON.</p>
-<p><img src="/images/4/14-5.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>Then replace the text with these line of codes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: [
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObject&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObjectAcl&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:GetObject&#34;</span>
-</span></span><span style="display:flex;"><span>            ],
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::leftover-storage/*&#34;</span> 
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    ]
+	<p><strong>Content</strong></p>
+<h4 id="coding-the-frontend">Coding the Frontend</h4>
+<p>In the terminal window, navigate to leftover folder and run this command to install the libraries:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install aws-amplify @aws-amplify/ui-react
+</span></span></code></pre></div><p><img src="/images/2/6-0-1.png?featherlight=false&amp;width=90pc" alt="Install"></p>
+<p>Open index.css file in src folder and update it with the following code to center the App UI:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>:<span style="color:#a6e22e">root</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: Inter, system-ui, Avenir, Helvetica, Arial, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.5</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">400</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.87</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-synthesis</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  text-rendering: <span style="color:#66d9ef">optimizeLegibility</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-webkit-</span>font-smoothing: antialiased;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-moz-</span>osx-font-smoothing: grayscale;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">1280</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">rem</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Here should be the result:</p>
-<p><img src="/images/4/14-6.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<h2 id="create-lambda-function-for-data-collection">Create Lambda function for data collection</h2>
-<p>Go to Lambda Console → click Create Function</p>
-<p><img src="/images/4/15-1.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>•	Function name: leftover-data-collector
-•	Runtime: Node.js 22.x
-•	Architecture: x86_64
-•	Execution role: Use existing role → LeftoverDataCollectionRole
-Fill that out and click Create function</p>
-<p><img src="/images/4/15-2.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>Click on the new Lambda function we just created, in Code source, index.js, replace it with this snippet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">S3Client</span>, <span style="color:#a6e22e">PutObjectCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-s3&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s3Client</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">S3Client</span>({ <span style="color:#a6e22e">region</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ap-southeast-1&#34;</span> });
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">card</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>) =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ingredients</span>, <span style="color:#a6e22e">timestamp</span>, <span style="color:#a6e22e">userId</span>, <span style="color:#a6e22e">sessionId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">body</span>);
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create partition path based on date
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">timestamp</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">year</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>();
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">month</span> <span style="color:#f92672">=</span> String(<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">=</span> String(<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()).<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>);
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create unique filename
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filename</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">sessionId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span>Date.<span style="color:#a6e22e">now</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">.json`</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`user-inputs/year=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">year</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/month=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">month</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/day=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">day</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">filename</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Prepare data for storage
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dataToStore</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timestamp</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">userId</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">sessionId</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ingredients</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;,&#39;</span>).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">ing</span> =&gt; <span style="color:#a6e22e">ing</span>.<span style="color:#a6e22e">trim</span>()),
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ingredientCount</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;,&#39;</span>).<span style="color:#a6e22e">length</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">rawInput</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ingredients</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">metadata</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">userAgent</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">headers</span>[<span style="color:#e6db74">&#39;User-Agent&#39;</span>] <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;unknown&#39;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">sourceIP</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">requestContext</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">identity</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">sourceIp</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;unknown&#39;</span>
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        };
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Store in S3
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">command</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PutObjectCommand</span>({
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Bucket</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;leftover-storage&#39;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Key</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">dataToStore</span>),
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ContentType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>
-</span></span><span style="display:flex;"><span>        });
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">s3Client</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">command</span>);
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*&#39;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Content-Type&#39;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST, OPTIONS&#39;</span>
-</span></span><span style="display:flex;"><span>            },
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ 
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Data stored successfully&#39;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span> 
-</span></span><span style="display:flex;"><span>            })
-</span></span><span style="display:flex;"><span>        };
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error storing data:&#39;</span>, <span style="color:#a6e22e">error</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*&#39;</span>
-</span></span><span style="display:flex;"><span>            },
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ 
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Failed to store data&#39;</span> 
-</span></span><span style="display:flex;"><span>            })
-</span></span><span style="display:flex;"><span>        };
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">read-the-docs</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#888</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">3n</span> <span style="color:#f92672">+</span> <span style="color:#f92672">1</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">grid-column</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">3n</span> <span style="color:#f92672">+</span> <span style="color:#f92672">2</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">grid-column</span>: <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">box</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">3n</span> <span style="color:#f92672">+</span> <span style="color:#f92672">3</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">grid-column</span>: <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then update the App.css which is also in the same src folder with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">app-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">header-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">2.5</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">48</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">main-header</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">2.25</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#1a202c</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">main-header</span> .<span style="color:#a6e22e">highlight</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#2563eb</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">640px</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">main-header</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">3.75</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">description</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">500</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1.125</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">65</span><span style="color:#66d9ef">ch</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#1a202c</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="coding-the-backend">Coding the Backend</h4>
+<p>Update main.tsx file in src folder with these codes to allow users to sign up, sign in, reset their password, and confirm sign-in for MFA with the Amplify Authenticator component:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react-dom/client&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;./App.jsx&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./index.css&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Authenticator</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;root&#34;</span>)<span style="color:#f92672">!</span>).<span style="color:#a6e22e">render</span>(
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">React.StrictMode</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">Authenticator</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">App</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">Authenticator</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">React.StrictMode</span>&gt;
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>In the same src folder, implement a simple UI for the App.tsx:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">FormEvent</span>, <span style="color:#a6e22e">useState</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Loader</span>, <span style="color:#a6e22e">Placeholder</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;./App.css&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Amplify</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-amplify&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">outputs</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;../amplify_outputs.json&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;@aws-amplify/ui-react/styles.css&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Amplify</span>.<span style="color:#a6e22e">configure</span>(<span style="color:#a6e22e">outputs</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App() {</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main-header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">This</span> <span style="color:#a6e22e">here</span> <span style="color:#66d9ef">is</span>
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">br</span> /&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;<span style="color:#a6e22e">just</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">website</span>&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;description&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">You</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">develop</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">own</span> <span style="color:#a6e22e">website</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">deploy</span> <span style="color:#a6e22e">it</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">AWS</span> <span style="color:#a6e22e">Amplify</span>.
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">App</span>;
+</span></span></code></pre></div><p>Lastly, setup Amplify Data by create a resource.ts file in amplify/data folder and update it with following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tsx" data-lang="tsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ClientSchema</span>, <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">defineData</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;@aws-amplify/backend&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">schema</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">schema</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Empty schema but properly formatted
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Schema</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ClientSchema</span>&lt;<span style="color:#f92672">typeof</span> <span style="color:#a6e22e">schema</span>&gt;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defineData</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">schema</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">authorizationModes</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">defaultAuthorizationMode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;apiKey&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">apiKeyAuthorizationMode</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">expiresInDays</span>: <span style="color:#66d9ef">30</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>});
 </span></span></code></pre></div>
 
 
@@ -1209,7 +1231,6 @@ Fill that out and click Create function</p>
             
                 
                     
-                    
                 
                 
 
@@ -1224,9 +1245,6 @@ Fill that out and click Create function</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1260,7 +1278,6 @@ Fill that out and click Create function</p>
             
                 
                     
-                    
                 
                 
 
@@ -1279,9 +1296,6 @@ Fill that out and click Create function</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1365,6 +1379,7 @@ Fill that out and click Create function</p>
             
                 
                     
+                    
                 
                 
 
@@ -1380,6 +1395,9 @@ Fill that out and click Create function</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1467,10 +1485,10 @@ Fill that out and click Create function</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/4-verify-new-account/4.2-s3/" title="Build the S3 Bucket for data storage"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/5-rest-api-and-athena/5.2-athena/" title="Set up Athena for analysis"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/4-setup-iam-identity-center/" title="Setting Up the IAM Identity Center" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/7-setting-up-sandbox/" title="Setting up AWS Sandbox" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

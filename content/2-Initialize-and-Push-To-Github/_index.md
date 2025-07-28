@@ -3,7 +3,7 @@ title : "Initialize Git and Push Project to GitHub"
 date : "2023-12-01T00:00:00Z"
 weight : 2
 chapter : false
-pre : " <b> 1.2 </b> "
+pre : " <b> 2. </b> "
 ---
 
 #### Setting up Git and Push

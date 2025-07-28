@@ -3,7 +3,7 @@ title : "Setting Up Amplify For The Project"
 date : "2023-12-01T00:00:00Z"
 weight : 3
 chapter : false
-pre : " <b> 1.3 </b> "
+pre : " <b> 3. </b> "
 ---
 
 ####  Intializing Amplify in the project

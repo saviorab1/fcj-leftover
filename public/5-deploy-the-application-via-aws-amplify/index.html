@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Build the Lambda :: </title>
+    <title>Deploy the Application via AWS Amplify :: </title>
 
     
     <link href="/css/nucleus.css?1753693611" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/4-verify-new-account/4.3-lambda/">
+  <body class="" data-url="/5-deploy-the-application-via-aws-amplify/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -335,7 +335,7 @@
   
     
     <li data-nav-id="/4-verify-new-account/" title="Build the website frontend, S3 and Lambda" class="dd-item 
-        parent
+        
         
         
         ">
@@ -423,7 +423,7 @@
     
     <li data-nav-id="/4-verify-new-account/4.3-lambda/" title="Build the Lambda" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/4-verify-new-account/4.3-lambda/">
@@ -484,7 +484,7 @@
     
     <li data-nav-id="/5-deploy-the-application-via-aws-amplify/" title="Deploy the Application via AWS Amplify" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/5-deploy-the-application-via-aws-amplify/">
@@ -862,13 +862,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>Setting up an AWS account</a> > <a href='/4-verify-new-account/'>Build the website frontend, S3 and Lambda</a> > Build the Lambda
-          
-        
+            <a href='/'>Setting up an AWS account</a> > Deploy the Application via AWS Amplify
           
         
           
@@ -881,9 +875,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#content">Content</a></li>
-    <li><a href="#set-up-iam-role-for-lambda">Set up IAM role for Lambda</a></li>
-    <li><a href="#create-lambda-function-for-data-collection">Create Lambda function for data collection</a></li>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -901,7 +897,7 @@
           
             <h1>
               
-              Build the Lambda
+              Deploy the Application via AWS Amplify
             </h1>
           
 
@@ -909,118 +905,70 @@
 
 
 
-	<h2 id="content">Content</h2>
+	<p><strong>Content</strong></p>
 <ul>
-<li><a href="#set-up-iam-role-for-lambda">Set up IAM role for Lambda</a></li>
-<li><a href="#create-lambda-function-for-data-collection">Create Lambda function for data collection</a></li>
+<li><a href="#connecting-aws-amplify-with-github">Connecting AWS Amplify with GitHub</a></li>
+<li><a href="#editing-the-yml-file">Editing the YML File</a></li>
+<li><a href="#visit-the-deployed-url">Visit the Deployed URL</a></li>
 </ul>
-<h2 id="set-up-iam-role-for-lambda">Set up IAM role for Lambda</h2>
-<p>Go to IAM console → Roles → Create Role</p>
-<p><img src="/images/4/14-1.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>Choose AWS Service for Trusted entity and Lambda for Use case in the first step</p>
-<p><img src="/images/4/14-2.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>For Permissions Policies, choose AWSLambdaBasicExecutionRole.</p>
-<p><img src="/images/4/14-3.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>For Role name, we named it LeftoverDataCollectionRole, but you can pick your own poison to be fair. Afterward, go back to the Roles tab and click on the role we just created. Click on Add permissions → Create inline policy.</p>
-<p><img src="/images/4/14-4.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>In the Policy Editor, switch to JSON.</p>
-<p><img src="/images/4/14-5.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>Then replace the text with these line of codes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: [
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObject&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObjectAcl&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:GetObject&#34;</span>
-</span></span><span style="display:flex;"><span>            ],
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::leftover-storage/*&#34;</span> 
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Here should be the result:</p>
-<p><img src="/images/4/14-6.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<h2 id="create-lambda-function-for-data-collection">Create Lambda function for data collection</h2>
-<p>Go to Lambda Console → click Create Function</p>
-<p><img src="/images/4/15-1.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>•	Function name: leftover-data-collector
-•	Runtime: Node.js 22.x
-•	Architecture: x86_64
-•	Execution role: Use existing role → LeftoverDataCollectionRole
-Fill that out and click Create function</p>
-<p><img src="/images/4/15-2.png?featherlight=false&amp;width=90pc" alt="Logo"></p>
-<p>Click on the new Lambda function we just created, in Code source, index.js, replace it with this snippet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">S3Client</span>, <span style="color:#a6e22e">PutObjectCommand</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@aws-sdk/client-s3&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s3Client</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">S3Client</span>({ <span style="color:#a6e22e">region</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ap-southeast-1&#34;</span> });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>) =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ingredients</span>, <span style="color:#a6e22e">timestamp</span>, <span style="color:#a6e22e">userId</span>, <span style="color:#a6e22e">sessionId</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">body</span>);
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create partition path based on date
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">timestamp</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">year</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>();
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">month</span> <span style="color:#f92672">=</span> String(<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">=</span> String(<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()).<span style="color:#a6e22e">padStart</span>(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;0&#39;</span>);
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create unique filename
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filename</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">sessionId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span>Date.<span style="color:#a6e22e">now</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">.json`</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`user-inputs/year=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">year</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/month=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">month</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/day=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">day</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">filename</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Prepare data for storage
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dataToStore</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timestamp</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">userId</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">sessionId</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ingredients</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;,&#39;</span>).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">ing</span> =&gt; <span style="color:#a6e22e">ing</span>.<span style="color:#a6e22e">trim</span>()),
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ingredientCount</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ingredients</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;,&#39;</span>).<span style="color:#a6e22e">length</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">rawInput</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ingredients</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">metadata</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">userAgent</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">headers</span>[<span style="color:#e6db74">&#39;User-Agent&#39;</span>] <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;unknown&#39;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">sourceIP</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">requestContext</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">identity</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">sourceIp</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;unknown&#39;</span>
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        };
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Store in S3
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">command</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PutObjectCommand</span>({
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Bucket</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;leftover-storage&#39;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Key</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">dataToStore</span>),
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ContentType</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>
-</span></span><span style="display:flex;"><span>        });
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">s3Client</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">command</span>);
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*&#39;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Content-Type&#39;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST, OPTIONS&#39;</span>
-</span></span><span style="display:flex;"><span>            },
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ 
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Data stored successfully&#39;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">key</span> 
-</span></span><span style="display:flex;"><span>            })
-</span></span><span style="display:flex;"><span>        };
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error storing data:&#39;</span>, <span style="color:#a6e22e">error</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">statusCode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*&#39;</span>
-</span></span><span style="display:flex;"><span>            },
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ 
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Failed to store data&#39;</span> 
-</span></span><span style="display:flex;"><span>            })
-</span></span><span style="display:flex;"><span>        };
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>};
+<h4 id="connecting-aws-amplify-with-github">Connecting AWS Amplify with GitHub</h4>
+<p>After initializing Amplify in the project, the application was deployed using AWS Amplify’s hosting feature, which supports seamless integration with GitHub for CI/CD.</p>
+<p>You will open the AWS Console by navigating to the AWS Amplify service, and click on <strong>Deploy an App</strong> or <strong>Create New App</strong>.</p>
+<p><img src="/images/2/5-1.png?featherlight=false&amp;width=90pc" alt="AWS Frontpage"></p>
+<p>On the “Start building with Amplify” page, choose GitHub as the source provider. Log in and authorize GitHub access if prompted.</p>
+<p><img src="/images/2/5-2.png?featherlight=false&amp;width=90pc" alt="AWS GitHub"></p>
+<p>Remember to check the branch/repository of the GitHub repository you used to store the data.</p>
+<p><img src="/images/2/5-3.png?featherlight=false&amp;width=90pc" alt="Repository"></p>
+<h4 id="editing-the-yml-file">Editing the YML File</h4>
+<p>At the app setting part, you will need to edit the YML file. Put all the info just like the screenshot under and click on <strong>Edit YML file</strong>.</p>
+<p><img src="/images/2/5-4.png?featherlight=false&amp;width=90pc" alt="Repository"></p>
+<p>Inside the YML file, paste the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">Modify the amplify.yml file as follows</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">backend</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">phases</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">preBuild</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm install</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">nvm use 20</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm ci --cache .npm --prefer-offline</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">frontend</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">phases</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">npm run build</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">artifacts</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">baseDirectory</span>: <span style="color:#ae81ff">dist</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">files</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;**/*&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cache</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">node_modules/**/*</span>
 </span></span></code></pre></div>
+<div class="notices warning" ><p>THE COMMAND LINES MUST BE INDENTED CORRECTLY JUST LIKE THE INSTRUCTIONS.</p>
+</div>
+
+<p><img src="/images/2/5-5.png?featherlight=false&amp;width=90pc" alt="YML File"></p>
+<p>After finished editing the YML file, save and then scroll down to next.</p>
+<p><img src="/images/2/5-6.png?featherlight=false&amp;width=90pc" alt="Finish Step 3"></p>
+<p>Click on Finish and Deploy, this will create an AWS Amplify Console that will match your liking.</p>
+<p><img src="/images/2/5-7.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
+<p>Return to the Overview, click the Production branch, and then select Redeploy this version. Wait for the build process to complete. Once deployed, the app will be accessible at the generated domain link provided in the main branch overview.</p>
+<p><img src="/images/2/5-8.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
+
+<div class="notices tip" ><p>In case of the yml file being wrong somewhere, you can come back to the file by choosing <strong>Hosting</strong> then <strong>Build Settings</strong>.</p>
+</div>
+
+<p><img src="/images/2/5-8-1.png?featherlight=false&amp;width=90pc" alt="Finish Setting up"></p>
+<h4 id="visit-the-deployed-url">Visit the Deployed URL</h4>
+<p>Then, you can visit the page by clicking <strong>Visit Deployed URL</strong>.</p>
+<p><img src="/images/2/5-9.png?featherlight=false&amp;width=90pc" alt="Visit Time"></p>
+<p>You should see the result that looks like this.</p>
+<p><img src="/images/2/5-10.png?featherlight=false&amp;width=90pc" alt="Visit Time"></p>
+
 
 
 
@@ -1209,7 +1157,6 @@ Fill that out and click Create function</p>
             
                 
                     
-                    
                 
                 
 
@@ -1224,9 +1171,6 @@ Fill that out and click Create function</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1260,7 +1204,6 @@ Fill that out and click Create function</p>
             
                 
                     
-                    
                 
                 
 
@@ -1271,25 +1214,6 @@ Fill that out and click Create function</p>
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1314,6 +1238,26 @@ Fill that out and click Create function</p>
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1467,10 +1411,10 @@ Fill that out and click Create function</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/4-verify-new-account/4.2-s3/" title="Build the S3 Bucket for data storage"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/4-setup-iam-identity-center/" title="Setting Up the IAM Identity Center"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/4-setup-iam-identity-center/" title="Setting Up the IAM Identity Center" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/5-rest-api-and-athena/" title="Update API and Athena" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
