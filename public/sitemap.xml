@@ -2,71 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:3205/4-verify-new-account/4.1-frontend/</loc>
+    <loc>http://localhost:1313/4-verify-new-account/4.1-frontend/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/</loc>
+    <loc>http://localhost:1313/5-rest-api-and-athena/5.1-api/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/</loc>
+    <loc>http://localhost:1313/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/3-create-admin-user-and-group/3.1-legacy-way/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/</loc>
+    <loc>http://localhost:1313/3-create-admin-user-and-group/3.1-legacy-way/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/1-create-new-aws-account/</loc>
+    <loc>http://localhost:1313/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/1-create-new-aws-account/1.1-find-account-id/</loc>
+    <loc>http://localhost:1313/1-create-new-aws-account/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/4-verify-new-account/4.2-s3/</loc>
+    <loc>http://localhost:1313/1-setting-up-vite/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/</loc>
+    <loc>http://localhost:1313/4-verify-new-account/4.2-s3/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/2-mfa-setup-for-aws-user-root/2-u2f-security-key/</loc>
+    <loc>http://localhost:1313/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/1-create-new-aws-account/1.2-update-account/</loc>
+    <loc>http://localhost:1313/2-mfa-setup-for-aws-user-root/2-u2f-security-key/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/3-create-admin-user-and-group/3.2-cross-region/</loc>
+    <loc>http://localhost:1313/1-create-new-aws-account/1.2-update-account/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/2-mfa-setup-for-aws-user-root/</loc>
+    <loc>http://localhost:1313/5-rest-api-and-athena/5.2-athena/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/3-create-admin-user-and-group/3.3-cloudwatch/</loc>
+    <loc>http://localhost:1313/3-create-admin-user-and-group/3.2-cross-region/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/4-verify-new-account/4.3-lambda/</loc>
+    <loc>http://localhost:1313/2-mfa-setup-for-aws-user-root/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/12-s3-bucket-for-data-storage/12.3-create-the-bucket/</loc>
+    <loc>http://localhost:1313/3-create-admin-user-and-group/3.3-cloudwatch/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/3-create-admin-user-and-group/</loc>
+    <loc>http://localhost:1313/4-verify-new-account/4.3-lambda/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/1-create-new-aws-account/1.3-aws-account-alias/</loc>
+    <loc>http://localhost:1313/12-s3-bucket-for-data-storage/12.3-create-the-bucket/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/</loc>
+    <loc>http://localhost:1313/3-create-admin-user-and-group/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/4-verify-new-account/</loc>
+    <loc>http://localhost:1313/1-create-new-aws-account/1.3-aws-account-alias/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/12-s3-bucket-for-data-storage/</loc>
+    <loc>http://localhost:1313/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/categories/</loc>
+    <loc>http://localhost:1313/4-verify-new-account/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:3205/tags/</loc>
+    <loc>http://localhost:1313/5-rest-api-and-athena/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/12-s3-bucket-for-data-storage/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

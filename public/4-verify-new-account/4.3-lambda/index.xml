@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Build the Lambda on </title>
-    <link>http://localhost:3205/4-verify-new-account/4.3-lambda/</link>
+    <link>http://localhost:1313/4-verify-new-account/4.3-lambda/</link>
     <description>Recent content in Build the Lambda on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:3205/4-verify-new-account/4.3-lambda/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/4-verify-new-account/4.3-lambda/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

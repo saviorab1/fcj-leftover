@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Setting up AWS Bedrock (Cross-Region) on </title>
-    <link>http://localhost:3205/3-create-admin-user-and-group/3.2-cross-region/</link>
+    <link>http://localhost:1313/3-create-admin-user-and-group/3.2-cross-region/</link>
     <description>Recent content in Setting up AWS Bedrock (Cross-Region) on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:3205/3-create-admin-user-and-group/3.2-cross-region/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/3-create-admin-user-and-group/3.2-cross-region/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
