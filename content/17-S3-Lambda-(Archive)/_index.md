@@ -1,9 +1,9 @@
 ---
-title : "Build the website frontend, S3 and Lambda"
+title : "Build the S3 and Lambda (Archive)"
 date : "2023-12-01T00:00:00Z"
-weight : 4
+weight : 17
 chapter : false
-pre : " <b> 4. </b> "
+pre : " <b> 17. </b> "
 ---
 
 **Content:**
