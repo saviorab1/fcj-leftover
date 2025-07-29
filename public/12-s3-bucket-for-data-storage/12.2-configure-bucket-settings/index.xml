@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Configure Bucket Settings on </title>
-    <link>http://localhost:5605/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/</link>
+    <link>http://localhost:4818/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/</link>
     <description>Recent content in Configure Bucket Settings on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:5605/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:4818/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
