@@ -1,54 +1,27 @@
 ---
-title : "Setting Up Vite"
+title : "Setting Up Vite Development Environment"
 date : "2023-12-01T00:00:00Z"
 weight : 1
 chapter : false
 pre : " <b> 1. </b> "
 ---
 
+**Content:**
+- [Create Vite Project](1.1-create-vite-project/)
+- [Run Development Server](1.2-run-development-server/)
 
+Vite is a next-generation frontend build tool that provides fast development server and optimized builds. In this section, we'll set up a React + TypeScript project using Vite for our leftover ingredients application.
 
-#### Set Up The Vite, React and TypeScript
+#### Create Vite Project
 
-To kick off the development environment, we initialized the project with Vite, a next-generation frontend tooling system that offers fast build times and hot module replacement (HMR). We selected the React + TypeScript template to simplify development with type safety and modern React features.
+1. Initialize a new Vite project with React and TypeScript template.
+2. Configure the project structure and dependencies.
+3. Verify the project scaffolding is complete.
 
-#### Create the project using Vite
+#### Run Development Server
 
-Create a new project by making a new folder and direct to it inside the Visual Studio Code. After the folder is created, use this command:
-
-```bash
-npm create vite@latest leftover -- --template react-ts -y
-```
-
-![Create A Development Site](/images/1/1-1.png?featherlight=false&width=90pc)
-
-This command scaffolds a new Vite project named leftover with the React + TypeScript template.
-
-#### Navigate and run the development template
-
-Navigate towards the folder that you just created with this command. 
-
-```bash
-cd leftover
-```
-
-Then, to run the program after being set up.
-
-```bash
-npm run dev
-```
-
-![Running The Project](/images/1/1-2.png?featherlight=false&width=90pc)
-
-#### Result
-
-Once the server is running, the development version of the application becomes accessible at:
-**http://localhost:5173**
-
-
-The successful launch displays a default welcome screen with the Vite + React logo, a counter button, and instructions to test hot module replacement by editing the src/App.tsx file.
-
-
-![Result](/images/1/1-3.png?featherlight=false&width=90pc)
+1. Navigate to the project directory and install dependencies.
+2. Start the development server with hot module replacement.
+3. Access the application and verify it's running correctly.
 
 
