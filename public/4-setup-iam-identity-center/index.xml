@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Setting Up the IAM Identity Center on </title>
-    <link>http://localhost:1313/4-setup-iam-identity-center/</link>
+    <link>http://localhost:3352/4-setup-iam-identity-center/</link>
     <description>Recent content in Setting Up the IAM Identity Center on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/4-setup-iam-identity-center/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:3352/4-setup-iam-identity-center/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

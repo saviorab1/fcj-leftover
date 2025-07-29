@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Update API and Athena on </title>
-    <link>http://localhost:1313/5-rest-api-and-athena/</link>
+    <link>http://localhost:3352/5-rest-api-and-athena/</link>
     <description>Recent content in Update API and Athena on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/5-rest-api-and-athena/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:3352/5-rest-api-and-athena/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
