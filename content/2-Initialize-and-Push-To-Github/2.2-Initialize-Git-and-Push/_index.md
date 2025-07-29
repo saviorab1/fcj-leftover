@@ -85,8 +85,6 @@ The `-u` flag sets up tracking between your local main branch and the remote mai
 2. Refresh the page to see your uploaded project files.
 3. Verify that all project files and folders are present.
 
-![Repository Success](/images/2/2-6.png?featherlight=false&width=90pc)
-
 #### Result
 
 Your project is now successfully version-controlled and hosted on GitHub with:
