@@ -1,36 +1,25 @@
 ---
-title : "Setting Up Amplify For The Project"
+title : "Setting Up AWS Amplify"
 date : "2023-12-01T00:00:00Z"
 weight : 3
 chapter : false
 pre : " <b> 3. </b> "
 ---
 
-####  Intializing Amplify in the project
+**Content:**
+- [Initialize Amplify Project](3.1-initialize-amplify-project/)
+- [Commit Changes to Git](3.2-commit-changes-to-git/)
 
-First, you will need to use the npm command: 
+AWS Amplify provides a complete platform for building full-stack applications with cloud services. In this section, we'll initialize Amplify in the project to prepare for AWS resource integration and backend services.
 
-```bash
-npm create amplify@latest -y
-```
+#### Initialize Amplify Project
 
-This command sets up a minimal Amplify project, preparing the application for AWS resource integration.
+1. Install and configure AWS Amplify in the project directory.
+2. Set up the basic Amplify project structure and configuration.
+3. Verify the Amplify initialization is successful.
 
-#### Project Structure Update and Version Control Reminder
+#### Commit Changes to Git
 
-Upon successful execution, an amplify/ directory is generated in the root folder of the project. This directory contains all configurations and backend environment settings related to Amplify.
-
-After this change, remember to commit and push the updates to the GitHub repository:
-
-```bash
-git add .
-git commit -m "Add AWS Amplify setup"
-git push
-```
-
-![Result](/images/1/3-1.png?featherlight=false&width=90pc)
-
-#### Results
-The screenshot below highlights the newly added amplify folder in the project directory, confirming successful initialization.
-
-![Result](/images/1/3-2.png?featherlight=false&width=90pc)
+1. Stage the new Amplify configuration files.
+2. Create a commit with the Amplify setup changes.
+3. Push the updates to the GitHub repository.

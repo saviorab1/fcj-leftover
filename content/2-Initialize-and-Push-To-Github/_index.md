@@ -23,8 +23,3 @@ Version control is essential for project management and deployment. In this sect
 1. Initialize Git in the local project directory.
 2. Stage and commit the project files.
 3. Connect to the remote repository and push the code.
-
-#### Main Content
-
-1. [Create GitHub Repository](2.1-create-github-repository/)
-2. [Initialize Git and Push](2.2-initialize-git-and-push/)

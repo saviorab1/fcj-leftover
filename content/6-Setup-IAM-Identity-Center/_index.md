@@ -1,9 +1,9 @@
 ---
 title : "Setting Up the IAM Identity Center"
 date : "2023-12-01T00:00:00Z"
-weight : 4
+weight : 5
 chapter : false
-pre : " <b> 4. </b> "
+pre : " <b> 5. </b> "
 ---
 
 ## Content
