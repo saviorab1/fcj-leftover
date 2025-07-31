@@ -1,5 +1,5 @@
 ---
-title : "Setting up an AWS account"
+title : "Leftover – Creating a Smart Recipe Generator Website using Amazon Bedrock AI"
 date : "2023-12-01T00:00:00Z"
 weight : 1 
 chapter : false
@@ -8,8 +8,12 @@ chapter : false
 # Creating your first AWS account
 
 #### Overview
-In this first lab, you will be creating your new **AWS** account and use Multi-factor Authentication (**MFA**) to improve your account security. Next, you will create an **Administrator Group** and **Admin User** to manage access to resources in your account instead of using the root user. \
-Finally, we will step through account authentication with **AWS Support** in the event you experience authentication problems.
+Leftover suggests a new direction that integrates the latest cloud-native technologies. Vite + React + TypeScript is utilized for fast and modular frontend development, where AWS Amplify enables easy hosting, continuous deployment, and infrastructure management.
+
+Looking ahead, the project also involves integrating AWS Bedrock, a robust foundation model service. With Bedrock, the application will be capable of integrating generative AI capabilities such as text generation, summarization, and intelligent search—without requiring teams to grapple with advanced machine learning infrastructure. This forward-thinking integration opens the door to a smarter, more responsive web application experience.
+
+By combining rapid development tooling with scalable cloud and next-generation AI capabilities, this project addresses both the short-term pain points and long-term innovation opportunities.
+
 
 #### AWS Account
 **An AWS account** is the basic container for all the AWS resources you can create as an AWS customer. By default, each AWS account will have a _root user_. The _root user_ has full access within your AWS account, and root user permissions cannot be limited. When you first create your AWS account, you will be assessing it as the _root user_.
