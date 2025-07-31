@@ -15,20 +15,86 @@ Looking ahead, the project also involves integrating AWS Bedrock, a robust found
 By combining rapid development tooling with scalable cloud and next-generation AI capabilities, this project addresses both the short-term pain points and long-term innovation opportunities.
 
 
-#### AWS Account
-**An AWS account** is the basic container for all the AWS resources you can create as an AWS customer. By default, each AWS account will have a _root user_. The _root user_ has full access within your AWS account, and root user permissions cannot be limited. When you first create your AWS account, you will be assessing it as the _root user_.
+#### Goals
+Build and launch a modern web app using cloud technology and prepare it for future AI features. The goal is to replace old file-sharing tools with something faster, smarter, and more user-friendly—both for users and developers.
 
-![Create Account](/images/1/0001.png?featherlight=false&width=90pc)
+**Key Objectives:**
+1. Make Frontend Development Fast and Smooth
+- Use React, TypeScript, and Vite to build the app quickly and keep the code clean and modular.
 
-{{% notice note%}}
-As a best practice, do not use the AWS account _root user_ for any task where it's not required. Instead, create a new IAM user for each person that requires administrator access. Thereafter, the users in the administrators user group should set up the user groups, users, and so on, for the AWS account. All future interaction should be through the AWS account's users and their own keys instead of the root user. However, to perform some account and service management tasks, you must log in using the root user credentials.
-{{% /notice%}}
+Add features like hot module reload so developers can see changes instantly.
 
-#### Multi-Factor Authentication (MFA)
-**MFA** adds extra security because it requires users to provide unique authentication from an AWS supported MFA mechanism in addition to their regular sign-in credentials when they access AWS websites or services.
+2. Deploy Automatically and at Scale
+- Use AWS Amplify to handle app hosting and create a deployment pipeline.
 
-#### IAM User Group 
-An **IAM user group** is a collection of IAM users. User groups let you specify permissions for multiple users, which can make it easier to manage the permissions for those users. Any user in that user group automatically has the permissions that are assigned to the user group. 
+- Connect with GitHub so changes go live through a smooth CI/CD process.
+
+3. Get Ready for AI Integration
+- Design the system so that it's easy to plug in AI services (like AWS Bedrock) later.
+
+- This will allow features like smart search, AI-generated content, and insight automation in the future.
+
+4. Follow Cloud Best Practices
+- Use modern DevOps techniques (automation, caching, config files) to keep things fast and efficient.
+
+- Make sure the app runs well at scale and is easy for developers to work with.
+
+5. Work Together Securely and Smoothly
+- Let multiple developers contribute safely using GitHub + Amplify environments.
+
+- Make deployment steps repeatable and easy for long-term success and growth.
+
+
+
+#### Scope
+
+
+#### Solution Architecture
+
+![Role Details](/images/1/0-1.png?featherlight=false&width=90pc)
+
+This architecture shows how a web app and a developer interact with a secure AI system hosted on AWS Cloud.
+
+**For Users:**
+- A user accesses the app via a web browser.
+
+- AWS Cognito verifies identity and gives secure credentials.
+
+- AWS Amplify hosts the React frontend.
+
+- Frontend uses AppSync (GraphQL) to talk to backend services.
+
+**AI Request Flow:**
+- AppSync sends a request to the Invoke Agent Handler (Lambda).
+
+- This handler talks to either Region-1 or Region-2 AI models.
+
+- Each region has inference profiles that choose a specific AI model to run.
+
+- The model returns a result which flows back to the frontend.
+
+**For Developers:**
+- Developers access AWS services through IDE.
+
+- IAM Identity Center gives access and credentials.
+
+- They use a Sandbox environment for safe testing.
+
+**Data Handling:**
+Requests to API Gateway can:
+
+- Trigger Lambda functions for storage
+
+- Use IAM to get permission
+
+- Store data in S3 bucket
+
+- Analyze it via Amazon Athena
+
+**Shared Tools:**
+AWS tools like CDK, CloudFormation, CloudTrail, CLI, CloudWatch help with development, monitoring, and deployment.
+
+
 
 #### IAM User
 An **IAM user** is an entity that you create in AWS to represent the person or application that uses it to interact with AWS. A user in AWS consists of a name and credentials. \
