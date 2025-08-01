@@ -126,18 +126,9 @@ Requests to API Gateway can:
 **Shared Tools:**
 AWS tools like CDK, CloudFormation, CloudTrail, CLI, CloudWatch help with development, monitoring, and deployment.
 
+#### Structure Diagram
 
-
-#### IAM User
-An **IAM user** is an entity that you create in AWS to represent the person or application that uses it to interact with AWS. A user in AWS consists of a name and credentials. \
-Please note that an IAM user with administrator permissions is not the same thing as the AWS account root user.
-
-
-#### AWS Support
-AWS Basic Support offers all AWS customers access to our Resource Center, Service Health Dashboard, Product FAQs, Discussion Forums, and Support for Health Checks – at no additional charge. Customers who desire a deeper level of support can subscribe to AWS Support at the Developer, Business, or Enterprise level.
-
-Customers who choose AWS Support gain one-on-one, fast-response support from AWS engineers. The service helps customers use AWS's products and features. With pay-by-the-month pricing and unlimited support cases, customers are freed from long-term commitments. Customers with operational issues or technical questions can contact a team of support engineers and receive predictable response times and personalized support.
-
+#### Requirements For the Workshop
 
 #### Main Content
 
@@ -145,4 +136,3 @@ Customers who choose AWS Support gain one-on-one, fast-response support from AWS
 2. [Setting up MFA for the AWS Account root user](2-MFA-Setup-For-AWS-User-(root))
 3. [Creating an Administrator Accounts and Groups](3-create-admin-user-and-group/)
 4. [Getting support for Account Authentication](4-verify-new-account/)
-<!-- need to remove parenthesis for path in Hugo 0.88.1 for Windows-->
