@@ -47,6 +47,38 @@ Add features like hot module reload so developers can see changes instantly.
 
 
 #### Scope
+This is a project to create a modern, smart, and scalable web application using cloud-native frameworks and technologies. The scope covers everything from environment setup to deployment as well as future readiness for integration with AI through AWS Bedrock.
+
+**In Scope:**
+1.	Frontend Development:
+- Develop the application interface using React + TypeScript and Vite for fast development and high performance.
+
+2.	Cloud Infrastructure Integration:
+- Configure and initialize AWS Amplify for deployment, hosting, and management of CI/CD pipeline.
+- Customize Amplify’s amplify.yml for build and deployment automation.
+
+3.	Source Control & Repository Management:
+- Set up and manage the GitHub repository with commit history, branch handling, and integration with Amplify.
+
+4.	Build and Deployment Process:
+- Configure build artifacts, cache directories, and deploy the application to a live domain using Amplify Hosting.
+- Support automatic redeployment via GitHub commits.
+
+5.	AI-Ready Architecture:
+- Design project structure to be compatible with future AWS Bedrock integration for embedding generative AI features.
+
+**Out of Scope:**
+1.	Backend API Development:
+- Custom backend APIs and logic are not implemented in this phase, other than as introduced via Amplify defaults.
+
+2.	Full AWS Bedrock Integration:
+- Although the project is configured for AI integration, actual Bedrock services (i.e., text generation, embeddings) are not activated during this workshop phase.
+
+3.	Production-Grade Security & Access Control:
+- There is no complex access control, authentication, or fine-grained security roles in the project yet.
+
+4.	Complex Multi-Environment Configurations:
+- The Scope is a single environment deployment (i.e., main branch to Amplify hosting).
 
 
 #### Solution Architecture
