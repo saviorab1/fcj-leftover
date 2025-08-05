@@ -1,9 +1,9 @@
 ---
-title : "Setting up AWS Bedrock (Legacy)"
+title : "Setting Up Amazon Bedrock (Legacy)"
 date : "2023-12-01T00:00:00Z"
 weight : 1
 chapter : false
-pre : " <b> 8.1 </b> "
+pre : " <b> 8A. </b> "
 ---
 
 ## Content
