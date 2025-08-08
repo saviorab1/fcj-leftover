@@ -471,7 +471,13 @@ body {
 
 The final application should display:
 
-![Final Application](/images/10/10-2.png?featherlight=false&width=90pc)
+![Final Application](/images/10/10-3.png?featherlight=false&width=90pc)
+
+#### Test Your Application
+
+Now you can test the recipe generation functionality! Type in any ingredients you currently have available (e.g., "chicken, rice, tomatoes, onions") and the application will generate at least 2 complete recipes with pictures to help you create delicious meals with what's in your kitchen.
+
+![Final Application](/images/10/10-4.png?featherlight=false&width=90pc)
 
 #### Result
 
