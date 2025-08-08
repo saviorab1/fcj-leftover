@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Navigate to S3 Console on </title>
-    <link>http://localhost:6050/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/</link>
+    <link>http://localhost:3358/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/</link>
     <description>Recent content in Navigate to S3 Console on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:6050/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:3358/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
