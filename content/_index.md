@@ -5,7 +5,7 @@ weight : 1
 chapter : false
 ---
 
-# Creating your first AWS account
+# Leftover – Creating a Smart Recipe Generator Website using Amazon Bedrock AI
 
 #### Overview
 Leftover suggests a new direction that integrates the latest cloud-native technologies. Vite + React + TypeScript is utilized for fast and modular frontend development, where AWS Amplify enables easy hosting, continuous deployment, and infrastructure management.
