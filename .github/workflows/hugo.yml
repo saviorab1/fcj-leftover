@@ -47,6 +47,7 @@ jobs:
         run: |
           rm -rf themes/hugo-theme-learn
           git clone https://github.com/matcornic/hugo-theme-learn.git themes/hugo-theme-learn
+          cp -r themes/hugo-theme-learn/static/* static/ || true
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
