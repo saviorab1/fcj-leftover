@@ -22,7 +22,7 @@ Navigate to Amazon Athena and set up the query environment for analyzing your S3
 2. The Athena query editor will load with the default interface
 3. You'll see the query workspace ready for database operations
 
-![Launch Query Editor](/images/16/16-2png?featherlight=false&width=90pc)
+![Launch Query Editor](/images/16/16-2.png?featherlight=false&width=90pc)
 
 #### Result
 
