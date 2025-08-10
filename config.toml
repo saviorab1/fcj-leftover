@@ -18,6 +18,7 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 enableGitInfo = false
+canonifyURLs = true
 
 # For search functionality
 [outputs]
