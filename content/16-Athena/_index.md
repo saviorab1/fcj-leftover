@@ -1,48 +1,47 @@
 ---
-title : "Set up Athena for analysis"
+title : "Set Up Athena for Data Analysis"
 date : "2023-12-01T00:00:00Z"
 weight : 16
 chapter : false
 pre : " <b> 16. </b> "
 ---
 
-AWS Athena is a serverless interactive query service that lets you analyze data in Amazon S3 using standard SQL. You simply point Athena to your S3 data, define the schema, and start running queries without needing to load the data into a separate database. It’s cost-effective since you only pay for the amount of data scanned, making it ideal for quick analytics on large datasets.
+**Content:**
+- [Access Athena Console](16.1-access-athena-console/)
+- [Create Database and Table](16.2-create-database-and-table/)
+- [Configure External Table](16.3-configure-external-table/)
+- [Query and Analyze Data](16.4-query-and-analyze-data/)
 
-#### Create Lambda Function
+Amazon Athena is a serverless interactive query service that enables you to analyze data stored in Amazon S3 using standard SQL. With Athena, you can query your collected user data without managing infrastructure, paying only for the queries you run.
 
-Go to Athena console → choose Query your data with Trino SQL → click Launch Query editor
+{{% notice info %}}
+Athena integrates seamlessly with your S3 data storage, allowing you to perform analytics on user interactions and ingredient inputs collected through your recipe application.
+{{% /notice %}}
 
-![Role Details](/images/16/16-1.png?featherlight=false&width=90pc)
+#### Access Athena Console
 
-Click on Create → Create Table
- 
-![Role Details](/images/16/16-2.png?featherlight=false&width=90pc)
+1. Navigate to the Amazon Athena console and launch the query editor.
+2. Configure the initial setup for querying your S3 data.
+3. Prepare the environment for database and table creation.
 
-On Query window, type in this line and click Run
-CREATE DATABASE leftover_analytics
-On the left handside, under Database dropbox, choose the new table we just created
+#### Create Database and Table
 
-![Role Details](/images/16/16-3.png?featherlight=false&width=90pc)
- 
-Then, create another query and type in these lines and click Run:
-CREATE EXTERNAL TABLE leftover_analytics.user_inputs ( timestamp string, userId string, sessionId string, rawInput string, ingredientCount int, userAgent string, sourceIP string
-)
-PARTITIONED BY ( year string, month string, day string
-)
-ROW FORMAT SERDE 'org.apache.hive.hcatalog.data.JsonSerDe'
-LOCATION 's3://leftover-storage/user-inputs/'
-TBLPROPERTIES ('has_encrypted_data'='false')
- 
-![Role Details](/images/16/16-4.png?featherlight=false&width=90pc)
+1. Create a dedicated database for your analytics workload.
+2. Set up the foundational structure for data organization.
+3. Configure the database to work with your S3 storage location.
 
-The database will now partitioned by date and save to the location you chose within the S3 bucket (In this case, it is in leftover-storage/users-input). You can then query any data you would like within the storage and download it as CSV file. 
-For examples, you can see the last 10 prompts by using this line:
-SELECT * FROM "leftover_analytics"."user_inputs" limit 10
+#### Configure External Table
 
-And after you run the code, you should see the box at below, which is shown at the bottom of this screenshot.
+1. Define the external table schema to match your collected data structure.
+2. Set up partitioning by date for efficient query performance.
+3. Configure JSON serialization for proper data parsing.
 
-![Role Details](/images/16/16-5.png?featherlight=false&width=90pc)
+#### Query and Analyze Data
 
-You can check the dataset and the graph. Furthermore, you can export CSV file as well.
+1. Execute SQL queries to analyze user interaction patterns.
+2. Export query results for further analysis and reporting.
+3. Utilize Athena's visualization capabilities for data insights.
 
-![Role Details](/images/16/16-6.png?featherlight=false&width=90pc)
+{{% notice tip %}}
+Partitioning your data by date (year/month/day) significantly improves query performance and reduces costs by limiting the amount of data scanned during analysis.
+{{% /notice %}}

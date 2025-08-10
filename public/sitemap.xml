@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/16-athena/16.1-access-athena-console/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/7-setting-up-sandbox/7.1-configure-aws-credentials/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -77,6 +80,9 @@
     <loc>http://localhost:1313/6-setup-iam-identity-center/6.2-configure-user-and-permissions/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/16-athena/16.2-create-database-and-table/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/7-setting-up-sandbox/7.2-deploy-sandbox-environment/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -113,6 +119,9 @@
     <loc>http://localhost:1313/8-setting-up-amazon-bedrock-legacy/8.3-configure-backend-integration/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/16-athena/16.3-configure-external-table/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/12-s3-bucket-for-data-storage/12.3-create-the-bucket/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -141,6 +150,9 @@
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/15-create-rest-api-with-api-gateway/15.4-integrate-api-with-frontend/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/16-athena/16.4-query-and-analyze-data/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/8-setting-up-amazon-bedrock-legacy/8.4-update-data-schema/</loc>
@@ -180,6 +192,9 @@
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/16-athena/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/0-overview/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
