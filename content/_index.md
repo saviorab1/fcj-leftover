@@ -17,4 +17,4 @@ A smart web application that transforms leftover ingredients into creative recip
 
 This workshop is organized into sequential modules, each building upon the previous one. Start with the **Workshop Overview** to understand the complete architecture and goals.
 
-{{%children%}}
+{{< children />}}
