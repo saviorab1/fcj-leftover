@@ -1,6 +1,6 @@
 ---
 title : "Creating S3 Bucket for Data Storage"
-date : "2023-12-01T00:00:00Z"
+date : "2025-08-10T20:24:00Z"
 weight : 12
 chapter : false
 pre : " <b> 12. </b> "

@@ -1,6 +1,6 @@
 ---
 title : "Setting Up Amazon Bedrock (Cross-Region Inference)"
-date : "2023-12-01T00:00:00Z"
+date : "2025-08-10T20:24:00Z"
 weight : 9
 chapter : false
 pre : " <b> 9. </b> "

@@ -1,6 +1,6 @@
 ---
 title : "Setting Up Frontend and Backend"
-date : "2023-12-01T00:00:00Z"
+date : "2025-08-10T20:24:00Z"
 weight : 5
 chapter : false
 pre : " <b> 5. </b> "

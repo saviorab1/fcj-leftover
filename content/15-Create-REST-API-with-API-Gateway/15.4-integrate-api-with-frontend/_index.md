@@ -1,6 +1,6 @@
 ---
 title : "Integrate API with Frontend"
-date : "2023-12-01T00:00:00Z"
+date : "2025-08-10T20:24:00Z"
 weight : 4
 chapter : false
 pre : " <b> 15.4 </b> "
