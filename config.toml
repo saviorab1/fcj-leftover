@@ -2,6 +2,23 @@
 theme = "hugo-theme-learn"
 baseURL = "http://localhost:1313"
 
+# Ensure all content is published
+publishDir = "public"
+buildDrafts = true
+buildFuture = true
+buildExpired = true
+
+# Content directories
+contentDir = "content"
+staticDir = "static"
+layoutDir = "layouts"
+
+# Language and content settings
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+enableGitInfo = false
+
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
@@ -21,9 +38,19 @@ home = [ "HTML", "RSS", "JSON"]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
 
 # Suppress raw HTML warnings
 ignoreLogs = ['warning-goldmark-raw-html']
+
+# Content management
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
+  expiryDate = ['expiryDate']
   
 title = "Create a new AWS account."
 

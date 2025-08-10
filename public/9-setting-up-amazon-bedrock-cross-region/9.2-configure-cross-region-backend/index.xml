@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configure Cross-Region Backend on </title>
+    <link>http://localhost:58897/9-setting-up-amazon-bedrock-cross-region/9.2-configure-cross-region-backend/</link>
+    <description>Recent content in Configure Cross-Region Backend on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:58897/9-setting-up-amazon-bedrock-cross-region/9.2-configure-cross-region-backend/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
