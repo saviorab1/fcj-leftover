@@ -1,6 +1,7 @@
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 baseURL = "https://saviorab1.github.io/fcj-leftover/"
+canonifyURLs = true
 
 # For search functionality
 [outputs]

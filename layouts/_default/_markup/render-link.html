@@ -1,0 +1,12 @@
+{{- $dest := .Destination -}}
+{{- if or (hasPrefix $dest "http://") (hasPrefix $dest "https://") (hasPrefix $dest "mailto:") (hasPrefix $dest "#") -}}
+  <a href="{{ $dest }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- else -}}
+  {{- $path := $dest -}}
+  {{- if hasPrefix $dest "/" -}}
+    {{- $path = (substr $dest 1) -}}
+  {{- end -}}
+  <a href="{{ $path | absURL }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- end -}}
+
+
