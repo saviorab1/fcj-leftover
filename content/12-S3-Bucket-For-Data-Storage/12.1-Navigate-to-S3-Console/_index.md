@@ -1,6 +1,6 @@
 ---
 title : "Navigate to S3 Console"
-date : "2023-12-01T00:00:00Z"
+date : "2025-08-10T20:24:00Z"
 weight : 1
 chapter : false
 pre : " <b> 12.1 </b> "
