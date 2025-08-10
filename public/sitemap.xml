@@ -8,6 +8,9 @@
     <loc>http://localhost:1313/4-deploy-the-application-via-aws-amplify/4.1-connect-github-to-amplify/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/11-monitoring-with-cloudwatch/11.1-create-cloudwatch-dashboard/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/2-initialize-and-push-to-github/2.1-create-github-repository/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -15,6 +18,9 @@
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/14-create-lambda-function-for-data-collection/14.1-create-lambda-function/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/15-create-rest-api-with-api-gateway/15.1-create-rest-api/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/1-setting-up-vite/1.1-create-vite-project/</loc>
@@ -48,6 +54,9 @@
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/3-setting-up-amplify/3.2-commit-changes-to-git/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/15-create-rest-api-with-api-gateway/15.2-configure-api-resources-and-methods/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/5-setting-up-frontend-and-backend/5.2-configure-authentication-and-backend/</loc>
@@ -86,7 +95,13 @@
     <loc>http://localhost:1313/1-setting-up-vite/1.2-run-development-server/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/11-monitoring-with-cloudwatch/11.2-setup-bedrock-metrics-widget/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/8-setting-up-amazon-bedrock-legacy/8.2-setup-fallback-region/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/11-monitoring-with-cloudwatch/11.3-add-invocation-counter-widget/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/13-setup-iam-role-for-lambda/13.3-add-s3-access-policy/</loc>
@@ -104,6 +119,9 @@
     <loc>http://localhost:1313/4-deploy-the-application-via-aws-amplify/4.3-deploy-and-access-application/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/15-create-rest-api-with-api-gateway/15.3-enable-cors-and-deploy-api/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/3-setting-up-amplify/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -116,7 +134,13 @@
     <loc>http://localhost:1313/9-setting-up-amazon-bedrock-cross-region/9.3-update-frontend-integration/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/11-monitoring-with-cloudwatch/11.4-create-cost-calculation-widget/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/4-deploy-the-application-via-aws-amplify/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/15-create-rest-api-with-api-gateway/15.4-integrate-api-with-frontend/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/8-setting-up-amazon-bedrock-legacy/8.4-update-data-schema/</loc>
@@ -137,10 +161,10 @@
     <loc>http://localhost:1313/9-setting-up-amazon-bedrock-cross-region/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/11-apply-cloudwatch/</loc>
+    <loc>http://localhost:1313/10-create-the-website-frontend/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/10-create-the-website-frontend/</loc>
+    <loc>http://localhost:1313/11-monitoring-with-cloudwatch/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/12-s3-bucket-for-data-storage/</loc>
@@ -150,6 +174,12 @@
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/14-create-lambda-function-for-data-collection/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/15-create-rest-api-with-api-gateway/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/16-athena/</loc>
     <lastmod>2023-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
