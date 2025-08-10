@@ -45,6 +45,7 @@ jobs:
           submodules: recursive
       - name: Download Hugo Theme
         run: |
+          rm -rf themes/hugo-theme-learn
           git clone https://github.com/matcornic/hugo-theme-learn.git themes/hugo-theme-learn
       - name: Setup Pages
         id: pages
