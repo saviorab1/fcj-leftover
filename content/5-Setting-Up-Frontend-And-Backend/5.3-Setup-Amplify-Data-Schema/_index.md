@@ -57,6 +57,24 @@ export const data = defineData({
 - `expiresInDays: 30`: API key remains valid for 30 days
 - Provides secure but convenient access to data operations
 
+#### Wire Up Backend Resources
+
+Update the backend entry to include both `auth` and `data` resources.
+
+1. Open `amplify/backend.ts`.
+2. Replace its contents with:
+
+```ts
+import { defineBackend } from "@aws-amplify/backend";
+import { data } from "./data/resource";
+import { auth } from "./auth/resource";
+
+const backend = defineBackend({
+  auth,
+  data,
+});
+```
+
 #### Data Layer Benefits
 
 This configuration provides:

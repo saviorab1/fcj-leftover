@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Run Development Server on </title>
-    <link>http://localhost:58897/fcj-leftover/1-setting-up-vite/1.2-run-development-server/</link>
+    <link>http://localhost:1313/fcj-leftover/1-setting-up-vite/1.2-run-development-server/</link>
     <description>Recent content in Run Development Server on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:58897/fcj-leftover/1-setting-up-vite/1.2-run-development-server/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/fcj-leftover/1-setting-up-vite/1.2-run-development-server/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
