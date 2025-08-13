@@ -1,5 +1,4 @@
 .gitignore
-public/
 .vscode/
 .DS_Store
 .env

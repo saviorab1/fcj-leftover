@@ -70,6 +70,35 @@ function App() {
 export default App;
 ```
 
+#### Create Auth Resource
+
+Define your authentication backend and customize the registration email.
+
+1. Navigate to the `amplify/auth/` directory in your project.
+2. Create a new file named `resource.ts`.
+3. Add the following code:
+
+```ts
+import { defineAuth } from "@aws-amplify/backend";
+
+/**
+ * Define and configure your auth resource
+ * @see https://docs.amplify.aws/gen2/build-a-backend/auth
+ */
+export const auth = defineAuth({
+  loginWith: {
+    email: {
+      verificationEmailStyle: "CODE",
+      verificationEmailSubject: "This is an account registration test mail!",
+      verificationEmailBody: (createCode) =>
+        `Use this code to confirm your account: ${createCode()}`,
+    },
+  },
+});
+```
+
+This configuration customizes the verification email sent during user registration.
+
 #### Key Configuration Elements
 
 **Amplify Configuration**:
@@ -82,7 +111,7 @@ export default App;
 - Implements a clean, modern interface
 
 {{% notice note %}}
-The `amplify_outputs.json` file is automatically generated when you deploy your Amplify backend and contains all necessary configuration for connecting to AWS services.
+The `amplify_outputs.json` file is automatically generated when you deploy your Amplify backend and contains configuration for connecting to AWS services. In some environments, `.gitignore` may include `amplify_outputs.json` by default—remove that entry to ensure your frontend can import this file.
 {{% /notice %}}
 
 #### Authentication Features
