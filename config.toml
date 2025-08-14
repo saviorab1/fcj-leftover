@@ -26,7 +26,7 @@ home = [ "HTML", "RSS", "JSON"]
 # Suppress raw HTML warnings
 ignoreLogs = ['warning-goldmark-raw-html']
   
-title = "Create a new AWS account."
+title = "Leftover."
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-aws'></i> AWS Study Group - Blog"

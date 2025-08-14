@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/fcj-leftover/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=fcj-leftover/livereload" data-no-instant defer></script>
+  <head><script src="/fcj-leftover/livereload.js?mindelay=10&amp;v=2&amp;port=2452&amp;path=fcj-leftover/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.1">
+    <meta name="generator" content="Hugo 0.148.2">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
-    <link rel="icon" href="http://localhost:1313/fcj-leftover/images/favicon.png" type="image/png">
+    <link rel="icon" href="http://localhost:2452/fcj-leftover/images/favicon.png" type="image/png">
 
     <title>Configure Build Settings :: </title>
 
     
-    <link href="http://localhost:1313/fcj-leftover/css/nucleus.css?1755005149" rel="stylesheet">
-    <link href="http://localhost:1313/fcj-leftover/css/fontawesome-all.min.css?1755005149" rel="stylesheet">
-    <link href="http://localhost:1313/fcj-leftover/css/hybrid.css?1755005149" rel="stylesheet">
-    <link href="http://localhost:1313/fcj-leftover/css/featherlight.min.css?1755005149" rel="stylesheet">
-    <link href="http://localhost:1313/fcj-leftover/css/perfect-scrollbar.min.css?1755005149" rel="stylesheet">
-    <link href="http://localhost:1313/fcj-leftover/css/auto-complete.css?1755005149" rel="stylesheet">
-    <link href="http://localhost:1313/fcj-leftover/css/atom-one-dark-reasonable.css?1755005149" rel="stylesheet">
-    <link href="http://localhost:1313/fcj-leftover/css/theme.css?1755005149" rel="stylesheet">
-    <link href="http://localhost:1313/fcj-leftover/css/hugo-theme.css?1755005149" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/nucleus.css?1755163631" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/fontawesome-all.min.css?1755163631" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/hybrid.css?1755163631" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/featherlight.min.css?1755163631" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/perfect-scrollbar.min.css?1755163631" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/auto-complete.css?1755163631" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/atom-one-dark-reasonable.css?1755163631" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/theme.css?1755163631" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/hugo-theme.css?1755163631" rel="stylesheet">
     
-    <link href="http://localhost:1313/fcj-leftover/css/theme-workshop.css?1755005149" rel="stylesheet">
+    <link href="http://localhost:2452/fcj-leftover/css/theme-workshop.css?1755163631" rel="stylesheet">
     
     
 
-    <script src="http://localhost:1313/fcj-leftover/js/jquery-3.3.1.min.js?1755005149"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/jquery-3.3.1.min.js?1755163631"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,14 +36,14 @@
     </style>
     
   </head>
-  <body class="" data-url="http://localhost:1313/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.2-configure-build-settings/">
+  <body class="" data-url="http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.2-configure-build-settings/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="http://localhost:1313/fcj-leftover/">
+      <a id="logo" href="http://localhost:2452/fcj-leftover/">
 
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
 
@@ -57,15 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="http://localhost:1313/fcj-leftover/js/lunr.min.js?1755005149"></script>
-<script type="text/javascript" src="http://localhost:1313/fcj-leftover/js/auto-complete.js?1755005149"></script>
+<script type="text/javascript" src="http://localhost:2452/fcj-leftover/js/lunr.min.js?1755163631"></script>
+<script type="text/javascript" src="http://localhost:2452/fcj-leftover/js/auto-complete.js?1755163631"></script>
 <script type="text/javascript">
     
-        var baseurl = "http:\/\/localhost:1313\/fcj-leftover\/";
+        var baseurl = "http:\/\/localhost:2452\/fcj-leftover\/";
     
 </script>
-<script type="text/javascript" src="http://localhost:1313/fcj-leftover/js/search.js?1755005149"></script>
-
+<script type="text/javascript" src="http://localhost:2452/fcj-leftover/js/search.js?1755163631"></script>
     
   </div>
 
@@ -87,7 +86,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/0-overview/">
+      <a href="http://localhost:2452/fcj-leftover/0-overview/">
           Overview
           
             <i class="fas fa-check read-icon"></i>
@@ -113,7 +112,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/1-setting-up-vite/">
+      <a href="http://localhost:2452/fcj-leftover/1-setting-up-vite/">
            <b> 1. </b> Setting Up Vite Development Environment
           
             <i class="fas fa-check read-icon"></i>
@@ -144,7 +143,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/1-setting-up-vite/1.1-create-vite-project/">
+      <a href="http://localhost:2452/fcj-leftover/1-setting-up-vite/1.1-create-vite-project/">
            <b> 1.1 </b> Create Vite Project
           
             <i class="fas fa-check read-icon"></i>
@@ -172,7 +171,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/1-setting-up-vite/1.2-run-development-server/">
+      <a href="http://localhost:2452/fcj-leftover/1-setting-up-vite/1.2-run-development-server/">
            <b> 1.2 </b> Run Development Server
           
             <i class="fas fa-check read-icon"></i>
@@ -207,7 +206,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/2-initialize-and-push-to-github/">
+      <a href="http://localhost:2452/fcj-leftover/2-initialize-and-push-to-github/">
            <b> 2. </b> Initialize Git and Push to GitHub
           
             <i class="fas fa-check read-icon"></i>
@@ -238,7 +237,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/2-initialize-and-push-to-github/2.1-create-github-repository/">
+      <a href="http://localhost:2452/fcj-leftover/2-initialize-and-push-to-github/2.1-create-github-repository/">
            <b> 2.1 </b> Create GitHub Repository
           
             <i class="fas fa-check read-icon"></i>
@@ -266,7 +265,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/2-initialize-and-push-to-github/2.2-initialize-git-and-push/">
+      <a href="http://localhost:2452/fcj-leftover/2-initialize-and-push-to-github/2.2-initialize-git-and-push/">
            <b> 2.2 </b> Initialize Git and Push
           
             <i class="fas fa-check read-icon"></i>
@@ -301,7 +300,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/3-setting-up-amplify/">
+      <a href="http://localhost:2452/fcj-leftover/3-setting-up-amplify/">
            <b> 3. </b> Setting Up AWS Amplify
           
             <i class="fas fa-check read-icon"></i>
@@ -332,7 +331,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/3-setting-up-amplify/3.1-initialize-amplify-project/">
+      <a href="http://localhost:2452/fcj-leftover/3-setting-up-amplify/3.1-initialize-amplify-project/">
            <b> 3.1 </b> Initialize Amplify Project
           
             <i class="fas fa-check read-icon"></i>
@@ -360,7 +359,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/3-setting-up-amplify/3.2-commit-changes-to-git/">
+      <a href="http://localhost:2452/fcj-leftover/3-setting-up-amplify/3.2-commit-changes-to-git/">
            <b> 3.2 </b> Commit Changes to Git
           
             <i class="fas fa-check read-icon"></i>
@@ -395,7 +394,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/4-deploy-the-application-via-aws-amplify/">
+      <a href="http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/">
            <b> 4. </b> Deploy Application via AWS Amplify
           
             <i class="fas fa-check read-icon"></i>
@@ -426,7 +425,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.1-connect-github-to-amplify/">
+      <a href="http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.1-connect-github-to-amplify/">
            <b> 4.1 </b> Connect GitHub to Amplify
           
             <i class="fas fa-check read-icon"></i>
@@ -454,7 +453,7 @@
         active
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.2-configure-build-settings/">
+      <a href="http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.2-configure-build-settings/">
            <b> 4.2 </b> Configure Build Settings
           
             <i class="fas fa-check read-icon"></i>
@@ -482,7 +481,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.3-deploy-and-access-application/">
+      <a href="http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.3-deploy-and-access-application/">
            <b> 4.3 </b> Deploy and Access Application
           
             <i class="fas fa-check read-icon"></i>
@@ -517,7 +516,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/5-setting-up-frontend-and-backend/">
+      <a href="http://localhost:2452/fcj-leftover/5-setting-up-frontend-and-backend/">
            <b> 5. </b> Setting Up Frontend and Backend
           
             <i class="fas fa-check read-icon"></i>
@@ -548,7 +547,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/5-setting-up-frontend-and-backend/5.1-install-dependencies-and-setup-frontend/">
+      <a href="http://localhost:2452/fcj-leftover/5-setting-up-frontend-and-backend/5.1-install-dependencies-and-setup-frontend/">
            <b> 5.1 </b> Install Dependencies and Setup Frontend
           
             <i class="fas fa-check read-icon"></i>
@@ -576,7 +575,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/5-setting-up-frontend-and-backend/5.2-configure-authentication-and-backend/">
+      <a href="http://localhost:2452/fcj-leftover/5-setting-up-frontend-and-backend/5.2-configure-authentication-and-backend/">
            <b> 5.2 </b> Configure Authentication and Backend
           
             <i class="fas fa-check read-icon"></i>
@@ -604,7 +603,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/5-setting-up-frontend-and-backend/5.3-setup-amplify-data-schema/">
+      <a href="http://localhost:2452/fcj-leftover/5-setting-up-frontend-and-backend/5.3-setup-amplify-data-schema/">
            <b> 5.3 </b> Setup Amplify Data Schema
           
             <i class="fas fa-check read-icon"></i>
@@ -639,7 +638,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/6-setup-iam-identity-center/">
+      <a href="http://localhost:2452/fcj-leftover/6-setup-iam-identity-center/">
            <b> 6. </b> Setup IAM Identity Center
           
             <i class="fas fa-check read-icon"></i>
@@ -670,7 +669,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/6-setup-iam-identity-center/6.1-enable-iam-identity-center/">
+      <a href="http://localhost:2452/fcj-leftover/6-setup-iam-identity-center/6.1-enable-iam-identity-center/">
            <b> 6.1 </b> Enable IAM Identity Center
           
             <i class="fas fa-check read-icon"></i>
@@ -698,7 +697,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/6-setup-iam-identity-center/6.2-configure-user-and-permissions/">
+      <a href="http://localhost:2452/fcj-leftover/6-setup-iam-identity-center/6.2-configure-user-and-permissions/">
            <b> 6.2 </b> Configure User and Permissions
           
             <i class="fas fa-check read-icon"></i>
@@ -726,7 +725,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/6-setup-iam-identity-center/6.3-complete-user-setup-and-access/">
+      <a href="http://localhost:2452/fcj-leftover/6-setup-iam-identity-center/6.3-complete-user-setup-and-access/">
            <b> 6.3 </b> Complete User Setup and Access
           
             <i class="fas fa-check read-icon"></i>
@@ -761,7 +760,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/7-setting-up-sandbox/">
+      <a href="http://localhost:2452/fcj-leftover/7-setting-up-sandbox/">
            <b> 7. </b> Setting Up AWS Sandbox
           
             <i class="fas fa-check read-icon"></i>
@@ -792,7 +791,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/7-setting-up-sandbox/7.1-configure-aws-credentials/">
+      <a href="http://localhost:2452/fcj-leftover/7-setting-up-sandbox/7.1-configure-aws-credentials/">
            <b> 7.1 </b> Configure AWS Credentials
           
             <i class="fas fa-check read-icon"></i>
@@ -820,7 +819,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/7-setting-up-sandbox/7.2-deploy-sandbox-environment/">
+      <a href="http://localhost:2452/fcj-leftover/7-setting-up-sandbox/7.2-deploy-sandbox-environment/">
            <b> 7.2 </b> Deploy Sandbox Environment
           
             <i class="fas fa-check read-icon"></i>
@@ -855,7 +854,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/8-setting-up-amazon-bedrock-legacy/">
+      <a href="http://localhost:2452/fcj-leftover/8-setting-up-amazon-bedrock-legacy/">
            <b> 8. </b> Setting Up Amazon Bedrock (Legacy)
           
             <i class="fas fa-check read-icon"></i>
@@ -886,7 +885,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/8-setting-up-amazon-bedrock-legacy/8.1-request-model-access/">
+      <a href="http://localhost:2452/fcj-leftover/8-setting-up-amazon-bedrock-legacy/8.1-request-model-access/">
            <b> 8.1 </b> Request Model Access
           
             <i class="fas fa-check read-icon"></i>
@@ -914,7 +913,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/8-setting-up-amazon-bedrock-legacy/8.2-setup-fallback-region/">
+      <a href="http://localhost:2452/fcj-leftover/8-setting-up-amazon-bedrock-legacy/8.2-setup-fallback-region/">
            <b> 8.2 </b> Setup Fallback Region
           
             <i class="fas fa-check read-icon"></i>
@@ -942,7 +941,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/8-setting-up-amazon-bedrock-legacy/8.3-configure-backend-integration/">
+      <a href="http://localhost:2452/fcj-leftover/8-setting-up-amazon-bedrock-legacy/8.3-configure-backend-integration/">
            <b> 8.3 </b> Configure Backend Integration
           
             <i class="fas fa-check read-icon"></i>
@@ -970,7 +969,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/8-setting-up-amazon-bedrock-legacy/8.4-update-data-schema/">
+      <a href="http://localhost:2452/fcj-leftover/8-setting-up-amazon-bedrock-legacy/8.4-update-data-schema/">
            <b> 8.4 </b> Update Data Schema
           
             <i class="fas fa-check read-icon"></i>
@@ -1005,7 +1004,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/9-setting-up-amazon-bedrock-cross-region/">
+      <a href="http://localhost:2452/fcj-leftover/9-setting-up-amazon-bedrock-cross-region/">
            <b> 9. </b> Setting Up Amazon Bedrock (Cross-Region Inference)
           
             <i class="fas fa-check read-icon"></i>
@@ -1036,7 +1035,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/9-setting-up-amazon-bedrock-cross-region/9.1-request-cross-region-model-access/">
+      <a href="http://localhost:2452/fcj-leftover/9-setting-up-amazon-bedrock-cross-region/9.1-request-cross-region-model-access/">
            <b> 9.1 </b> Request Cross-Region Model Access
           
             <i class="fas fa-check read-icon"></i>
@@ -1064,7 +1063,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/9-setting-up-amazon-bedrock-cross-region/9.2-configure-cross-region-backend/">
+      <a href="http://localhost:2452/fcj-leftover/9-setting-up-amazon-bedrock-cross-region/9.2-configure-cross-region-backend/">
            <b> 9.2 </b> Configure Cross-Region Backend
           
             <i class="fas fa-check read-icon"></i>
@@ -1092,7 +1091,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/9-setting-up-amazon-bedrock-cross-region/9.3-update-frontend-integration/">
+      <a href="http://localhost:2452/fcj-leftover/9-setting-up-amazon-bedrock-cross-region/9.3-update-frontend-integration/">
            <b> 9.3 </b> Update Frontend Integration
           
             <i class="fas fa-check read-icon"></i>
@@ -1127,7 +1126,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/10-create-the-website-frontend/">
+      <a href="http://localhost:2452/fcj-leftover/10-create-the-website-frontend/">
            <b> 10. </b> Create The Website Frontend
           
             <i class="fas fa-check read-icon"></i>
@@ -1158,7 +1157,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/10-create-the-website-frontend/10.1-setup-assets-and-logo/">
+      <a href="http://localhost:2452/fcj-leftover/10-create-the-website-frontend/10.1-setup-assets-and-logo/">
            <b> 10.1 </b> Setup Assets and Logo
           
             <i class="fas fa-check read-icon"></i>
@@ -1186,7 +1185,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/10-create-the-website-frontend/10.2-implement-main-application/">
+      <a href="http://localhost:2452/fcj-leftover/10-create-the-website-frontend/10.2-implement-main-application/">
            <b> 10.2 </b> Implement Main Application
           
             <i class="fas fa-check read-icon"></i>
@@ -1214,7 +1213,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/10-create-the-website-frontend/10.3-style-application-interface/">
+      <a href="http://localhost:2452/fcj-leftover/10-create-the-website-frontend/10.3-style-application-interface/">
            <b> 10.3 </b> Style Application Interface
           
             <i class="fas fa-check read-icon"></i>
@@ -1249,7 +1248,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/11-monitoring-with-cloudwatch/">
+      <a href="http://localhost:2452/fcj-leftover/11-monitoring-with-cloudwatch/">
            <b> 11. </b> Monitoring with CloudWatch
           
             <i class="fas fa-check read-icon"></i>
@@ -1280,7 +1279,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/11-monitoring-with-cloudwatch/11.1-create-cloudwatch-dashboard/">
+      <a href="http://localhost:2452/fcj-leftover/11-monitoring-with-cloudwatch/11.1-create-cloudwatch-dashboard/">
           Create CloudWatch Dashboard
           
             <i class="fas fa-check read-icon"></i>
@@ -1308,7 +1307,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/11-monitoring-with-cloudwatch/11.2-setup-bedrock-metrics-widget/">
+      <a href="http://localhost:2452/fcj-leftover/11-monitoring-with-cloudwatch/11.2-setup-bedrock-metrics-widget/">
           Setup Bedrock Metrics Widget
           
             <i class="fas fa-check read-icon"></i>
@@ -1336,7 +1335,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/11-monitoring-with-cloudwatch/11.3-add-invocation-counter-widget/">
+      <a href="http://localhost:2452/fcj-leftover/11-monitoring-with-cloudwatch/11.3-add-invocation-counter-widget/">
           Add Invocation Counter Widget
           
             <i class="fas fa-check read-icon"></i>
@@ -1364,7 +1363,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/11-monitoring-with-cloudwatch/11.4-create-cost-calculation-widget/">
+      <a href="http://localhost:2452/fcj-leftover/11-monitoring-with-cloudwatch/11.4-create-cost-calculation-widget/">
           Create Cost Calculation Widget
           
             <i class="fas fa-check read-icon"></i>
@@ -1399,7 +1398,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/12-s3-bucket-for-data-storage/">
+      <a href="http://localhost:2452/fcj-leftover/12-s3-bucket-for-data-storage/">
            <b> 12. </b> Creating S3 Bucket for Data Storage
           
             <i class="fas fa-check read-icon"></i>
@@ -1430,7 +1429,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/">
+      <a href="http://localhost:2452/fcj-leftover/12-s3-bucket-for-data-storage/12.1-navigate-to-s3-console/">
            <b> 12.1 </b> Navigate to S3 Console
           
             <i class="fas fa-check read-icon"></i>
@@ -1458,7 +1457,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/">
+      <a href="http://localhost:2452/fcj-leftover/12-s3-bucket-for-data-storage/12.2-configure-bucket-settings/">
            <b> 12.2 </b> Configure Bucket Settings
           
             <i class="fas fa-check read-icon"></i>
@@ -1486,7 +1485,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/12-s3-bucket-for-data-storage/12.3-create-the-bucket/">
+      <a href="http://localhost:2452/fcj-leftover/12-s3-bucket-for-data-storage/12.3-create-the-bucket/">
            <b> 12.3 </b> Create the Bucket
           
             <i class="fas fa-check read-icon"></i>
@@ -1521,7 +1520,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/13-setup-iam-role-for-lambda/">
+      <a href="http://localhost:2452/fcj-leftover/13-setup-iam-role-for-lambda/">
            <b> 13. </b> Setting Up IAM Role for Lambda
           
             <i class="fas fa-check read-icon"></i>
@@ -1552,7 +1551,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/13-setup-iam-role-for-lambda/13.1-create-iam-role/">
+      <a href="http://localhost:2452/fcj-leftover/13-setup-iam-role-for-lambda/13.1-create-iam-role/">
            <b> 13.1 </b> Create IAM Role
           
             <i class="fas fa-check read-icon"></i>
@@ -1580,7 +1579,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/13-setup-iam-role-for-lambda/13.2-configure-role-permissions/">
+      <a href="http://localhost:2452/fcj-leftover/13-setup-iam-role-for-lambda/13.2-configure-role-permissions/">
            <b> 13.2 </b> Configure Role Permissions
           
             <i class="fas fa-check read-icon"></i>
@@ -1608,7 +1607,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/13-setup-iam-role-for-lambda/13.3-add-s3-access-policy/">
+      <a href="http://localhost:2452/fcj-leftover/13-setup-iam-role-for-lambda/13.3-add-s3-access-policy/">
            <b> 13.3 </b> Add S3 Access Policy
           
             <i class="fas fa-check read-icon"></i>
@@ -1643,7 +1642,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/14-create-lambda-function-for-data-collection/">
+      <a href="http://localhost:2452/fcj-leftover/14-create-lambda-function-for-data-collection/">
            <b> 14. </b> Creating Lambda Function for Data Collection
           
             <i class="fas fa-check read-icon"></i>
@@ -1674,7 +1673,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/14-create-lambda-function-for-data-collection/14.1-create-lambda-function/">
+      <a href="http://localhost:2452/fcj-leftover/14-create-lambda-function-for-data-collection/14.1-create-lambda-function/">
            <b> 14.1 </b> Create Lambda Function
           
             <i class="fas fa-check read-icon"></i>
@@ -1702,7 +1701,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/14-create-lambda-function-for-data-collection/14.2-implement-data-collection-code/">
+      <a href="http://localhost:2452/fcj-leftover/14-create-lambda-function-for-data-collection/14.2-implement-data-collection-code/">
            <b> 14.2 </b> Implement Data Collection Code
           
             <i class="fas fa-check read-icon"></i>
@@ -1737,7 +1736,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/15-create-rest-api-with-api-gateway/">
+      <a href="http://localhost:2452/fcj-leftover/15-create-rest-api-with-api-gateway/">
            <b> 15. </b> Create REST API with API Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -1768,7 +1767,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/15-create-rest-api-with-api-gateway/15.1-create-rest-api/">
+      <a href="http://localhost:2452/fcj-leftover/15-create-rest-api-with-api-gateway/15.1-create-rest-api/">
            <b> 15.1 </b> Create REST API
           
             <i class="fas fa-check read-icon"></i>
@@ -1796,7 +1795,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/15-create-rest-api-with-api-gateway/15.2-configure-api-resources-and-methods/">
+      <a href="http://localhost:2452/fcj-leftover/15-create-rest-api-with-api-gateway/15.2-configure-api-resources-and-methods/">
            <b> 15.2 </b> Configure API Resources and Methods
           
             <i class="fas fa-check read-icon"></i>
@@ -1824,7 +1823,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/15-create-rest-api-with-api-gateway/15.3-enable-cors-and-deploy-api/">
+      <a href="http://localhost:2452/fcj-leftover/15-create-rest-api-with-api-gateway/15.3-enable-cors-and-deploy-api/">
            <b> 15.3 </b> Enable CORS and Deploy API
           
             <i class="fas fa-check read-icon"></i>
@@ -1852,7 +1851,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/15-create-rest-api-with-api-gateway/15.4-integrate-api-with-frontend/">
+      <a href="http://localhost:2452/fcj-leftover/15-create-rest-api-with-api-gateway/15.4-integrate-api-with-frontend/">
            <b> 15.4 </b> Integrate API with Frontend
           
             <i class="fas fa-check read-icon"></i>
@@ -1887,7 +1886,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/16-athena/">
+      <a href="http://localhost:2452/fcj-leftover/16-athena/">
            <b> 16. </b> Set Up Athena for Data Analysis
           
             <i class="fas fa-check read-icon"></i>
@@ -1918,7 +1917,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/16-athena/16.1-access-athena-console/">
+      <a href="http://localhost:2452/fcj-leftover/16-athena/16.1-access-athena-console/">
            <b> 16.1 </b> Access Athena Console
           
             <i class="fas fa-check read-icon"></i>
@@ -1946,7 +1945,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/16-athena/16.2-create-database-and-table/">
+      <a href="http://localhost:2452/fcj-leftover/16-athena/16.2-create-database-and-table/">
            <b> 16.2 </b> Create Database and Table
           
             <i class="fas fa-check read-icon"></i>
@@ -1974,7 +1973,7 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/16-athena/16.3-configure-external-table/">
+      <a href="http://localhost:2452/fcj-leftover/16-athena/16.3-configure-external-table/">
            <b> 16.3 </b> Configure External Table
           
             <i class="fas fa-check read-icon"></i>
@@ -2002,8 +2001,298 @@
         
         
         ">
-      <a href="http://localhost:1313/fcj-leftover/16-athena/16.4-query-and-analyze-data/">
+      <a href="http://localhost:2452/fcj-leftover/16-athena/16.4-query-and-analyze-data/">
            <b> 16.4 </b> Query and Analyze Data
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/" title="Clean Up AWS Resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/">
+           <b> 17. </b> Clean Up AWS Resources
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/17.1-clean-up-athena/" title="Clean Up Athena" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/17.1-clean-up-athena/">
+           <b> 17.1 </b> Clean Up Athena
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/17.2-delete-api-gateway/" title="Delete API Gateway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/17.2-delete-api-gateway/">
+           <b> 17.2 </b> Delete API Gateway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/17.3-remove-lambda-resources/" title="Remove Lambda Resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/17.3-remove-lambda-resources/">
+           <b> 17.3 </b> Remove Lambda Resources
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/17.4-remove-iam-roles/" title="Remove IAM Roles" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/17.4-remove-iam-roles/">
+           <b> 17.4 </b> Remove IAM Roles
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/17.5-delete-s3-bucket/" title="Delete S3 Bucket" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/17.5-delete-s3-bucket/">
+           <b> 17.5 </b> Delete S3 Bucket
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/17.6-delete-cloudwatch-dashboard/" title="Delete CloudWatch Dashboard" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/17.6-delete-cloudwatch-dashboard/">
+           <b> 17.6 </b> Delete CloudWatch Dashboard
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/17.7-revoke-bedrock-model-access/" title="Revoke Bedrock Model Access" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/17.7-revoke-bedrock-model-access/">
+           <b> 17.7 </b> Revoke Bedrock Model Access
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/17.8-delete-amplify-app/" title="Delete Amplify App" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/17.8-delete-amplify-app/">
+           <b> 17.8 </b> Delete Amplify App
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/17-clean-up/17.9-delete-iam-identity-center/" title="Delete IAM Identity Center" class="dd-item 
+        
+        
+        
+        ">
+      <a href="http://localhost:2452/fcj-leftover/17-clean-up/17.9-delete-iam-identity-center/">
+           <b> 17.9 </b> Delete IAM Identity Center
           
             <i class="fas fa-check read-icon"></i>
           
@@ -2090,7 +2379,6 @@
 
 
 
-
         <section id="body">
         <div id="overlay"></div>
         <div class="padding highlightable">
@@ -2122,7 +2410,7 @@
             
           
           
-            <a href='http://localhost:1313/fcj-leftover/'>Leftover – Smart Recipe Generator Workshop</a> > <a href='http://localhost:1313/fcj-leftover/4-deploy-the-application-via-aws-amplify/'>Deploy Application via AWS Amplify</a> > Configure Build Settings
+            <a href='http://localhost:2452/fcj-leftover/'>Overview</a> > <a href='http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/'>Deploy Application via AWS Amplify</a> > Configure Build Settings
           
         
           
@@ -2139,11 +2427,7 @@
   <ul>
     <li>
       <ul>
-        <li>
-          <ul>
-            <li></li>
-          </ul>
-        </li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -2179,7 +2463,7 @@
 <li>Review the detected framework (should show Vite or React).</li>
 <li>Verify the build commands and output directory settings.</li>
 </ol>
-<p><img src="http://localhost:1313/fcj-leftover/images/4/4-4.png?featherlight=false&amp;width=90pc" alt="App Settings"></p>
+<p><img src="http://localhost:2452/fcj-leftover/images/4/4-4.png?featherlight=false&amp;width=90pc" alt="App Settings" loading="lazy" /></p>
 <h4 id="edit-build-specification">Edit Build Specification</h4>
 <ol>
 <li>Click <strong>Edit</strong> next to the build settings or <strong>Edit YML file</strong>.</li>
@@ -2210,7 +2494,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">cache</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">paths</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">node_modules/**/*</span>
-</span></span></code></pre></div><p><img src="http://localhost:1313/fcj-leftover/images/4/4-5.png?featherlight=false&amp;width=90pc" alt="YML Configuration"></p>
+</span></span></code></pre></div><p><img src="http://localhost:2452/fcj-leftover/images/4/4-5.png?featherlight=false&amp;width=90pc" alt="YML Configuration" loading="lazy" /></p>
 
 <div class="notices warning" ><p>Ensure proper indentation in the YAML file. Incorrect indentation will cause build failures.</p>
 </div>
@@ -2220,7 +2504,7 @@
 <li>After editing the amplify.yml file, click <strong>Save</strong>.</li>
 <li>Review the build settings to ensure they match your requirements.</li>
 </ol>
-<p><img src="http://localhost:1313/fcj-leftover/images/4/4-6.png?featherlight=false&amp;width=90pc" alt="Save Configuration"></p>
+<p><img src="http://localhost:2452/fcj-leftover/images/4/4-6.png?featherlight=false&amp;width=90pc" alt="Save Configuration" loading="lazy" /></p>
 <h4 id="configure-environment-variables-optional">Configure Environment Variables (Optional)</h4>
 <ol>
 <li>If your application requires environment variables, add them in the <strong>Environment variables</strong> section.</li>
@@ -3330,6 +3614,168 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -3339,10 +3785,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="http://localhost:1313/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.1-connect-github-to-amplify/" title="Connect GitHub to Amplify"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.1-connect-github-to-amplify/" title="Connect GitHub to Amplify"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="http://localhost:1313/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.3-deploy-and-access-application/" title="Deploy and Access Application" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/4.3-deploy-and-access-application/" title="Deploy and Access Application" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -3352,19 +3798,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="http://localhost:1313/fcj-leftover/js/clipboard.min.js?1755005149"></script>
-    <script src="http://localhost:1313/fcj-leftover/js/perfect-scrollbar.min.js?1755005149"></script>
-    <script src="http://localhost:1313/fcj-leftover/js/perfect-scrollbar.jquery.min.js?1755005149"></script>
-    <script src="http://localhost:1313/fcj-leftover/js/jquery.sticky.js?1755005149"></script>
-    <script src="http://localhost:1313/fcj-leftover/js/featherlight.min.js?1755005149"></script>
-    <script src="http://localhost:1313/fcj-leftover/js/highlight.pack.js?1755005149"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/clipboard.min.js?1755163632"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/perfect-scrollbar.min.js?1755163632"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/perfect-scrollbar.jquery.min.js?1755163632"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/jquery.sticky.js?1755163632"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/featherlight.min.js?1755163632"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/highlight.pack.js?1755163632"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="http://localhost:1313/fcj-leftover/js/modernizr.custom-3.6.0.js?1755005149"></script>
-    <script src="http://localhost:1313/fcj-leftover/js/learn.js?1755005149"></script>
-    <script src="http://localhost:1313/fcj-leftover/js/hugo-learn.js?1755005149"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/modernizr.custom-3.6.0.js?1755163632"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/learn.js?1755163632"></script>
+    <script src="http://localhost:2452/fcj-leftover/js/hugo-learn.js?1755163632"></script>
 
-    <link href="http://localhost:1313/fcj-leftover/mermaid/mermaid.css?1755005149" rel="stylesheet" />
-    <script src="http://localhost:1313/fcj-leftover/mermaid/mermaid.js?1755005149"></script>
+    <link href="http://localhost:2452/fcj-leftover/mermaid/mermaid.css?1755163632" rel="stylesheet" />
+    <script src="http://localhost:2452/fcj-leftover/mermaid/mermaid.js?1755163632"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
