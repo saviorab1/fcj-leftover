@@ -193,6 +193,13 @@ export function response(ctx) {
 Replace `<UserID>` in the inference profile ARN with your actual AWS account ID. You can find this in the Cross-Region Interface section of the Bedrock console.
 {{% /notice %}}
 
+#### Understanding Token Counts
+
+Large Language Models (LLMs) are billed and limited by tokens, not characters. Both your inputs (for example, the `messages` you send, including the constructed `prompt`) and the model’s outputs (the generated recipe text) consume tokens. The `max_tokens` parameter caps output tokens only.
+
+To estimate usage and plan costs, you can use the Token Calculator for LLMs: [https://token-calculator.net](https://token-calculator.net). It approximates token counts for popular models and includes reference pricing tables to help with budgeting and capacity planning.
+
+
 #### Result
 
 Your backend is now configured for cross-region inference with automatic routing, failover capabilities, and simplified management compared to the legacy approach.

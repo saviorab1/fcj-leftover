@@ -62,16 +62,10 @@ This is a project to create a modern, smart, and scalable web application using 
 - Design project structure to be compatible with future AWS Bedrock integration for embedding generative AI features.
 
 **Out of Scope:**
-1.	Backend API Development:
-- Custom backend APIs and logic are not implemented in this phase, other than as introduced via Amplify defaults.
-
-2.	Full AWS Bedrock Integration:
-- Although the project is configured for AI integration, actual Bedrock services (i.e., text generation, embeddings) are not activated during this workshop phase.
-
-3.	Production-Grade Security & Access Control:
+1.	Production-Grade Security & Access Control:
 - There is no complex access control, authentication, or fine-grained security roles in the project yet.
 
-4.	Complex Multi-Environment Configurations:
+2.	Complex Multi-Environment Configurations:
 - The Scope is a single environment deployment (i.e., main branch to Amplify hosting).
 
 

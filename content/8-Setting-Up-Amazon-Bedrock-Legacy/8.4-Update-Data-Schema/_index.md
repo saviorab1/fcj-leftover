@@ -78,6 +78,12 @@ export function request(ctx) {
 - **temperature**: Response randomness (0.4 for balanced creativity)
 - **type**: Data type being sent (text in this case)
 
+#### Understanding Token Counts
+
+LLMs process text in tokens, which roughly correspond to word pieces. Both request payloads (your `messages` and prompt) and model responses consume tokens. Pricing and context limits are token-based; `max_tokens` limits the number of output tokens only.
+
+To estimate token usage for prompts and responses, use the Token Calculator for LLMs: [https://token-calculator.net](https://token-calculator.net). It provides approximate token counts across major models and reference pricing to help budget your usage.
+
 #### Update Data Schema
 
 Replace the content of `amplify/data/resource.ts` with:

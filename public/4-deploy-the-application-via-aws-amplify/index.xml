@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deploy Application via AWS Amplify on </title>
-    <link>http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/</link>
+    <link>http://localhost:3451/fcj-leftover/4-deploy-the-application-via-aws-amplify/</link>
     <description>Recent content in Deploy Application via AWS Amplify on </description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:2452/fcj-leftover/4-deploy-the-application-via-aws-amplify/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:3451/fcj-leftover/4-deploy-the-application-via-aws-amplify/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
