@@ -6,3 +6,10 @@
 .env.development.local
 .env.test.local
 .env.production.local
+/public
+/public
+/public
+/.claude
+CLAUDE.md
+/public
+.mcp.json

@@ -6,6 +6,11 @@ chapter : false
 pre : " <b> 6.1 </b> "
 ---
 
+{{% notice warning %}}
+**Important:** By July 2025, enabling IAM Identity Center will automatically migrate your account into an AWS Organization, effectively ending your free-tier status and deducting your $200 free-tier credits. If you are eligible for the new free-tier program, consider skipping this step.
+{{% /notice %}}
+
+
 #### Access IAM Identity Center Service
 
 To set up centralized access management, you need to enable AWS IAM Identity Center in your AWS account.

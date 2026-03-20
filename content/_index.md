@@ -159,3 +159,4 @@ This diagram shows the magic that happens behind the scenes when someone uses yo
 14. [Create Lambda Function for Data Collection](../14-create-lambda-function-for-data-collection/)
 15. [Create REST API with API Gateway](../15-create-rest-api-with-api-gateway/)
 16. [Athena Analytics](../16-athena/)
+17. [Clean Up](../17-clean-up/)
